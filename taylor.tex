@@ -1,0 +1,59 @@
+\section{Taylorreihe / -entwicklung}
+Mit Hilfe der Taylorreihe können Funktionen an der Stelle x approximiert werden. Dazu muss zuerst ein $x_0$ gewählt werden, welches nahe bei x liegt und auch möglichst leicht zu berechnen ist. Dann können n-glieder der Taylorreihe berechnet werden.
+
+\subsection{Definition}
+\subsubsection{Taylorreihe}
+Die Taylorreihe der Funktion $f$ um den Punkt $x_0$ ist:\newline
+$T_f (x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n$\newline
+
+Das $n$-te Taylorpolynom:\newline
+{\footnotesize
+$T_n (x; x_0) = f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \ldots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$
+}
+
+\subsubsection{Restglied}
+{\small
+Das Restglied entspricht dem Fehler der Approximation und kann lediglich abgeschätzt werden da $\xi$ unbekannt ist.\\
+Das $n$-te Restglied: \\
+$R_n (x; x_0) = f(x) - T_n (x; x_0)$\\
+
+Restglied nach Lagrange: \\
+$R_n (x; x_0) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0)^{n+1}$ für ein $\xi \in (x_0, x)$ \\
+$|R_n (x; x_0)| \leq \frac{|f^{(n+1)}(\xi)|}{(n+1)!} |x-x_0|^{n+1}$ für ein $\xi \in (x_0, x)$ sd $f^{(n+1)}(\xi)$ maximal wird. Dh: Wähle $\xi$ dementsprechend das dies der Fall ist!
+}
+
+\subsection{Rechenregeln}
+\subsubsection{Addition}
+$f, g$ sind $m$-mal differenzierbar:
+
+$T_m (f + g)(x;x_0) = T_m f(x;x_0) + T_m g(x;x_0)$
+
+\subsubsection{Multiplikation}
+$f, g$ sind $m$-mal differenzierbar:
+
+$T_m (f \cdot g)(x;x_0) = T_m(T_m f(x;x_0) \cdot T_m g(x;x_0))$
+
+\underline{Achtung}: Anschaulich bedeutet es folgendes: Man
+multipliziert die beiden Taylorreihen von $f$ und $g$ miteinander ($T_m f(x;x_0) \cdot T_m g(x;x_0)$).
+Danach entfernt man alle Terme der Ordnung $> m$.
+
+\subsubsection{Kettenregel}
+$f: A \to B, g: B \to \R$ zwei $m$-mal differenzierbare Funktionen.
+Entwickelt wird um den Punkt $x_0 \in A$ mit $g(x_0) = q$ ($q$ muss man berechnen).
+Dann gilt:
+\begin{align*}
+T_m (g \circ f)(x;x_0) &= T_m (f(g))(x;x_0)\\
+&= T_m(T_m g(x;x_0) \circ T_m f(x;q))\\
+& = T_m(T_m f(T_m g(x;x_0))(x;q))
+\end{align*}
+
+\subsubsection{Bemerkungen / Eigenschaften / Konvergenz}
+\begin{itemize}
+	\item Der Konvergenzradius kann 0 sein
+	\item Falls Taylor-Reihe konvergiert, dann ist sie nicht notwendig gleich
+	der Funktion, die sie beschreibt. Gegenbeispiel:
+	$f(x) = \begin{cases}
+	e^{-\frac{1}{x}} & x > 0\\
+	0 & x \leq 0\end{cases}$
+	\item Ist $f$ eine Potenzreihe, dann ist diese Potenzreihe auch die Taylor-Reihe
+\end{itemize}

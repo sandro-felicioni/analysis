@@ -1,0 +1,351 @@
+\section{Differentialgleichung (DGL)}
+\subsection{Lineare DGL 1. Ordnung ($y' + f(x) \cdot y = g(x)$)}
+\subsubsection{Variation der Konstanten}
+%Nach http://de.wikipedia.org/wiki/Variation_der_Konstanten#Motivation
+Sei:\[
+F(x) = \int f(t) dt.
+\]
+Dann ist $\{y_{Hom}(x) = c_1e^{F(x)}| c_1 \in \R\}$ die Menge aller Lösungen der homogenen Differnentialgleichung ($y' + f(x) \cdot y = 0$). Als Ansatz für die Lösung des inhomogenen Problems setze man $y_p(x) = u(x)e^{F(x)}$, d.h. man \textit{lässt die Konstante $c_1$ variieren}. Dies ergibt eine eindeutige Zuordnung zwischen den Funktion $y$ und $u$. Denn $e^{F(x)}$ ist eine stets positive, stetig differnezierbare Funktion. Die Ableitung dieser Ansatzfunktion ist \[
+y_p'(x) = u(x)f(x)e^{F(x)} + u'(x)e^{F(x)} = y(x)f(x) + u'(x)e^{F(x)}
+\]
+Also löst $y$ die inhomogene Differntialgleichung \[
+y_p'(x) = y(x)f(x) + g(x)
+\]
+genau dann, wenn\[
+u'(x) = y(x)f(x) + g(x)
+\]
+gilt. Also folgt\[
+u(x) = \int  g(t)e^{-F(t)} dt
+\]
+Somit ist die Lösungsmenge von $y_p$
+\[
+\{ y_p'(x) = e^{F(x)} (u(x) + c_2) | c_2 \in \R \}
+\]
+Die Lösungsmenge der generellen Lösung der allgemeinen Lösung ist somit $y$:
+\begin{align*}
+&\{y\}=\{y = y_{Hom} + y_p\}\\
+& =\{ y(x) =  c_1e^{F(x)} +  e^{F(x)} (u(x) + c_2) | c_1, c_2 \in \R\} 
+\end{align*}
+Gibt es nun einen Ansatz, kann diese menge durch Einsetzen des Funktionswert und Gleichsetzen mit dem Resultat genau bestummen werde in dem die Konstanten $c$  aufgelöst werden.\\
+\\
+Konkret reicht es also aus. $F$ und $u$ zu berechnen. 
+
+\subsubsection{genereller Ansatz}
+Wenn $g(x) = 0$ ist, dann ist die DGL homogen. Falls $g(x) \neq 0$, so handelt
+es sich um eine inhomogene DGL.
+
+Der erste Schritt für homogene und inhomogene DGL ist die Lösung der homogenen
+DGL: $y' + f(x) \cdot y = 0$:
+{\small
+\begin{align*}
+y' + f(x) \cdot y &= 0 \quad \left | -(f(x) \cdot y) \right.\\
+y' &= -f(x) \cdot y \quad \boxed{y' \text{ ist das gleiche wie } \frac{dy}{dx}}\\
+\frac{dy}{dx} &= -f(x) \cdot y \quad \left | \div y \right.\\
+\frac{dy}{dx\, y} &= -f(x) \quad \left | \int \right.\\
+\int \frac{dy}{dx\, y} dx &= \int -f(x) dx \quad \boxed{\frac{dy}{dx\, y} \cdot dx = \frac{dx}{dx\, y} dy = \frac{1}{y} dy}\\
+\int \frac{1}{y} dy &= \int -f(x) dx\\
+\ln(y) &= -F(x) \quad \left | e^\alpha \right.\\
+e^{\ln(y)} &= e^{-F(x)}\\
+y &= e^{-F(x)}
+\end{align*}
+}
+
+Damit erhalten wir die allgemeine Lösung: $y = A \cdot e^{-F(x)}$. Hat man eine
+homogene DGL und einen Punkt, an dem die ursprüngliche Funktion ausgewertet wurde,
+so kann man die explizite Lösung berechnen (also $A$ berechnen), in dem man die
+hier allgemein erhaltene Lösung für den gegebenen Punkt auswertet und so die
+Unbekannte bekommt.
+
+Für ein inhomogenes DGL setzt sich die allgemeine Lösung aus der homogenen Lösung
+$y_h$ und der partikulären (speziellen) Lösung $y_p$ der inhomogenen DGL zusammen.
+Die homogene Lösung haben wir bereits berechnet: $y_h = A \cdot e^{-F(x)}$. Nun
+folgt die partikuläre Lösung:
+
+Dazu wird die Konstante ($A$) der homogenen Lösung als Funktion dargestellt ($u(x)$).
+Wir erhalten somit: $y_p = u(x) \cdot e^{-F(x)}$.
+Dieses $y_p$ setzten wir nun als $y$ in die inhomogene Gleichung ein:
+{\small
+\[
+y' + f(x) \cdot y = g(x) \Rightarrow (\underbrace{u(x) \cdot e^{-F(x)}}_{= y_p = y})'
++ f(x) \cdot (\underbrace{u(x) \cdot e^{-F(x)}}_{= y_p = y}) = g(x)
+\]
+}
+
+Die neue Gleichung wird nun nach $u'(x) = \ldots$ aufgelöst, was zu
+$u'(x) = \frac{g(x)}{e^{-F(x)}}$ führt. Nun wird $u(x)$ bestimmt durch integrieren
+beider Seiten: $u(x) = \int \frac{g(x)}{e^{-F(x)}}\,dx$. Hat man dies ausgerechnet,
+setzt man $u(x)$ in $y_p = u(x) \cdot e^{-F(x)}$ ein und bekommt so die partikuläre
+Lösung der DGL.
+
+Als letzter Schritt für inhomogene DGL summiert man $y_h$ und $y_p$ und erhält nach
+dem Umformen und Kürzen die allgemeine Lösung der DGL:
+{\small
+\[
+y = y_h + y_p = 
+\underbrace{A \cdot e^{-F(x)}}_{= y_h} +
+\underbrace{\underbrace{\int \frac{g(x)}{e^{-F(x)}}\,dx}_{= u(x)} \cdot e^{-F(x)}}_{= y_p}
+\]
+}
+
+Hat man für die inhomogene DGL ebenfalls Punkte an denen die Funktion ausgewertet wurde,
+so kann man dies in die allgemeine Lösung eintragen und so die Unbekannten ($A$) berechnen.
+
+\subsubsection{Beispiel mit Variation der Konstanten}
+%Nach http://de.wikipedia.org/wiki/Variation_der_Konstanten#Motivation
+Gegeben: $y' + x^2 \cdot y = 2x^2$\\
+Somit:  $y' = f(x) \cdot y + g(x)$ mit $g(x) := 2x^2$ und $f(x) :=  - x^2$\\
+Es gilt somit:\[
+F(x) = \int f(t) dt. =  \int - x^2 dt. = -\frac{x^3}{3}
+\]
+Dann ist \[
+\{y_{Hom}(x) = c_1e^{-\frac{x^3}{3}}| c_1 \in \R\}
+\] die Menge aller Lösungen der homogenen Differnentialgleichung ($y' + x^2\cdot y = 0$). \\
+
+\fbox{%
+        \parbox{1\linewidth}{%
+\textit{Dieser Teil muss nicht berechnet werden (Herleitung).}\\
+Als Ansatz für die Lösung des inhomogenen Problems setze man $y_p(x) = u(x)e^{F(x)}$.
+\\
+Ansatzfunktion ist \[
+y_p'(x) = u(x)f(x)e^{F(x)} + u'(x)e^{F(x)} = y(x)f(x) + u'(x)e^{F(x)}
+\]
+Also löst $y$ die inhomogene Differntialgleichung \[
+y_p'(x) = y(x)f(x) + g(x)
+\]
+genau dann, wenn\[
+u'(x) = y(x)f(x) + g(x)
+\]
+gilt.
+        }%
+}
+
+Also folgt\[
+u(x) = \int  g(x)e^{-F(x)} dx. =  2 \int  x^2e^{\frac{x^3}{3}} dx. = 2e^{\frac{x^3}{3}}
+\]
+Somit ist die Lösungsmenge von $y_p$
+\[
+\{ y_p'(x) = e^{-\frac{x^3}{3}} (2e^{\frac{x^3}{3}} + c_2) | c_2 \in \R \}
+= \{ y_p'(x) =2 + c_3) | c_3 \in \R \}
+\]
+Die Lösungsmenge der generellen Lösung der allgemeinen Lösung ist somit $y$\[
+\{ y(x) =  c_1e^{-\frac{x^3}{3}} +  2  | c_1 \in \R \}
+\]
+
+\subsubsection{Beispiel genereller Ansatz}
+Gegeben: $y' + x^2 \cdot y = 2x^2$
+
+Homogene DGL lösen: $y' + x^2 \cdot y = 0$
+\begin{align*}
+y' + x^2 \cdot y &= 0\\
+\frac{dy}{dx} + x^2 \cdot y &= 0 \quad | -(x^2 \cdot y)\\
+\frac{1}{dx}\, dy &= -x^2 \cdot y \quad | \div y\\
+\frac{1}{dx} \frac{1}{y} \, dy &= -x^2 \quad | \int\\
+\int \frac{1}{dx} \frac{1}{y} \, dy \, dx &= \int -x^2 \, dx\\
+\int \frac{1}{y}\, dy &= \int -x^2 \, dx\\
+\ln(y) &= -\frac{1}{3} x^3 \quad | e^\alpha\\
+y &= e^{-\frac{1}{3}x^3}
+\end{align*}
+
+Somit ist die allgemeine homogene Lösung: $\underline{y_h = A \cdot e^{-\frac{1}{3}x^3}}$.
+
+
+Als nächstes gehen wir die praktikuläre Lösung an:
+$y_p = u(x) \cdot e^{-\frac{1}{3}x^3}$
+\begin{align*}
+\Rightarrow (u(x) \cdot e^{-\frac{1}{3}x^3})' + x^2 (u(x) e^{-\frac{1}{3}x^3}) &= 2 x^2\\
+u'(x) \cdot e^{-\frac{1}{3}x^3} - u(x) \cdot x^2 e^{-\frac{1}{3}x^3} + u(x) x^2 e^{-\frac{1}{3}x^3} &= 2 x^2\\
+u'(x) \cdot e^{-\frac{1}{3}x^3} &= 2 x^2 \quad | \div e^{-\frac{1}{3}x^3}\\
+u'(x) &= 2 x^2 e^{\frac{1}{3}x^3} \quad | \int\\
+u(x) &= 2 e^{\frac{1}{3}x^3}
+\end{align*}
+
+Wir erhalten somit: $\underline{y_p} = 2 e^{\frac{1}{3}x^3} \cdot e^{-\frac{1}{3}x^3} = \underline{2}$.
+Die allgemeine Lösung des inhomogenen DGL ist somit:
+$\underline{\underline{y}} = y_h + y_p = \underline{\underline{A \cdot e^{-\frac{1}{3}x^3} + 2}}$
+
+
+\subsubsection{Beispiel Direkterer Lösungsweg}
+Gegeben: $y' + x^2 \cdot y = 2x^2$.
+Direkt lösen:
+\begin{equation*}
+\begin{array}{r l |l}
+y' + x^2 \cdot y &= 2x^2\\
+\frac{dy}{dx} + x^2 \cdot y &= 2x^2 \quad & -(x^2 \cdot y)\\
+\frac{dy}{dx} &= 2x^2 -x^2 \cdot y \quad & \text{vereinfachen}\\
+\frac{dy}{dx} &= x^2 ( 2 - y) \quad & \div (2 - y) \\
+\frac{\frac{dy}{dx}}{2 - y} &= x^2  & \int \text{ with respect to } x \\
+\int \frac{\frac{dy}{dx}}{2 - y}  \, dx &= \int x^2 \, dx & \text{links: } \int \frac{g'(x)}{g(x)} \, dx = \ln|g(x)|\\ 
+- ln |2 - y| &= \frac{x^3}{3} + c_1 & \cdot (-1) \\
+ln |2 - y| &= - \frac{x^3}{3} - c_1 & e \\
+e^{ln |2 - y|} &= e^{-\frac{1}{3}x^3 - c_1 } \\
+2 - y &= e^{-\frac{1}{3}x^3 - c_1 }& - 2 \\
+- y &= e^{-\frac{1}{3}x^3 - c_1 } - 2 & \cdot (-1)\\
+y &= - e^{-\frac{1}{3}x^3 - c_1 } + 2 & \text{replace const} \\
+\underline{\underline{y}} &= \underline{\underline{c_2 \cdot e^{-\frac{1}{3}x^3} + 2}}\\
+\end{array} 
+\end{equation*}
+
+
+\subsection{Lineare DGL n-ter Ordnung {\footnotesize mit konst. Koeffizienten}}
+Diese DGL haben genau n Nullstellen und die Form:
+\begin{eqnarray*}
+	y^{(n)}+a_{n-1} \cdot y^{(n-1)}+\ldots+a_1 \cdot y' +a_0 \cdot y=g(x)\\
+	\text{wobei} \; g(x) = 0 \hspace{10pt} \text{oder} \hspace{10pt} g(x) \neq 0
+\end{eqnarray*}
+
+\textbf{Vorgehen:}
+\begin{enumerate}
+	\item Homogene DGL aufstellen und dazu das charakteristische Polynom $p(\lambda)$ notieren mit Ansatz $y(x) = e^{\lambda x}$ mit $\lambda \in \C$:
+	\begin{align*}
+		y^{(n)} &+ a_{n-1} \cdot y^{(n-1)} &+ \ldots &+ a_1 \cdot y' &+& \, a_0 \cdot y&=0\\
+		p(\lambda) = (\lambda^n &+ a_{n-1} \cdot \lambda^{n-1} &+ \ldots &+ a_1 \cdot \lambda &+& \, a_0) \cdot e^{\lambda x} &\overset{!}{=} 0 \\
+		= \lambda^n &+ a_{n-1} \cdot \lambda^{n-1} &+ \ldots &+ a_1 \cdot \lambda &+& \, a_0 &\overset{!}{=} 0
+	\end{align*}
+	Merke: $e^{\lambda x}$ kann nie 0 sein, deshalb muss (...) = 0 sein!\\
+
+	\item Nun müssen die ($\lambda_1, \ldots, \lambda_n$) Nullstellen von $p(\lambda)$ berechnet werden. Wenn $n > 2$ muss zuerst $p(\lambda)$ in lineare und quadratische Faktoren (durch raten/x-ausfaktorisieren/Polynomdivision/binomische Formeln) zerlegt werden. Dh: Jeder Faktor ist dann von 1. oder 2. Ordnung und davon können nun die Nullstellen berechnet werden (ablesen/Mitternachtsformel). Wir beachten, dass es sowohl reelle als auch komplexe Nullstellen gibt und merken für jede Nullstelle die Vielfachheit dieser Nullstelle.\\
+	Bsp. einer linearer und quadratischen Zerlegung:
+	{\small \begin{align*}
+			p_1(\lambda) &= \lambda^2 + \lambda - 6 = (\lambda + 3) (\lambda - 2) \hspace{10pt} \text{oder} \\
+			p_2(\lambda) &= \lambda^4 -4 = (\lambda^2 + 2) (\lambda^2 - 2) = (\lambda^2 + 2) (\lambda + \sqrt{2}) (\lambda - \sqrt{2})
+	\end{align*}}
+	\item 
+	\begin{enumerate}[leftmargin=0.3cm]
+		\item Ist $\lambda_i$ eine k-fache reelle Nullstelle, so gibt es k linear unabhängige Lösungen zur Nullstelle $\lambda_i$, nämlich:
+		\vspace{3pt}
+		\begin{align*}
+			e^{\lambda_i x}, \, x e^{\lambda_i x}, \, x^2 e^{\lambda_i x}, \, ... , \, x^{k-1} e^{\lambda_i x}
+		\end{align*}
+
+		\item Sind $\lambda_i = a \pm ib$ k-fache komplexe Nullstellen, so gibt es 2k linear unabhängige Lösungen zu diesen 2 Nullstellen, nämlich:
+		{\small\begin{align*}
+				e^{\lambda_i x}, x e^{\lambda_i x}, \ldots, x^{k-1} e^{\lambda_i x}
+				= \; &e^{x(a+ib)}, x e^{x(a+ib)}, \ldots, x^{k-1} e^{x(a+ib)}, \\
+				&e^{x(a-ib)}, x e^{x(a-ib)} \ldots, x^{k-1} e^{x(a-ib)}
+		\end{align*}}Merke: Durch anwenden der Eulersche Identität lässt sich obige Lösung auch schreiben als:
+		\vspace{3pt}
+		\begin{align*}
+			&e^{a x} \, \cos(bx), \, x e^{a x} \, \cos(bx), \ldots, \, x^{k-1} e^{a x} \, \cos(bx) \hspace{10pt} \text{und}\\
+			&e^{a x} \, \sin(bx), \, x e^{a x} \, \sin(bx), \ldots, \, x^{k-1} e^{a x} \, \sin(bx)
+		\end{align*}
+	\end{enumerate}
+	\vspace{3pt}
+	\item Die allgemeine Lösung dieser homogenen DGL ist nun eine linearkombination all dieser gefundenen Lösungen. \\
+	Bsp: $\lambda_1 =$ einfache, $\lambda_2 = $ 2-fache reelle Nullstelle:
+	\begin{align*}
+	 y_h(x) = C_1 e^{\lambda_1 x} + \ucomment{\lambda_2: \text{2-fache Nullstelle}}{C_2 e^{\lambda_2 x} + C_3 x e^{\lambda_2 x}}
+	\end{align*}
+	Die Unbekannten $C_i$ können gefunden werden, wenn genügend Punkte gegeben sind, an denen der Funktionswert bekannt ist.
+\end{enumerate}
+
+
+Hat man ursprünglich eine inhomogene DGL vorliegen, so muss man für die allgemeine Lösung
+noch die partikuläre Lösung des inhomogenen DGL berechnen. Dazu werden die Unbekannten
+$C_i$ durch Funktionen $u_i(x)$ ersetzt. So wird aus
+$y_h = C_2 x e^{\lambda_1 x} + C_1 e^{\lambda_1 x} \Rightarrow
+y_p = u_2(x) x e^{\lambda_1 x} + u_1(x) e^{\lambda_1 x}$ (eine doppelte Nullstelle).
+
+Jetzt geht es darum die Funktionen $u_i(x)$ zu bestimmen, um sie in die vorherige
+$y_p$-Gleichung einsetzen zu können. Dazu stellen wir $i$ Gleichungen auf.
+Also so viele, wie wir unbekannte Funktionen $u_i(x)$ haben:
+\begin{align*}
+u_2(x)' (x e^{\lambda_1 x}) + u_1(x)' (e^{\lambda_1 x}) &= 0\\
+u_2(x)' (x e^{\lambda_1 x})' + u_1(x)' (e^{\lambda_1 x})' &= g(x)
+\end{align*}
+
+Das Prinzip ist folgendes: Bis auf die letzte Gleichung, wird gleich $0$ gesetzt.
+Die letzte Gleichung wird gleich $g(x)$ gesetzt.
+Unsere unbekannten Funktionen werden jeweils einmal abgeleitet, egal in welcher
+Gleichung wir sind. Pro Zeile, die man weiter runter geht, wird der Term mit $e^{\lambda_i x}$
+jeweils einmal mehr abgeleitet. In der ersten Zeile wird zum Beispiel $e^{\lambda_1 x}$ nicht abgeleitet,
+in der nächsten Gleichung wird es einmal abgeleitet. Hätten wir mehr Unbekannte Funktionen,
+so würde in der folgenden Zeile zwei mal abgeleitet werden. Im Allgemeinen gilt also:
+{\footnotesize
+\begin{align*}
+u_1(x)' y_{h1}(x) + u_2(x)' y_{h2}(x) + \ldots + u_n(x)' y_{hn}(x) &= 0\\
+u_1(x)' y_{h1}(x)' + u_2(x)' y_{h2}(x)' + \ldots + u_n(x)' y_{hn}(x)' &= 0\\
+u_1(x)' y_{h1}(x)'' + u_2(x)' y_{h2}(x)'' + \ldots + u_n(x)' y_{hn}(x)'' &= 0\\
+&\ldots\\
+u_1(x)' y_{h1}(x)^{(n-1)} + u_2(x)' y_{h2}(x)^{(n-1)} + \ldots + u_n(x)' y_{hn}(x)^{(n-1)} &= g(x)
+\end{align*}
+}
+
+Diese Gleichungen werden nun jeweils aufgelöst, bis man $u_i(x)$ erhält. Um zu
+$u_i(x)$ zu gelangen, muss auf dem Weg einmal die Gleichung auf beiden Seiten
+integriert werden. Hat man alle $u_i(x)$, so setzt man diese in unsere
+ursprüngliche $y_p$ Gleichung ein.
+
+Nun kann die allgemeine Lösung des inhomogenen DGL berechnet werden. Dazu
+summiert man $y_h$ und $y_p$: $y = y_h + y_p$. Dies ist die allgemeine Lösung.
+Hat man konkrete Punkte, an denen die Funktion ausgewertet wurde, so kann man
+die Unbekannten $C_i$ berechnen.
+
+\subsubsection*{Beispiel}
+Es soll $y'' + y = \frac{2}{\cos(x)}$ ausgerechnet werden.
+
+Zuerst sehen wir uns das homogene DGL an:
+\begin{align*}
+y'' + y &= 0\\
+\Rightarrow \lambda^2 e^{\lambda x} + e^{\lambda x} &= 0\\
+\Leftrightarrow e^{\lambda x} (\lambda^2 + 1) &=0 \\
+\Rightarrow \lambda^2 + 1 &= 0\\
+\Leftrightarrow \lambda^2 &= -1 \quad
+\Rightarrow \underline{\lambda_1 = i},\, \underline{\lambda_2 = -i}
+\end{align*}
+
+Somit ist die allgemeine Lösung des homogenen DGL:
+\begin{align*}
+y_h &= C_1 \cdot e^{ix} + C_2 \cdot e^{-ix}\\
+&= C_1 (\cos(x) + i\sin(x)) + C_2(\cos(x) - i\sin(x))\\
+&= \sin(x) \underbrace{(i C_1 + i C_2)}_{ = D_1} + \cos(x) \underbrace{(C_1 + C_2)}_{= D_2}\\
+&= \underline{D_1 \sin(x) + D_2 \cos(x) = y_h}
+\end{align*}
+
+Da es sich um ein inhomogenes DGL handelt, berechnen wir als nächstes die partikuläre
+Lösung:
+\begin{align*}
+y_p &= \underbrace{u_1(x)}_{D_1 \text{ in } y_h} \sin(x) + \underbrace{u_2(x)}_{D_2 \text{ in } y_h} \cos(x)\\
+&\Rightarrow \left|
+	\begin{aligned}
+		u_1(x)' \sin(x) + u_2(x)' \cos(x) &= 0\\
+		u_1(x)' \sin(x)' + u_2(x)' \cos(x)' &= \frac{2}{\cos(x)}
+	\end{aligned}
+\right|\\
+&= \ldots\\
+&\Rightarrow u_1(x)' = -2 \tan(x),\, u_2(x)' = 2\\
+&\Leftrightarrow u_1(x) = 2 \ln(\cos(x)),\, u_2(x) = 2x\\
+&\Rightarrow \underline{y_p = 2 \ln(\cos(x)) \sin(x) + 2x \cos(x)}
+\end{align*}
+
+Da wir nun auch die partikuläre Lösung haben, können wir die allgemeine Lösung
+des inhomogenen DGL berechnen:
+$\underline{\underline{y}} = y_h + y_p = \underline{\underline{D_1 \sin(x) + D_2 \cos(x) + 2 \ln(\cos(x)) \sin(x) + 2x \cos(x)}}$
+
+\subsection{Ansätze für partikuläre Lösung}
+	\textbf{Hinweis}: nur brauchbar für lineare DGL mit konstanten Koeffizienten \\
+	\\
+	Bezeichnungen:
+	\begin{align*}
+	P(x)  &  \quad \text{charakt. Polynom der DGL}  \\
+	S_k(x) & \quad \text{polynomielle Störfunktion, Grad} \; k \\
+	A, B & \quad \text{unbekannte Konstanten} \\
+	R_k(x) = a_k x^k + . + a_1 x + a_0 & \quad \text{mit unbekannten Koeffizienten}
+	\end{align*}
+	
+	
+	
+	\begin{tabular}{l|l}
+		$g(x)$ & $Ansatz$ \\ \hline \hline
+		$ c e^{mx} $  & $A e^{mx}$ , falls $P(m) \neq 0$\\
+		&  $A x^q e^{mx}$, falls $m$ $q$-fache NST von $P$ \\ \hline
+		$ S_k(x) $  & $R_k(x)$ , falls $P(0) \neq 0$\\
+		&  $x^q R_k(x)$, falls $0$ $q$-fache NST von $P$ \\ \hline
+		$ P_k(x) e^{mx} $  & $R_k(x) e^{mx}$ , falls $P(m) \neq 0$\\
+		&  $x^q R_k(x) e^{mx}$, falls $m$ $q$-fache NST von $P$ \\ \hline
+		$ \sin wx, \cos wx $  & $A \cos wx + B \sin wx$ , falls $P(\pm iw) \neq 0$\\
+		&  $x^q (A \cos wx + B \sin wx)$, falls $\pm iw$ \\
+		& $q$-fache NST von $P$ \\ \hline
+		$ \sinh wx, \cosh wx $  & $A \cosh wx + B \sinh wx$ , falls $P(w) \neq 0$\\
+		&  $x^q (A \cosh wx + B \sinh wx)$, falls $w$ \\
+		& $q$-fache NST von $P$ \\
+	\end{tabular}

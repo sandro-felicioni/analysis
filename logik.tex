@@ -1,0 +1,26 @@
+\section{Logik}\index{Logik}
+\subsection{Aussagenlogik}
+Seien A und B zwei Aussagen die wahr oder falsch sein können.
+\begin{itemize}
+	\item A ist eine \textbf{notwendige Bedingung} für B. \\
+	Dh: B kann ohne A nicht erfüllbar sein oder anders, wenn B erfüllt ist dann muss A auch zwingend erfüllt sein. \\
+	Also: $B \Rightarrow A$
+
+	\item A ist eine \textbf{hinreichende Bedingung} für B. \\
+	Dh: Wenn A erfüllt ist, ist auch sicher B erfüllt. \\
+	Also: $A \Rightarrow B$
+
+	\item A ist eine \textbf{notw.} und \textbf{hinreichende Bedingung} für B.\\
+	Dh: A ist genau dann erfüllt wenn auch B erfüllt ist\small{(en: iff)}\\
+	Also: $A \Leftrightarrow B$ oder $(B \Rightarrow A \wedge A \Rightarrow B)$
+\end{itemize}
+
+\subsection{Logische Symbole}
+{\footnotesize
+\begin{tabular}{|c|l|c|}\hline
+	\textbf{Symbol} & \textbf{Bedeutung} & \textbf{Beweis von solchen Aussagen}\\\hline
+	$A \Leftrightarrow B$ & genau dann, wenn & \pbox{2cm}{$A \Rightarrow B$ \\ $B \Rightarrow A$} oder \pbox{2cm}{$A \Rightarrow B$ \\ $\neg A \Rightarrow \neg B$} \\\hline
+	$A \Rightarrow B$ & impliziert / wenn dann & \pbox{4cm}{$A \Rightarrow B$ oder $\neg B \Rightarrow \neg A$ oder\\$(A \wedge \neg B)$ Diese Annahme zum Widerspruch führen}\\
+	\hline
+\end{tabular}
+}

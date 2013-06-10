@@ -1,0 +1,151 @@
+\section{Mengen}\index{Menge}
+
+\subsection{Definitionen}\label{sec:mengen-def}
+{\footnotesize
+\begin{tabular}{|l|l|l|}\hline
+	\textbf{Name} & \textbf{Mengensymbol} & \textbf{Definition} \\ \hline
+	\textbf{Teilmenge:} & $A \subseteq B$ & $\forall x: x \in A \rightarrow x \in B$ \\
+	\textbf{Vereinigung:} & $A \cup B$ & $ \{x \,|\, (x \in A) \lor (x \in B)\}$ \\
+	\textbf{Durchschnitt:} & $A \cap B$ & $ \{x \,|\, (x \in A) \land (x \in B)\}$ \\
+	\textbf{Differenz:} & $A \backslash B = A - B $ & $ \{x \,|\, (x \in A) \land (x \not\in B)\}$ \\
+	\textbf{Komplement:} & $A^c = \overline{A} $ & $ \{x \,|\, x \not\in A\}$ \\
+	\hline
+\end{tabular}
+}
+
+\subsection{Rechenregeln}
+{\footnotesize
+\begin{tabular}{|l|r|}\hline
+$A \cup B = B \cup A$ & $A \cap B = B \cap A$\\
+$A \cup (B \cup C) = (A \cup B) \cup C$ & $A \cap (B \cap C) = (A \cap B) \cap C$\\
+$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$\\
+$(A \cup B)^c = A^c \cap B^c$ & $(A \cap B)^c = A^c \cup B^c$\\
+$(A \backslash B) \cup C = (A \cup C) \cap (B^c \cup C)$ & $(A \backslash B) \cap C = A \backslash )(B \cup C^c)$\\
+$(A \backslash B) \backslash C = A \backslash (B \cup C)$ & $A \backslash B = A \cap B^c$\\\hline
+\end{tabular}
+}
+
+\subsection{Beweise}
+Um Mengengleichungen zu beweisen überführt man üblicherweise eine Seite in eine Form,
+die nur noch aus logischen Operatoren besteht ($\land, \lor, \in, \not\in$) und formt
+dann so um, dass man zur gewünschten anderen Seite kommt durch Rückführung in eine
+Form mit Mengenoperatoren. Dazu verwendet man am einfachsten die Definitionen in Sektion \ref{sec:mengen-def}.
+
+\subsection*{Beispiel}
+Zeige: $(A \cup B)^c = A^c \cap B^c$ wobei $A, B$ Untermengen von $X$ sind.
+\begin{align*}
+(A \cup B)^c &= \{x \in X: x \not\in (A \cup B)\} = \{x \in X: x \not\in A \land x \not\in B\}\\
+&= \{x \in X: x \not\in A\} \cap \{x \in X: x \not\in B\} = A^c \cap B^c
+\end{align*}
+
+\subsection{bekannte Mengen}
+\begin{description}
+	\item[$\N$, natürliche Zahlen:] $\{1, 2, 3, \ldots\}$
+	\item[$\Z$, ganze Zahlen:] $\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$
+	\item[$\Q$, rationale Zahlen:] $\{\frac{p}{q} | p \in \Z, q \in \N \backslash \{0\}\}$
+	\item[$\R$, reelle Zahlen:] ``alle'' Zahlen, die wir im Alltag brauchen. Genauer: rationale Zahlen und die irrationalen Zahlen.
+\end{description}
+
+\subsection{Mächtigkeit}\index{Mächtigkeit}
+Eine Menge $A$ ist gleichmächtig zu einer Menge $B$, wenn es eine \textit{Bijektion}
+$f: A \rightarrow B$ gibt. Man schreibt dann $|A| = |B|$.
+
+Hat man zwischen zwei Mengen eine Funktion $f: A \rightarrow B$ gefunden, die bijektiv ist,
+so gibt es eine Umkehrfunktion, die ebenfalls Bijektiv ist. Diese bildet jedes Element von $B$
+auf eines aus $A$ ab.
+
+\subsubsection{Abzählbar}\index{abzählbar}
+Eine Menge $A$ ist abzählbar, wenn sie gleichmächtig zur Menge $\N$ (natürliche Zahlen) ist.
+
+\subsubsection{Gleichmächtigkeit zeigen}
+Zeigt man durch angeben einer bijektiven Funktion.
+
+\paragraph{Beispiel}
+Zu zeigen: $U := \{ 2k + 1: k \in \N \}$ gleichmächtig zu $\N$ ist.
+
+\textbf{Beweis}: Sei $f: \N \rightarrow U$ gegeben durch
+\begin{equation*}
+f(n) = \left\{
+	\begin{array}{l l}
+		n & n \text{ ungerade}\\
+		-n - 1 & n \text{ gerade}
+	\end{array}
+\right.
+\end{equation*}
+
+Diese Funktion ist offensichtlich bijektiv (sonst Umkehrfunktion angeben), wodurch $U$ gleichmächtig $\N$ ist.
+
+\subsubsection{weitere gleichmächtige Mengen}
+\begin{itemize}
+	\item $\N, \Z, \Q$ sind gleichmächtig
+	\item $\R, ]0,1[$ sind gleichmächtig
+	\item $\R$ ist mächtiger (``überabzählbar'') als $\N$
+\end{itemize}
+
+\subsection{Teilmengen von $\R$}
+\subsubsection{Intervalle}\index{Intervall}
+\begin{tabular}{|l|l|l|}\hline
+Schreibweise & Definition & Bezeichnung\\\hline
+$]a, b[, (a,b)$ & $\{x \in \R | a < x < b\}$ & offen\\\hline
+$[a, b[, [a, b)$ & $\{x \in \R | a \leq x < b\}$ & (rechts) halboffen \\\hline
+$]a,b], (a, b]$ & $\{x \in \R | a < x \leq b\}$ & (links) halboffen \\\hline
+$[a,b]$ & $\{x \in \R | a \leq x \leq b\}$ & abgeschlossen \\\hline
+\end{tabular}
+
+Achtung: Ist $a$ oder $b$ ``unendlich'' ($\pm \infty$), so muss es auf der entsprechenden Seite offen sein: z.B. $[a, $\hl{$\infty[$}, \hl{$]-\infty$}$, b[$.
+Unendlich ist keine konkrete Zahl und kann somit nicht gleich einer anderen Zahl sein, was nötig wäre für $\leq$. \\
+%nächster abschnitt aus wikipedia http://de.wikipedia.org/wiki/Intervall_(Mathematik)#Verallgemeinerung
+In der Topologie sind reelle Intervalle Beispiele für zusammenhängende Mengen. Offene Intervalle sind offene Mengen und abgeschlossene Intervalle sind abgeschlossene Mengen. Halboffene Mengen sind weder offen noch abgeschlossen. Abgeschlossene beschränkte Intervalle sind kompakt.
+
+\subsubsection{Beschränktheit}\index{beschränkt}
+Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{beschränkt}, falls es ein $C_1, C_2 \in \R$ gibt, sodass 
+$\forall x \in M: C_1 \leq x \leq C_2$\\
+(Alternativ: $\exists C \in \R \; \forall x \in M: |x| \leq C$)
+
+\vspace{2pt}Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{nach oben beschränkt}, falls 
+$\exists C \in \R \; \forall x \in M: x \leq C$ \hspace{3pt} (C = obere Schranke)
+
+\vspace{2pt}Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{nach unten beschränkt}, falls 
+$\exists C \in \R \; \forall x \in M: C \leq x$ \hspace{3pt} (C = untere Schranke)
+
+\subsubsection{Supremum / Infinum}\index{Supremum}\index{Infinum}\index{Schranke}
+Ist $M \subset \R$ nach oben beschränkt, so nennt man jedes $C$ mit $x \leq C, \forall x \in M$
+eine \underline{obere Schranke} von $M$. Die kleinste obere Schranke (existiert immer in $\R$) nennt man \underline{Supremum} von $M$ ($\sup M$).
+
+Analog dazu wird die \underline{untere Schranke} und das \underline{Infinum} ($\inf M$) definiert.
+
+Falls die Menge $M$ ein grösstes (bzw. kleinstes) Element besitzt, so nennt man es \underline{Maximum} (bzw. \underline{Minimum}).
+Es gilt:
+\begin{itemize}
+	\item Ist $M \subset \R$ abgeschlossen und beschränkt, so existieren Minimum und Maximum von $M$
+	\item Wenn $\max M$ existiert, dann ist $\sup M = \max M$
+	\item Ist $\sup M \in M$, so ist $\max M = \sup M$
+	\item Wenn $\min M$ existiert, dann ist $\inf M = \min M$
+	\item Ist $\inf M \in M$, so ist $\min M = \inf M$
+\end{itemize}
+
+\paragraph{mathematische Definition}
+$\sup M = a$ gilt genau dann, wenn
+\begin{itemize}
+	\item $\forall x \in M: x \leq a$, $a$ ist somit obere Schranke von $M$
+	\item $\forall \epsilon > 0 \; \exists x \in M: x > a - \epsilon$, d.h. $a - \epsilon$ ist keine obere Schranke mehr, egal wie klein man $\epsilon$ auch wählt $\rightarrow$ $a$ ist kleinste obere Schranke.
+\end{itemize}
+
+$\inf M = a$ gilt genau dann, wenn
+\begin{itemize}
+	\item $\forall x \in M: x \geq a$, $a$ ist somit untere Schranke von $M$
+	\item $\forall \epsilon > 0 \; \exists x \in M: x < a + \epsilon$, d.h. $a + \epsilon$ ist keine untere Schranke mehr, egal wie klein man $\epsilon$ auch wählt $\rightarrow$ $a$ ist grösste untere Schranke.
+\end{itemize}
+
+\subsubsection{Archimedisches Prinzip}\index{archimedisches Prinzip}
+\begin{satz}[Archimedisches Prinzip V. 1]
+Zu jeder Zahl $0 < b \in \R$ gibt es ein $n \in \N$ mit $b < n$
+\end{satz}
+
+oder
+
+\begin{satz}[Archimedisches Prinzip V. 2]
+Zu den zwei Zahlen $x, y \in \R, \; y > x > 0$ existiert eine Zahl $n \in \N$, sodass gilt: $nx > y$
+\end{satz}
+
+Geometrisch: Hat man zwei Strecken auf einer Geraden, so kann man die grössere von beiden übertreffen, wenn man die kleinere nur oft genug abträgt.

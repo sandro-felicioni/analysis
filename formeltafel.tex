@@ -1,0 +1,489 @@
+\section{Formeltafel}
+\subsection{Mitternachtsformel}
+\[ a x^2 + b x + c = 0 \qquad \implies \qquad x_{1,2} = \frac{-b \pm
+\sqrt{b^2-4ac}}{2a} \]
+
+\subsection{Binomialkoeffizient}
+\[ \binom nk = \frac{n!}{k!\,(n-k)!} \quad \mbox{für }\ 0\leq k\leq n \]
+
+\subsection{Argument}
+\[
+	\arg(x,y) := \begin{cases}
+		\arctan(\frac{y}{x}) & x \geq 0 \\
+		-\arctan(\frac{y}{x}) & x < 0 \\
+		\frac{\pi}{2} & x=0, y < 0 \\
+		\frac{3\pi}{2} & x = 0, y > 0
+	\end{cases}
+\]
+
+\subsection{Kreisfunktionen}
+{\footnotesize
+\begin{tabular}{|l||c|c|c|c|c|c|c||c|c|}\hline
+\multirow{2}{*}{$\alpha$} & $0$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ &
+$\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\frac{2\pi}{3}$ & $\pi$ &
+\multirow{2}{*}{Periode} & \multirow{2}{*}{Wertebereich}\\
+
+& $0^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $90^\circ$ & $120^\circ$ &
+$180^\circ$ & &\\ \hline
+
+$\sin$ & $0$ & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ &
+$\frac{\sqrt{3}}{2}$ & $1$ & $\frac{\sqrt{3}}{2}$ & $0$ & $\sin(\alpha +
+k\cdot$\hl{$2\pi$}$)$ & $[-1,1]$\\ \hline
+
+$\cos$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & $0$
+& $-\frac{1}{2}$ & $-1$ & $\cos(\alpha + k\cdot$\hl{$2\pi$}$)$ & $[-1,1]$\\
+\hline
+
+
+$\tan$ & $0$ & $\frac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\pm \infty$ &
+$-\sqrt{3}$ & $0$ & $\tan(\alpha + k \cdot$\hl{$\pi$}$)$ & $]-\infty, \infty[$
+\\
+\hline
+\end{tabular}
+}
+\includegraphics[width=\columnwidth]{sin_cos_tan.eps}
+
+\subsubsection{Einheitskreis}
+\includegraphics[width=\columnwidth]{einheitskreis_sin_cos.eps}
+$\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{y}{x}$
+
+\subsection{Trigonometrische Funktionen \& Additionstheorem}
+\begin{itemize}[leftmargin=*]
+	\item $\sin^2(x) + \cos^2(x) = 1$
+	\item $\frac{1}{\cos^2(\alpha)} = 1 + \tan^2(\alpha)$
+	\item $\sin(90^\circ \pm \alpha) = \cos(\alpha)$
+	\item $\sin(180^\circ \pm \alpha) = \mp \sin(\alpha)$
+	\item $\cos(90^\circ \pm \alpha) = \mp \sin(\alpha)$
+	\item $\cos(180^\circ \pm \alpha) = - \cos(\alpha)$
+	\item $\sin(\alpha \pm \beta) = \sin(\alpha)\cos(\beta) \pm
+	\cos(\alpha)\sin(\beta)$
+	\item $\cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)
+	\sin(\beta)$
+	\item $\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp
+	\tan(\alpha)\tan(\beta)}$
+	\item $\sin(2\alpha) = 2 \sin(\alpha)\cos(\alpha)$
+	\item $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 2 \cos^2(\alpha) - 1
+	= 1 - 2 \sin^2(\alpha)$
+	\item $\tan(2\alpha) = \frac{2 \tan(\alpha)}{1 - \tan^2(\alpha)}$
+	\item $\tan(\alpha) = \frac{\sin(\alpha)}{\cos{(\alpha)}}$
+\end{itemize}
+
+\subsection{Hyperbelfunktionen}
+\begin{itemize}[leftmargin=*]
+	\item $\sinh(x) = \frac{1}{2}(e^x - e^{-x}) = -i \sin(ix)$
+	\item $\cosh(x) = \frac{1}{2}(e^x + e^{-x}) = \cos(ix)$
+	\item $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x +
+	e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1} = 1 - \frac{2}{e^{2x} + 1}$
+	\item $\arcsinh(x) = \ln(x + \sqrt{x^2 + 1})$
+	\item $\arcosh(x) = \ln(x + \sqrt{x^2 - 1})$
+	\item $\arctanh(x) = \frac{1}{2} \ln(\frac{1+x}{1-x})$
+	\item Umformung: $\tanh(x) + 1 = \frac{e^{2x} - 1}{e^{2x} + 1} + 1 = \frac{2x -
+	1 + e^{2x} + 1}{e^{2x} + 1} = \frac{2e^{2x}}{e^{2x} + 1}$
+\end{itemize}
+
+
+\subsection{Ableitungen}
+\subsubsection{Regeln}
+\begin{itemize}[leftmargin=*]
+	\item (Summenregel) $(f + g)'(x) = f'(x) + g'(x)$
+	\item (Produktregel) $(fg)'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)$
+	\item (Quotientenregel) $(\frac{f}{g})'(x) = \frac{f'(x) \cdot g(x) -
+	f(x) \cdot g'(x)}{g^2(x)}$
+	\item (Kettenregel) $(g \circ f)'(x) = (g(f(x)))' = g'(f(x)) \cdot f'(x)$
+\end{itemize}
+
+\subsubsection{Ableitungs-Tafel}
+\begin{itemize}[leftmargin=*]
+	\item $\frac{d}{dx}\; x^n = nx^{n-1}$
+	\item $\frac{d}{dx}\; \frac{1}{x^n} = -n \frac{1}{x^{n+1}}$
+	\item $\frac{d}{dx}\; \sqrt[n]{x} = \frac{1}{n\sqrt[n]{x^{n-1}}}$
+	\item $\frac{d}{dx}\; e^{\alpha x + \beta} = \alpha e^{\alpha x + \beta}$
+	\item $\frac{d}{dx}\; e^{x^\alpha} = \alpha x^{\alpha - 1} e^{x^\alpha}$
+	\item $\frac{d}{dx}\; \ln(x) = \frac{1}{x}$
+	\item $\frac{d}{dx}\; \alpha^x = \alpha^x \ln(\alpha)$
+	\item $\frac{d}{dx}\; x^x = x^x (1 + \ln(x))$
+	\item $\frac{d}{dx}\; x^{x^\alpha} = x^{x^\alpha + \alpha - 1} (\alpha
+	\log(x) + 1)$
+	\newline
+	\item $\frac{d}{dx}\; \sin(x) = \cos(x)$;
+	$\frac{d}{dx}\; \sin(\alpha x + \beta) = \alpha \cos(\alpha x +
+	\beta)$
+	\item $\frac{d}{dx}\; \cos(x) = -\sin(x)$;
+	$\frac{d}{dx}\; \cos(\alpha x + \beta) = -\alpha \sin(\alpha x + \beta)$
+	\item $\frac{d}{dx}\; \tan(x) = \frac{1}{cos^2(x)}$;
+	$\frac{d}{dx}\; \tan(\alpha x + \beta) = \alpha \frac{1}{\cos^2(\alpha x
+	+ \beta)}$
+	\item $\frac{d}{dx}\; \tan(x) = 1 + \tan(x)^2$
+	\item $\frac{d}{dx}\; \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$;  
+		$\frac{d}{dx}\; \arcsin(\alpha x + \beta) =
+	\frac{\alpha}{\sqrt{1-(\alpha x + \beta)^2}}$
+	\item $\frac{d}{dx}\; \arccos(x) = -\frac{1}{\sqrt{1-x^2}}$;
+		$\frac{d}{dx}\; \arccos(\alpha x + \beta) = -\frac{\alpha}{\sqrt{1 -
+	(\alpha x + \beta)^2}}$
+	\item $\frac{d}{dx}\; \arctan(x) = \frac{1}{x^2+1}$; 
+		$\frac{d}{dx}\; \arctan(\alpha x + \beta) = \frac{\alpha}{(\alpha x +
+	\beta)^2 + 1}$
+	\newline
+	\item $\frac{d}{dx}\; \sinh(x) = \cosh(x)$;
+	$\frac{d}{dx}\; \sinh(\alpha x + \beta) = \alpha \cosh(\alpha x + \beta)$
+	\item $\frac{d}{dx}\; \cosh(x) = \sinh(x)$;
+	$\frac{d}{dx}\; \cosh(\alpha x + \beta) = \alpha \sinh(\alpha x + \beta)$
+	\item $\frac{d}{dx}\; \tanh(x) = \frac{1}{\cosh^2(x)}$;
+	$\frac{d}{dx}\; \tanh(\alpha x + \beta) = \alpha
+	\frac{1}{\cosh^2(\alpha x + \beta)}$
+	\item $\frac{d}{dx}\; \arcsinh(x) = \frac{1}{\sqrt{x^2 + 1}}$;
+	$\frac{d}{dx}\; \arcsinh(\alpha x + \beta) = \frac{\alpha}{\sqrt{(\alpha x
+	+ \beta)^2 + 1}}$
+	\item $\frac{d}{dx}\; \arcosh(x) = \frac{1}{\sqrt{x-1} \sqrt{x + 1}}$;
+	$\frac{d}{dx}\; \arcosh(\alpha x + \beta) = \frac{\alpha}{\sqrt{\alpha x + \beta
+	- 1} \sqrt{\alpha x + \beta + 1}}$
+	\item $\frac{d}{dx}\; \arctanh(x) = \frac{1}{1-x^2}$;
+	$\frac{d}{dx}\; \arctanh(\alpha x + \beta) = \frac{\alpha}{1 - (\alpha x +
+	\beta)^2}$
+\end{itemize}
+
+\subsection{Integrale}
+\subsubsection{Integralregeln}
+Es gelte: $\int f(x) \, dx = F(x)$
+\begin{itemize}[leftmargin=*]
+	\item $\int u'\cdot v dx = uv - \int u \cdot v' dx$
+	\item $\int f(x) dx = \int f(g(t)) \cdot g'(t) dt, \; x=g(t), dx = g'(t) dt$\newline\hfill
+	\item $\int f(a + x) \,dx = F(a + x)$
+	\item $\int f(a - x) \,dx = -F(a-x)$
+	\item $\int f(-x) \,dx = -F(-x)$
+	\item $\int f(\alpha x) \,dx = \frac{1}{\alpha}F(\alpha x)$
+	\item $\int \frac{g'(x)}{g(x)} \, dx = \ln|g(x)|$
+	\item $\int g(x)g'(x) \, dx = \frac{1}{2}g(x)^2$\\
+	\item $|\int f(x)| \leq \int |f(x)|$ (wenn f, Riemann-Integrable ist)
+\end{itemize}
+\subsubsection{typische Integrale}
+\begin{itemize}[leftmargin=*]
+  	\item $\int \frac{1}{x} \,dx = \ln |x|$
+	\item $\int \frac{1}{x^2} \,dx = -\frac{1}{x}$
+  	\item $\int \frac{1}{x+a} \,dx = \ln |x+a|$
+  	\item $\int \ln(x) \,dx = x(\ln(x) - 1)$
+  	\item $\int \ln(ax + b) \,dx = \frac{(a x+b) \ln (a x+b)-a x}{a}$
+  	\item $\int \frac{1}{(x+a)^2} \,dx = - \frac{1}{x+a}$
+	\item $\int \frac{1}{ax+b} \,dx = \frac{1}{a} \ln |ax+b|$
+	\item $\int \frac{1}{1 + x^2} \,dx = \frac{1}{2} \ln |1 + x^2|$
+	\item $\int(ax + b)^n \,dx = \frac{(ax + b)^{n+1}}{(n + 1)a}, (n \neq -1)$
+	\item $\int x(ax+b)^n \,dx = \frac{(ax + b)^{n+2}}{(n+2)a^2} -
+	\frac{b(ax+b)^{n+1}}{(n+1)a^2}$
+	\item $\int \frac{ax + b}{px + q} \,dx = \frac{ax}{p} + \frac{bp - aq}{p^2} \ln
+	|pq+q|$
+	\item $\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \arctan(\frac{x}{a})$
+	\item $\int \frac{1}{a^2 - x^2} \,dx = \frac{1}{2a} \ln \left | \frac{a+x}{a-x}
+	\right |$
+	\item $\int \sqrt{x} \,dx = \frac{2}{3}\sqrt{x^3}$
+	\item $\int \frac{1}{\sqrt{x}} \,dx = 2 \sqrt{x}$	
+	%mühsamer kerl der teilweise in prüfungen verwendet wird. Kann man über subsitution von x mit sin(u) lösen.
+	\item $\int \sqrt{1-x^2} \,dx = \frac{1}{2}\left( x\sqrt{1-x^2}+\frac{1}{\sin(x)} \right)$
+	\item $\int a^{xb + c} \,dx = \frac{a^{bx + c}}{b \log(a)}$
+\end{itemize}
+
+\subsubsection{trionometrische Funktionen}
+\begin{itemize}[leftmargin=*]
+	\item $\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
+	\item $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
+	\item $\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
+	\item $\int \frac{1}{\sin^2 x} \,dx = -\cot x$
+	\item $\int x \sin(ax) \,dx = \frac{\sin(ax)}{a^2} - \frac{x \cos(ax)}{a}$
+	\item $\int \cos^2(ax) \,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$
+	\item $\int \frac{1}{\cos^2(x)} \,dx = \tan x$
+	\item $\int \cos(ax) \,dx = \frac{\cos(ax)}{a^2} + \frac{x \sin(ax)}{a}$
+	\item $\int \sin(ax) \cos(ax) \,dx = -\frac{\cos^2(ax)}{2a}$
+	\item $\int \tan(ax) \,dx = - \frac{1}{a} \ln | \cos(ax) |$
+	\item $\int \arcsin(x) \,dx = x \arcsin(x) + \sqrt{1 - x^2}$
+	\item $\int \arccos(x) \,dx = x \arccos(x) - \sqrt(1-x^2)$
+	\item $\int \arctan(x) \,dx = x \arctan(x) - \frac{1}{2} \ln(1+x^2)$
+\end{itemize}
+
+\subsubsection{Hyperbelfunktionen}
+\begin{itemize}[leftmargin=*]
+	\item $\int \sinh(ax + b) \,dx = \frac{\cosh(ax + b)}{a}$; $\int \sinh(x) \,dx
+	= \cosh(x)$
+	\item $\int \cosh(ax + b) \,dx = \frac{\sinh(ax + b)}{a}$; $\int \cosh(x) \,dx
+	= \sinh(x)$
+	\item $\int \tan(ax + b) \,dx = \frac{\log(\cosh(ax+b))}{a}$; $\int \tan(x)
+	\,dx = \log(\cosh(x))$
+\end{itemize}
+
+\subsubsection{Exponentialfunktion}
+\begin{itemize}[leftmargin=*]
+  	\item $\int e^{ax} \,dx = \frac{1}{a} e^{ax}$ 
+	\item $\int x e^{ax} \,dx = e^{ax} \cdot \left ( \frac{ax - 1}{a^2} \right )$
+	\item $\int x \ln(x) \,dx = \frac{1}{2} x^2 (\ln(x) - \frac{1}{2})$
+	\item $\int_{-\infty}^\infty e^{-\frac{1}{a}x^2} \,dx = \sqrt{a \pi}$
+\end{itemize}
+
+\subsection{Reihenentwicklung}
+\begin{itemize}[leftmargin=*]
+	\item $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + \frac{x}{1!} +
+	\frac{x^2}{2!} + \cdots$
+	\item $\sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} = x -
+	\frac{x^3}{3!} + \frac{x^2}{5!} + \cdots$
+	\item $\cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = 1 -
+	\frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + \cdots$
+	\item $\sinh x = \sum_{n=0}^\infty \frac{x^{2n+1}}{(2n + 1)!}$
+	\item $\cosh x = \sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}$
+	\item $\ln x = \sum_{n=0}^\infty \frac{2}{2n + 1} \cdot \left(
+	\frac{x-1}{x+1} \right)^{2n}$
+\end{itemize}
+
+\subsection{Grenzwerte}
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Bernoullische Ungleichung}: $x \geq -1, n \in \N: \; (1+x)^n \geq
+	1+nx$
+	\item \textbf{Vergleich von Folgen}: weiter rechts stehende Folgen streben
+	schneller gegen $\infty$ als die links davon stehenden: $1, \quad \ln n, \quad
+	n^\alpha (\alpha > 0), \quad q^n (q > 1), \quad n!, \quad n^n$ $\Rightarrow
+	\lim_{x \to \infty} \frac{\ln n}{n^\alpha} = 0$
+\end{itemize}
+\subsubsection*{$\lim_{n \to \infty}$}
+\begin{itemize}[leftmargin=*]
+	\item $\lim_{n \to \infty} \sqrt[n]{a} \rightarrow 1$
+	\item $\lim_{n \to \infty} \sqrt[n]{n} \rightarrow 1$
+	\item $\lim_{n \to \infty} \sqrt[n]{n!} \rightarrow \infty$
+	\item $\lim_{n \to \infty} \frac{n}{\sqrt[n]{n!}} \rightarrow e$
+	\item $\lim_{n \to \infty} \frac{1}{n} \sqrt[n]{n!} \rightarrow \frac{1}{e}$
+	\item $\lim_{n \to \infty} \left ( \frac{n+1}{n} \right )^n \rightarrow e$
+	\item $\lim_{n \to \infty} \left ( 1 + \frac{1}{n} \right )^n \rightarrow e$
+	\item $\lim_{n \to \infty} \left ( 1 - \frac{1}{n} \right )^n \rightarrow \frac{1}{e}$
+	\item $\lim_{n \to \infty} \left ( 1 + \frac{x}{n} \right )^n \rightarrow e^x$
+	\item $\lim_{n \to \infty} \left ( 1 - \frac{x}{n} \right )^n \rightarrow \frac{1}{e^x}$
+	\item $\lim_{n \to \infty} {a \choose n} \rightarrow 0, \; a > -1$
+	\item $\lim_{n \to \infty} \frac{a^n}{n!} \rightarrow 0$
+	\item $\lim_{n \to \infty} \frac{n^n}{n!} \rightarrow \infty$
+	\item $\lim_{n \to \infty} \frac{a^n}{n^k} \rightarrow \infty, a > 1, k$ fest
+	\item $\lim_{n \to \infty} a^n n^k \rightarrow 0, |a| < 1, k$ fest
+	\item $\lim_{n \to \infty} n(\sqrt[n]{a} - 1) \rightarrow \ln a, a > 0$
+	\item $\lim_{n \to \infty} \left( 1+\frac{x}{n} \right)^n = e^x \quad$
+	\item $\lim_{n \to \infty} \sqrt[n]{n} = 1$
+	\item $\lim_{n \to \infty} n^p q^n = 0 \qquad p \in \N \text{ und } 0 < q < 1$
+	\item $\lim_{x \to \infty} \sqrt{x^2-x}-x = \frac{1}{2}$ \newline{\small (Lösungsansatz mit Taylorreihe
+	($\sqrt{1-x} = 1 + \frac{x}{2}+O(x^2)$): $\sqrt{x^2-x}-x = x(\sqrt{1-\frac{1}{x}}-1) =
+	x((1+\frac{1}{2x}+O(\frac{1}{x^2}))-1) = \frac{1}{2}+O(\frac{1}{x}) \underset{n \to \infty}{\longrightarrow} \frac{1}{2}$ )}
+\end{itemize}
+\subsubsection*{$\lim_{x \to 0}$}
+\begin{itemize}[leftmargin=*]
+	\item $\lim_{x \to 0} \frac{a^x - 1}{x} = \ln a$
+	\item $\lim_{x \to 0} \frac{\sin x}{x} = 1$
+	\item $\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$
+	\item $\lim_{x \to 0} \frac{\log_a (1 + x)}{x} = \frac{1}{\ln a}$
+	\item $\lim_{x \to 0} x^a \ln x = 0, \; a  > 0$
+	\item $\lim_{x \to 0} \frac{a^x-1}{x} = \ln a$ 
+	\item $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$ 
+	\item $\lim_{x \to 0} \frac{1-\cos(x)}{x} = 0 \quad$ 
+	\item $\lim_{x \to 0} \frac{\log_a(1+x)}{x} = \frac{1}{\ln a}$
+	\item $\lim_{x \to 0} x^\alpha \ln x = 0 \qquad \alpha > 0$
+\end{itemize}
+
+\subsection{Reihen}
+\begin{itemize}[leftmargin=*]
+	\item $\sum_{n=1}^\infty \frac{1}{n}$ divergiert (``harmonische Reihe'')
+	\item $\sum_{n=1}^\infty \frac{(-1)^n}{n} = \ln \frac{1}{2}$
+	\item $\sum_{n=1}^\infty \frac{1}{n^\alpha}$ konvergiert für $\alpha > 1$,
+	divergiert für $\alpha \leq 1$
+	\item $\sum_{n=0}^\infty q^n = \frac{1}{1-q}$ für $|q| < 1$ (``geometrische
+	Reihe'')
+	\item $\sum_{n=0}^\infty (-1)^n q^n = \frac{1}{1-q}$ für $|q| < 1$ (``geometrische
+	Reihe'')
+	\item $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$
+	\newline
+	\item $\sum_{n=1}^m n = \frac{m(m+1)}{2}$
+	\item $\sum_{n=0}^m q^n = \frac{1-q^{m+1}}{1-q}$ 
+	\item  $\sum_{n=0}^m n^2 = \frac{1}{6}m(m+1)(2m+1)$
+	\item  $\sum_{n=0}^m n^3 = \frac{1}{4}m^2(m+1)^2$
+\end{itemize}
+
+\subsection{Linienintegral}
+\begin{itemize}[leftmargin=*]
+	\item 2. Art: $\int_\gamma \vec{f}(\vec{x}) d\vec{x} := \int_a^b \left<
+	\vec{f}(\gamma(t)), \gamma(t)' \right>\; dt$
+	\item 1. Art: $\int_\gamma f ds := \int_a^b f(\gamma(t)) \|\gamma(t)'\|_2\; dt$
+\end{itemize}
+
+\subsection{Kreuzprodukt}
+{\footnotesize
+\[
+\vec{a} \times \vec{b} = \left ( \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array}
+\right ) \times
+\left ( \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array}
+\right ) =
+\left ( \begin{array}{c} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1
+\end{array} \right )
+\]
+}
+
+\begin{multicols}{2}
+\subsection{Exponent}
+\begin{itemize}[leftmargin=*]
+  \item $a^n a^m = a^{n + m}$
+  \item $(a^n)^m = a^{nm}$
+  \item $(ab)^n = a^n b^n$
+  \item $\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n}$
+  \item $a^{-n} = \frac{1}{a^n}$
+  \item $\left( \frac{a}{b} \right)^{-n} = \left( \frac{b}{a} \right)^n$
+  \item $a^\frac{n}{m} = (a^\frac{1}{m})^n = (a^n)^\frac{1}{m}$
+\end{itemize}
+\columnbreak
+
+\subsection{Wurzel}
+\begin{itemize}[leftmargin=*]
+  \item $\sqrt[n]{a} = a^\frac{1}{n}$
+  \item $\sqrt[n]{ab} = \sqrt[n]{a} \sqrt[n]{b}$
+  \item $\sqrt[m]{\sqrt[n]{a}} = \sqrt[nm]{a}$
+  \item $\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$
+\end{itemize}
+
+\end{multicols}
+
+\subsection{Ungleichungen}
+\begin{itemize}[leftmargin=*]
+  \item $a < b \Rightarrow a + c < b + c$ und $a - c < b - c$
+  \item $a < b$ und $c > 0 \Rightarrow \frac{a}{c} < \frac{b}{c}$
+  \item $a < b$ und $c < 0 \Rightarrow \frac{a}{c} > \frac{b}{c}$ 
+  \item Dreiecksungleichung für reelle Zahlen: $|a+b| \le |a|{+}|b|$ %Quelle Wikipedia: http://de.wikipedia.org/wiki/Dreiecksungleichung#Dreiecksungleichung_f.C3.BCr_reelle_Zahlen
+  \item Cauchy-Schwarz Ungleichung: $|x \cdot y| \leq \|x\| \cdot \|y\|, \; x,y \in \R^n$
+\end{itemize}
+
+\subsection{Logarithmen}
+\begin{itemize}[leftmargin=*]
+  \item $y = \log_a x \Leftrightarrow x = a^y$
+  \item $\log_a 1 = 0$
+  \item $\log_a a^x = x$
+  \item $a^{\log_a x} = x $
+  \item $\log_a xy = \log_a x + \log_a y$
+  \item $\log_a \frac{1}{x} = - \log_a x$
+  \item $\log_a x^r = r \log_a x$
+  \item $\log_a x = \frac{\log_b x}{\log_b a}$
+  \item $\log_a x = \frac{\ln x}{\ln a}$
+  \item $\log_a (x+y) = \log_a x + log_a (1 + \frac{y}{x})$
+  \item $\log_a (x-y) = \log_a x + \log_a (1- \frac{y}{x})$
+\end{itemize}
+
+\subsection{Exponentialfunktion}
+\begin{itemize}[leftmargin=*]
+  \item $e^{-\inf} = 0$
+  \item $e^0 = 1$
+  \item $e^1 = e =  2.718281828$
+  \item $e^{\inf} = \inf$
+  \item $e^{a+bi} = e^a(\cos(b) + i \sin(b))$ (Euler Identität)
+  \item $e^{b \ln(a)} = a^b$
+  \item $ e^{-\ln(b)} = \frac{1}{b}$ 
+\end{itemize}
+
+\subsection{Komplexe Zahlen}
+\begin{itemize}[leftmargin=*]
+	\item $z \in \C: z = a + b\cdot i$
+	\item $\bar{z} = a - b\cdot i$
+	\item $|z|^2 = z \cdot \bar{z} = (a + b\cdot i) \cdot (a - b\cdot i) = a^2 + b^2$
+	\item $i^2 = -1$
+	\item $(a + bi) + (c + di) = (a + c) + (b + d)i$
+	\item $(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i$
+	\item $\frac{a + bi}{c + di} = \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}\cdot i$
+\end{itemize}
+
+\subsection{Geometrische Körper}
+\subsubsection{Ellipsoid}
+Hat die Form eines Rugbyballs. In kartesischen Koordinaten definert durch
+$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1 = 0$.
+
+\subsection{Geometrie in 3D}
+%evtl. nicht nötig. Aber in alten prüfungen oft gefragt.
+\subsubsection*{Masse von speziellen Gebieten}
+	\begin{multicols}{2}
+	\renewcommand\arraystretch{1.4}
+	\begin{tabular}{l|l}
+		Zylinder   &   $ V = \pi r^2 h $ \\
+		Pyramide   &   $ V = \frac{1}{3} G h $ \\
+		Ellipsoid   &   $ V = \frac{4 \pi}{3} a b c $ \\
+		Kegel   &   $ V = \frac{\pi}{3} r^2 h $ \\
+		Kegelstumpf   &   $ V = \frac{\pi h}{3} (r_1^2+r_2^2 + r_1 r_2) $ 
+	\end{tabular}
+	
+	\columnbreak
+	\begin{tabular}{l|l}
+		Torus   &   $ V = 2 \pi^2 R r^2 $ \\
+		   &   $ S = 4 \pi^2 R r $ \\
+		Kugel   &   $ V = \frac{4 \pi}{3} r^3 $ \\
+		   &   $ S = 4 \pi r^2 $ 
+	\end{tabular}
+	\end{multicols}
+
+\subsubsection*{Rotationskörper}
+Rotation um die x Achse $V=\pi \int_a^b f(x)^2 dx.$\\
+Rotation um die y Achse $V=2\pi \int_a^b x \cdot f(x) dx.$
+
+\subsection{Trigonometrie}
+\subsubsection{Kosinussatz}
+\includegraphics[scale=0.45]{kosinussatz.jpg}
+\begin{eqnarray*}
+	a^2 = b^2 + c^2 - 2bc \, \cdot \, \cos(\alpha)\\
+	b^2 = a^2 + c^2 - 2ac \, \cdot \, \cos(\beta)\\
+	c^2 = a^2 + b^2 - 2ab \, \cdot \, \cos(\gamma)
+\end{eqnarray*}
+
+\subsection{Ausklammern}
+\begin{itemize}[leftmargin=*]
+	\item $x^n - y^n = (x-y) (x^{n-1} + x^{n-2}y + x^{n-3}y^2 + \ldots + xy^{n-2}
+	+ y^{n-1})$
+	\item $x^n - 1 = (x-1)(x^{n-1} + x^{n-2} + \ldots + x + 1)$
+\end{itemize}
+
+\subsection{Aus Serien}
+\begin{itemize}[leftmargin=*]
+	\item Ableitung von $x^x$ kann man berechnen, indem man $x = e^{\log(x)}$
+	setzt. Also in diesem Fall $e^{\log(x^x)} = e^{x \log(x)}$ ableitet, was $e^{x
+	\log(x)} (1 + \log(x))$ (Serie 10)
+	\item Cauchy-Schwarz Ungleichung: $|x \cdot y| \leq \|x\| \cdot \|y\|, \; x,y \in \R^n$
+	\item Euler Identität (komplexe Zahlen): $e^{ix} = \cos(x) + i \sin(x)$
+	\item $\arctan$ Identität: $\arctan(\frac{1}{x}) + \arctan(x) = \operatorname{sgn}(x) \frac{\pi}{2},\quad x \neq 0$
+	\item $\operatorname{sgn}(x) := \begin{cases}
+		+1 & x > 0\\
+		0 & x = 0\\
+		-1 & x < 0
+	\end{cases}$
+\end{itemize}
+
+\subsection{Polynomdivision}
+Zu jedem Zeitpunkt gilt: Zähler : Nenner = Ergebnis, wobei der Zähler und das Ergebnis sich nach einem Schritt jeweils ändern.
+\begin{enumerate}[leftmargin=*]
+	\item Prüfe ob Grad des Zählers $\geq$ Grad des Nenners ist.
+	\begin{enumerate}
+		\item Falls Ja:
+		\begin{enumerate}
+			\item Dividiere höchsten Grad vom Zähler durch höchsten Grad vom Nenner und addiere das Resultat zum Ergebnis.
+			\item Multipliziere den neu hinzugefügten Summanden mit dem Nenner und notiere dieses Zwischenresultat. Danach berechne Zähler - Zwischenresultat und betrachte das als neuen Zähler. Starte wieder bei 1.
+		\end{enumerate}
+		\item Falls Nein:\\
+		Wir sind fertig. Wenn noch ein Rest übrig bleibt, muss dies dem Ergebnis noch hinzugefügt werden. Also Rest / Nenner noch dem Erebnis addieren werden. 
+	\end{enumerate}
+\end{enumerate}
+\textbf{Beispiel} \\
+\includegraphics[scale=0.45]{polynomdivision_rechnung.png}
+\includegraphics[scale=0.45]{polynomdivision_resultat.png}
+
+\begin{landscape}\begin{multicols}{3}
+
+\subsection{\texorpdfstring{$\log(x)$}{log(x)}}
+\includegraphics[scale=0.5]{log_x.png}
+
+\subsection{\texorpdfstring{$\frac{1}{x}$}{1/x}}
+\includegraphics[scale=0.5]{1_over_x.png}
+
+\subsection{\texorpdfstring{$\sqrt{x}$}{x^(1/x)}}
+\includegraphics[scale=0.5]{sqrt_x.png}
+
+\subsection{$e^x$}
+\includegraphics[width=0.5\columnwidth]{e_x}
+
+\subsection{Funktionsmanipulation}
+\includegraphics[width=\columnwidth]{manipulation_1.eps}
+\includegraphics[width=\columnwidth]{manipulation_2.eps}
+\includegraphics[width=\columnwidth]{manipulation_3.eps}
+
+\subsection{Pascalsches Dreieck}
+\includegraphics[width=\columnwidth]{pascal.png}
+
+\end{multicols}\end{landscape}

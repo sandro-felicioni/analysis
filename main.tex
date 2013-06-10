@@ -1,0 +1,78 @@
+%% 
+%% Analysis 1&2 BSc, ETH
+%%
+%% (C) 2013 Sandro Felicioni
+%% 
+%% Partialy based on irgendeiner Zusammenfassung des Jahres 2012 by
+%%	 - Gregor Wegberg
+%%   - Leo Büttiker
+%%   - Benjamin Steger
+%%   - Philipp Küng
+%%
+%% Partialy based on "Analysis Zusammenfassung 2009" from Stefan Heule (http://summaries.stefanheule.com)
+%%
+%% License: Creative Commons Attribution-Share Alike 3.0 Unported
+%% http://creativecommons.org/licenses/by-sa/3.0/
+%% 
+
+
+\documentclass[a4paper,titlepage,twocolumn]{article}
+\usepackage[ngerman]{babel}
+
+\input{./includes/standard-definitions.tex}
+\input{./includes/standard-exam-summary.tex}
+\input{./includes/amsthm_de.tex}
+
+\graphicspath{{./data/}}
+
+\usepackage{empheq}
+
+\makeindex
+
+\begin{document}
+\input{./includes/amsmath-doc-settings.tex}
+
+\onecolumn
+{\footnotesize
+\begin{multicols}{3}
+\thispagestyle{empty}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\end{multicols}
+
+%\idxlayout{columns=4,rule=0.1pt}
+%\printindex
+}
+\twocolumn
+\newpage
+\setcounter{page}{1}
+\pagestyle{plain}
+
+\input{induktion.tex}
+\input{logik.tex}
+\input{mengen.tex}
+\input{funktionen.tex}
+\input{zwischenwertsatz.tex}
+\input{folgen_R.tex}
+\input{reihen.tex}
+\input{taylor.tex}
+\input{funktion_stetigkeit_limes.tex}
+\input{stetigkeit_funktion_mehrere_variabeln.tex}
+\input{funktionsfolgen.tex}
+\input{differenzierbarkeit.tex}
+\input{partialbruchzerlegung.tex}
+\input{integralrechnung.tex}
+\input{riemannsumme.tex}
+\input{differentialgleichungen.tex}
+\input{kurvenintegral.tex}
+\input{differential_Rn.tex}
+\input{vektoranalysis.tex}
+
+\clearpage
+\input{formeltafel.tex}
+\input{reihen_tabellen.tex}
+
+% fill the page
+\clearpage
+
+\end{document}

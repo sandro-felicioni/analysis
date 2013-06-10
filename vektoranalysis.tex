@@ -1,0 +1,176 @@
+\section{Vektoranalysis}
+\begin{definition}[Vektorfeld]
+Die Abbildung $\vec{v}(\vec{r}): \R^n \to \R^n$ ist ein Vektorfeld. Es weist jedem
+Vektor $\vec{r}$ einen Vektor $\vec{v}(\vec{r})$ zu.
+\end{definition}
+
+\begin{definition}[Skalarfeld]
+Ist eine Abbildung der Form $f: \R^n \to \R$. Es existiert wenn das Vektorfeld wirbelfrei/konservativ ist. Ergibt ein geschlossener Weg im Vektorfeld nicht null so existiert kein skalares Feld (jedoch nicht umbedingt umgekehrt).\\
+Ebenes Skalarfeld: $f: \R^2 \to \R$ (Pro Flächenpunkt ein Skalar)\\
+Räumliches Skalarfeld: $f: \R^3 \to \R$ (Pro Raumpunkt ein Skalar)
+\end{definition}
+
+\begin{definition}[Gradient]
+Ist $f: \R^n \to \R$ (Skalarfeld), so ist der Gradient von $f$ der Vektor
+$\vec{v} = \grad f = \nabla f$. (Im Fall $f: \R^3 \to \R$:   $\grad f = (f_x, f_y, f_z) =
+\left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)$). ) 
+Der Gradient $\nabla f$ von einer Funktion $f : \R^2 \to \R$ beschreibt die Richtung 
+und den Betrag des steilsten Anstiegs des Graphen von $f$.
+\end{definition}
+
+\begin{definition}[Richtungsableitung]
+Ist eine reelle Zahl, sie gibt die Änderung des Funktionswertes von $f$ an, wenn man von einem Punkt $P$ aus in eine bestimmte Richtung $\vec{a}$ um eine Längeneinheit fortschreitet. Die Richtungsableitung von $f$ in Richtung $\vec{a}$ ist definiert als: 
+$\frac{\partial f}{\partial \vec{a}} = \nabla f \cdot \vec{e_a} = \nabla f \cdot \frac{\vec{a}}{|\vec{a}|} = \frac{1}{|\vec{a}|} \cdot \nabla f \cdot \vec{a}$\\
+Merke: Die Richtungsableitung ist maximal, wenn $\vec{a}$ in gleiche Richtung wie Gradient zeigt!
+\end{definition}
+
+\begin{definition}[Potential]
+Ist $\vec{v} = \nabla f$, so ist $f$ das Potential oder Stammfunktion zu $\vec{v}$.
+Existiert wenn $\rot \vec{f} = \vec{0}$ und der Definitionsbereich zusamenhängend ist.
+\end{definition}
+
+\begin{definition}[Gradientenfeld / Potentialfeld]
+Ist $\vec{v} = \nabla f$, so ist das Vektorfeld $\vec{v}$
+ein Gradientenfeld / Potentialfeld. Es besitzt dabei die folgenden
+Eigenschaften:
+\begin{itemize}
+	\item Der Wert des Kurvenintegrals entlang eines beliebigen Weges innerhalb des
+	Feldes ist unabhängig vom Weg selbst, sondern nur vom Anfangs- und Endpunkt
+	\item Ein Kurvenintegral mit einem Weg bei dem Anfangs- und Endpunkt der
+	gleiche Punkt sind, hat den Wert 0.
+	\item Ist immer wirbelfrei: $\rot \vec{v} = \rot(\grad f) = \vec{0}$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Rotor / Rotation]
+Gibt die Tendenz eines Vektorfeldes an, um Punkte zu rotieren. Es ist ein Vektorfeld, welches aus einem anderen Vektorfeld hergeleitet wird. Die Rotation des Vektorfelds $\vec{F} (x, y, z)$ ist das Vektorfeld rot$\vec{F}$. Also: 
+$\vec{F} (x, y, z) = 
+\left(
+	\begin{array}{c}
+		F_x (x, y, z) \\
+		F_y (x, y, z) \\
+		F_z (x, y, z)
+	\end{array}
+\right) \Rightarrow$
+ rot$\vec{F} = 
+\left(
+	\begin{array}{c}
+		\vspace{3pt} \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \\
+		\vspace{3pt} \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \\
+		\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
+	\end{array}
+\right)$\\
+Das Vektorfeld rot$\vec{F}$ wird häufig auch als Wirbelfeld zu $\vec{F}$ bezeichnet. $\vec{F}$ heisst in einem Bereich Wirbelfrei / Konservativ, wenn dort überall rot$\vec{F} = 0$ gilt.
+\end{definition}
+
+\begin{definition}[Wirbelfrei / konservativ]
+Ein Vektorfeld $\vec{v}$ ist wirbelfrei/konservativ wenn gilt: $\rot \vec{v} = 0$
+\end{definition}
+
+\begin{definition}[Vektorpotential]
+Ein Vektorfeld $\vec{v}$ heisst Vektorpotential zu $\vec{w}$, falls $\vec{w} = \rot \vec{v}$.
+\end{definition}
+
+\begin{definition}[Divergenz]
+Die Divergenz eines Vektorfelds $\operatorname{div} \vec{K}(x,y,z)$ ist definiert durch:
+$\operatorname{div} \vec{K}(x,y,z) := \frac{\partial
+K_1}{\partial x} + \frac{\partial K_2}{\partial y} + \frac{\partial
+K_3}{\partial z}$
+\end{definition}
+
+\begin{lemma}[Geschlossener Weg]
+Wenn $F = grad \phi$, respektive $\rot \vec{F} =\vec{0}$ und der Definitionsbereich zusammenhängend ist,
+sowie $\gamma$ geschlossen ist, so folgt $\int_\gamma F = 0$.
+\end{lemma}
+
+\subsection{Bestimmung eines Potentials im $\R^2$}
+Sei $\vec{v} = \begin{pmatrix}
+P(x,y)\\
+Q(x,y)
+\end{pmatrix}$.
+
+Um schnell zu prüfen, ob man überhaupt den folgenden Algorithmus anwenden muss,
+kann man prüfen ob gilt: $P_y = Q_x$, wenn nicht, so hat $\vec{v}$ kein Potential $f$.
+
+\begin{enumerate}[itemsep=1em]
+	\item $f(x,y) = \int P(x,y)\;dx + C(y)$ berechnen (Integral berechnen)
+	\item Die berechnete Gleichung $f(x,y)$ nun nach $y$ ableiten:
+	$\frac{\partial}{\partial y} f(x,y) = \frac{\partial}{\partial y}\int P(x,y)\;dx + C'(y)$
+	(berechnetes Integral nach $y$ ableiten)
+	\item $\frac{\partial}{\partial y} f(x,y) = Q(x,y)$ setzen und $C'(y)$ berechnen durch umformen
+	und integrieren
+	\item Berechnetes $C(y)$ in die Gleichung im 1. Punkt einsetzen. Fertig. Achtung: Im Grunde hat
+	$C(y)$ durch integrieren (aufleiten) noch einen konstanten Wert, der beliebigen Wert haben kann.
+	Dieser taucht im Grunde auch in der fertigen $f(x,y)$ Funktion auf.
+\end{enumerate}
+
+\subsection{Bestimmung eines Potentials im $\R^3$}
+Sei $\vec{v} = \begin{pmatrix}
+P(x,y,z)\\
+Q(x,y,z)\\
+R(x,y,z)
+\end{pmatrix}$.
+
+Um zu prüfen, ob man überhaupt ein Potential finden kann für $\vec{v}$ hat $\rot \vec{v} = 0$
+zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} = 0$): $P_y = Q_x, P_z = R_x, Q_z = R_y$.
+
+\begin{enumerate}[itemsep=1em]
+	\item $f(x,y,z) = \int P(x,y,z)\;dx + C(y,z)$ lösen (Integral berechnen)
+	\item Nun die berechnete Gleichung $f(x,y,z)$ nach $y$ ableiten $\Rightarrow f_y(x,y,z)$.
+	\item Die abgeleitete Gleichung $f_y$ mit $Q(x,y,z)$ gleichsetzen: $f_y(x,y,z) = Q(x,y,z)$
+	und damit $C_y(y,z)$ bestimmen.
+	\item Durch Integration von $C_y(y,z)$ nach $y$ ($\int C_y(y,z)\;dy$) wird $C(y,z)$ bestimmt
+	bis auf eine Konstante $D(z)$, die von $z$ abhängt. $C(y,z)$ hat also die Form:
+	$C(y,z) = \int C_y(y,z)\; dy + D(z)$.
+	\item Dieses $C(y,z)$ setzt man nun in die Gleichung $f(x,y,z)$ ein, die im 1. Punkt steht.
+	\item Nun wird die daraus erzeugte
+	$f(x,y,z) = \int P(x,y,z)\;dx + C(y,z) = \int P(x,y,z)\;dx + \int C_y(y,z)\; dy + D(z)$
+	Gleichung nach $z$ abgeleitet.
+	\item Durch Gleichsetzen von $f_z(x,y,z) = R(x,y,z)$ lässt sich $D_z(z)$ bestimmen.
+	\item $D_z(z)$ wird wiederrum durch Integration zu $D(z) = \int D_z(z)\; dz + c, \quad c \in \R$
+	\item Das berechnete $D(z)$ in die $f(x,y,z)$ Gleichung aus Punkt 6 einsetzen, fertig.
+\end{enumerate}
+
+\subsection{Geometrisches Verständniss}
+Sei B ein drei dimensionaler Körper (beschrieben durch Punkte in $\R^3$ mit der Funktion $f$) so sei $\nabla f$ senkrecht dazu.
+
+\subsubsection*{Beispiel}
+%aus analysis 2 (2012) serie 11 mc 3
+Gib einen Vektoren der ein nach aussen gerichteter Normalenvektor
+(nicht notwendigerweise normiert) auf dem Rand des Ellipsoids ist \[
+B := 
+\left\{ 
+	\begin{pmatrix} x\\ y\\ z \end{pmatrix} \in \R^3  
+	\middle\vert
+	f\begin{pmatrix} x\\ y\\ z \end{pmatrix} 
+		= \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1
+\right\}
+\]
+
+Der Vektor $\begin{pmatrix} 2x/a^2\\ 2y/b^2\\ 2z/c^2 \end{pmatrix}$ ist gleich $\nabla f$ und steht somit 
+senkrecht auf der Niveaufläche $f=1$. Da er vom Ursprung weg orientiert ist, liefert er die richtige Antwort.\\
+Der Vektor $\begin{pmatrix} yz(1/b^2-1/c^2)\\ xz(1/c^2-1/a^2)\\ xy(1/a^2-1/b^2) \end{pmatrix}$ ist tangential 
+zum Rand $\partial B$
+
+\subsection{Kritische Punkte im $\R^n$}
+Sei $f: \Omega \to \R$ mit $\Omega \subseteq \R^n$ und $F$ = Nebenbedingung ((Un)gleichung).
+Um kritische Punkte(Minima,Maxima,Sattelpunkte) zu bestimmen geht man wie folgt vor. 
+\begin{itemize}
+	\item Wenn $\Omega$ offen und kein $F$ existiert:
+	\begin{enumerate}
+		\item Berechne alle Punkte, die die Gleichung $\nabla f = 0$ erfüllen. Jeder dieser Punkte ist ein kritischer Punkt.
+
+		\item  \todo Prüfe mit Determinantenkriterium ob es sich um ein Min/Max/Sattelp handelt. Ausführlicher..
+	\end{enumerate}
+
+	\item Sonst:
+	\begin{enumerate}
+		\item Untersuche alle kritischen Punkte im inneren: $\nabla f = 0$. Analog zu oben.
+
+		\item Untersuche alle kritischen Punkte am Rand (mit Lagrange Multiplikator): $\nabla f = \lambda \nabla F$. Beachte dass nun eine Variable $\lambda$ dazugekommen ist. Um also auch $\lambda$ aufzulösen verwendet man $F$ als zusätzliche Gleichung!
+
+		\item Untersuche alle Ecken (= Ränder vom Rand): Meistens einfach Ecken in Funktion einsetzen und berechnen.
+
+		\item Von allen berechneten Punkte nehme das Min/Max. Prüfe auch immer ob die Punkte den Nebenbedingungen genügen! Falls nicht, verwerfe sie!
+	\end{enumerate}
+\end{itemize}

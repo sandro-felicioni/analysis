@@ -1,0 +1,28 @@
+\section{Vollständige Induktion}\index{Induktion}
+Grundlegende Struktur um die Aussage $A(n)$ zu beweisen:
+\begin{enumerate}
+	\item \textbf{Verankerung/Induktionsanfang:} Die Aussage wird für $n = A$ bewiesen.
+	$A$ ist dabei meistens der erste Wert für die gegebene Eingabemenge.
+	Der Beweis wird meist durch direktes ausrechnen gemacht.
+	\item \textbf{Annahme/Induktionsvoraussetzung:} Hier schreibt man,
+	dass man davon ausgeht die Aussage sei gültig für ein bestimmtes $n \in \N$ (damit man sie im 4. Schritt
+	einsetzen kann). Man kopiert also im Grunde, was man zu beweisen hat mit einigen Zierwörter.
+	\item \textbf{Induktionsbehauptung:} Hier schreibt man, dass die Aussage auch für (n + 1) gilt.
+	\item \textbf{Induktionsschritt:} Hier beweist man, dass unter der Annahme, dass die Induktionsvoraussetzung gilt, die Induktionsbehauptung folgt. Oder anders gesagt, wir beweisen dass wenn die Aussage für n gilt, dass es dann auch für (n + 1) gelten muss. Dazu wird die Induktionsannahme verwendet.
+\end{enumerate}
+Merke: Schritt 2 und 3 werden oft weggelassen, wenn zu trivial!\\
+\textbf{Beispiel}\\
+Es ist zu beweisen, dass für jedes $n \in \N$ folgendes gilt:\\
+$1 + 2 + 3 + \ldots + n = \frac{n(n + 1)}{2}$
+\begin{enumerate}
+	\item \textbf{Verankerung:} Für $n = 1$ gilt: $1 = \frac{1 (1 + 1)}{2} = \frac{2}{2} = 1 \quad \checkmark$ 
+	\item \textbf{Annahme:} $1 + 2 + 3 + \ldots + n = \frac{n(n+1)}{2}, \; \text{für ein} \; n \in \N$
+	\item \textbf{Induktionsbehauptung:} Wenn die Aussage für n gilt, dann gilt sie auch für (n + 1).
+	\item \textbf{Induktionsschritt:} Für $n \to n+1$ gilt:
+	\begin{align*}
+	1 + 2 + \ldots + n + (n+1) \overset{\text{Annahme}}{=} & \frac{n(n+1)}{2} + (n + 1)\\
+	&= \frac{n(n+1)}{2} + \frac{2n + 2}{2} \\
+	&= \frac{n^2 + n + 2n + 2}{2} \\
+	&= \frac{(n + 1)(n + 2)}{2} _\square
+	\end{align*}
+\end{enumerate}

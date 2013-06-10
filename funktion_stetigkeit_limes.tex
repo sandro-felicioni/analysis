@@ -1,0 +1,113 @@
+\section{Stetigkeit und Limes einer Funktion}
+$\lim_{x \to a} f(x) = b$ bedeutet, dass die Funktion $f$ für $x \to a$ den
+Grenzwert $b$ hat. Der Funktionswert nähert sich also immer näher an $b$ heran,
+wenn $x$ sich $a$ annähert (Epsilon-Delta-Kriterium).
+\[
+\forall \epsilon > 0 \; \exists \delta > 0: \|x -a\| < \delta \Rightarrow
+\|f(x) - f(a)\| < \epsilon
+\]
+
+Funktionsfolgen verhalten sich desweiteren wie Folgen. Es gelten also die
+gleichen Eigenschaften.
+
+%nächster satz aus wikipedia http://de.wikipedia.org/wiki/Grenzwert_(Funktion):
+Existiert der Grenzwert, so konvergiert die Funktion, andernfalls divergiert sie. 
+Der Grenzwert existiert nicht wenn die Funktion eine Division durch 0 enhält oder 
+wenn er gegen $\infty$, resp. $-\infty$ divergiert.
+
+\subsection{(Punktweise) Stetigkeit}
+Die Definition für punktweise Stetigkeit ist die gleiche, wie die für
+$\lim_{x \to a} f(x) = b$ (siehe die Definition gerade über diesem Kapitel).
+
+Charakterisierungen der Stetigkeit von $f$ im Punkt $a$:
+\begin{itemize}
+	\item $\lim_{x \to a} f(x) = f(a)$ ist die Definition
+	\item Man kann $\lim_{x \to a} f(x)$ auch als $f(\lim_{x \to a} x)$ schreiben.
+	Also die Reihenfolge zwischen Bildung des Grenzwertes und der Anwendung der
+	Funktion vertauschen. Beispiel: $\lim_{x \to \infty} \sin\frac{1}{x} =
+	\sin(\lim_{x \to \infty} \frac{1}{x}) = \sin(0) = 0$
+	\item Es gilt linker Grenzwert = Funktionswert = rechter Grenzwert: $\lim_{x
+	\nearrow a} f(x) = f(a) = \lim_{x \searrow a} f(x)$
+	\item Für eine beliebige (jede) Folge $(x_n)$ mit $x_n \to a$ hat $f(x_n) \to
+	f(a)$ zu gelten. Dies ist praktisch um zu zeigen, dass eine Funktion an einer
+	Stelle nicht stetig ist.
+\end{itemize}
+
+Eine Funktion $f$ ist stetig, wenn sie in allen Punkten stetig ist
+(``punktweise Stetigkeit'').
+
+Es gelten folgenden Eigenschaften:
+\begin{itemize}
+	\item Ist $f$ und $g$ stetig in einem gemeinsamen Definitionsbereich, so sind
+	$f + g, f- g, f \cdot g, \frac{f}{g}, f \circ g$ ebenfalls stetig.
+\end{itemize}
+
+\subsection{Gleichmässige Stetigkeit}
+Sei $f: D \to \R$, $D \subseteq \R$, dann ist $f$ genau dann stetig wenn gilt:
+\[
+\forall \epsilon > 0 \exists \delta > 0 \forall x,x_0 \in D: |x - x_0| < \delta
+\Rightarrow |f(x) - f(x_0)| < \epsilon
+\]
+
+Der Unterschied zur punktweisen Stetigkeit liegt darin, dass $\delta$ und
+$\epsilon$ nicht auch noch von $x_0$ abhängig sind. So ist $f(x) = x^2$ zwar
+(punktweise) stetig, aber nicht gleichmässig stetig. Begründung: Je weiter
+rechts man zwei Punkte mit einem Abstand kleiner als $\delta$ wählt, desto
+grösser wird der Abstand der beiden Funktionswerte. Dieser Abstand der
+Funktionswerte müsste aber kleiner als das vorgegebene $\epsilon$ bleiben.
+
+\subsection{Lipschitz-Stetigkeit}
+Eine Funktion $f: \R \to \R$ ist Lipschitz-stetig, wenn eine Konstante $L$
+existiert, so dass gilt:
+\[
+\forall x_1,x_2 \in \R: \|f(x_1) - f(x_2)\| \leq L \cdot \|x_1 - x_2\|
+\]
+
+\subsubsection*{Beispiel}
+Zeigen sie das die alternierende harmonische Reihe \[
+\sum_{n=1}^\infty (-1)^{n-1} \frac{1}{n} = 1 - \frac{1}{2} +\frac{1}{3} - \frac{1}{4} + \frac{1}{5} - ...
+\]
+konvergiert. Man zeige, dass der Grenzwert $L$ die Ungleichung $ \frac{1}{2} < L < \frac{1}{5}$ erfüllt.\\
+\\
+Die Reihe konvergiert. Sei $L_N = \sum_{n=1}^N (-1)^{n-1} \frac{1}{n}$ die N-te Partialsumme. Es gilt \[
+L_2 < L_4 < L_6 < ... < L_5 < L_3 < L_1
+\] und daraus folgt $L_2 = \frac{1}{2} < L < \frac{1}{5} = L_3$.
+
+
+\subsection{Stetigkeit, Differenzierbarkeit, Integrierbarkeit}
+Sei $f$ eine Funktion, so gilt:
+
+$f$ differenzierbar $\Rightarrow$ $f$ stetig $\Rightarrow$ $f$ integrierbar\\
+\\
+$f$ \emph{nicht} integrierbar $\Rightarrow$ $f$ \emph{nicht} stetig $\Rightarrow$ $f$\emph{nicht} differenzierbar  
+
+\subsection{Abhängigkeit der Stetigkeitsbegriffe}
+Sei $f$ eine reelle Funktion, so gilt:
+
+$f$ Lipschitz-stetig $\Rightarrow$ $f$ absolut stetig $\Rightarrow$ $f$
+gleichmässig stetig $\Rightarrow$ $f$ (punktweise) stetig.
+
+\subsection{Regel von de l'Hospital}
+Sei $a \in \R \cup \{\infty, -\infty\}$. Es hat zu gelten:
+\begin{itemize}
+  \item $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0 \text{ oder } \pm\infty$
+  \item In der Nähe von $a$ ist $g'(x) \neq 0$
+\end{itemize}
+
+Dann ist
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a}
+\frac{f'(x)}{g'(x)}
+\]
+
+Diese Regel kann man mehrfach anwenden hintereinander. \underline{Achtung:} Es
+kann sein, dass der Limes $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ nicht existiert,
+aber von $\lim_{x \to a} \frac{f(x)}{g(x)}$ trotzdem.
+
+
+\subsection{Tips zur Stetigkeit}
+\begin{itemize}
+  \item Um zu zeigen das eine Funktion mit mehreren Parameter in einem Punkt \emph{nicht} stetig ergänzbar ist
+	hilft es häufig die Parameter gleich zu setzen. (Häufig geht dann der Limes nicht gegen den gesuchten Punkt
+	 $\Rightarrow$ die Funktion ist \emph{nicht} stetig ergänzbar.)
+\end{itemize}

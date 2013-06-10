@@ -1,0 +1,89 @@
+\section{Reihen}
+
+\subsection{Definitionen}
+Eine Reihe $\sum_{n = 1}^\infty a_n$ ist \underline{konvergent} mit Grenzwert
+$s$, wenn die Folge der \underline{Partialsummen} $(S_m)$, $S_m :=
+\sum_{n=1}^m a_n$ gegen $s$ konvergiert. Also wenn gilt: $S_m \to s$.
+
+\begin{definition}[$\epsilon$-Kriterium]
+	$\forall \epsilon > 0 \; \exists n_0 \in \N \; \forall m \geq n_0: \left|
+	\sum_{n=1}^m a_n - s \right| < \epsilon$
+\end{definition}
+
+\begin{definition}[Absolute Konvergenz]\index{Konvergenz}
+Wenn auch die Reihe der Absolutbeträge $\sum_{n=1}^\infty |a_n|$ konvergiert, so
+heisst die Reihe absolut konvergent. Aus der absoluten Konvergenz folgt
+Konvergenz. Der Umkehrschluss ist nicht möglich.
+\end{definition}
+
+\subsection{Rechenregeln Reihen}
+Für \underline{konvergente} Reihen gilt:
+\[
+	\sum_{n=1}^\infty a_n = A, \sum_{n=1}^\infty b_n = B \Rightarrow
+	\sum_{n=1}^\infty (\alpha a_n + \beta b_n) = \alpha A + \beta B
+\]
+
+\subsection{Konvergenzkriterien}
+\begin{tabular}{|l|}
+\hline
+	Konvergiert $\sum_{n=1}^\infty a_n$, so ist $\lim_{n \to \infty} a_n = 0$.\\
+	Wenn also $\lim_{n \to \infty} a_n \neq 0$, so konvergiert die Reihe
+	\underline{nicht}\\
+\hline
+\end{tabular}
+
+\subsubsection{Reihen Kriterien}
+Achtung. Die nachfolgenden Kriterien sagen nur aus, ob die Reihen konvergiert
+oder nicht. Sie sagen \underline{nicht} aus, gegen was sie konvergieren!
+
+\paragraph{Quotientenkriterium}
+\[
+\left| \frac{a_{n+1}}{a_n} \right| \to q. \quad \text{Dann gilt} \begin{cases}
+q < 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ konvergiert absolut} \\
+q = 1 & \Rightarrow \text{keine Aussage}\\
+q > 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ divergiert}
+\end{cases}
+\]
+
+\paragraph{Wurzelkriterium}
+\[
+\sqrt[n]{\left | a_n \right |} \to q. \quad \text{Dann gilt} \begin{cases}
+q < 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ konvergiert absolut}\\
+q = 1 & \Rightarrow \text{keine Aussage}\\
+q > 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ divergiert}
+\end{cases}
+\]
+
+\paragraph{Leibnizkriterium}
+Wenn gilt:
+\begin{itemize}
+  \item $(a_n)$ ist alternierende Folge, d.h die Vorzeichen wechseln jedes Mal
+  \item $a_n \to 0$ oder $|a_n| \to 0$
+  \item $(|a_n|)$ ist monoton fallend
+\end{itemize}
+\ldots dann konvergiert $\sum_{n=1}^\infty a_n$
+
+\paragraph{Majorantenkriterium}
+Ist $|a_n| \leq b_n$ und $\sum_{n=1}^\infty b_n$ konvergent, so konvergiert
+$\sum_{n=1}^\infty a_n$ absolut.
+
+\paragraph{Minorantenkriterium}
+Ist $a_n \geq b_n \geq 0$ und $\sum_{n=1}^\infty b_n$ divergent, so divergiert
+$\sum_{n=1}^\infty a_n$
+
+\subsection{Potenzreihe}
+Die Potenzreihe hat die allgemeine Form
+\[
+\sum_{n=0}^\infty a_n (x - x_0)^n
+\]
+
+$x_0$ ist der Entwicklungspunkt der Potenzreihe und $(a_n)_{n \in \N}$ eine
+beliebige Folge.
+
+\subsubsection{Konvergenzradius}
+Die Berechnung des Konvergenzradius ist für solche Reihen einfacher, da der
+Faktor $(x - x_0)$ nicht analysiert werden muss. Entsprechend gilt für den
+Konvergenzradius $r$:
+$r = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{\|a_n\|}}$ (Wurzelkriterium) bzw.
+$r = \lim_{n\to\infty} \left | \frac{a_n}{a_{n+1}} \right |$
+(Quotientenkriterium).
