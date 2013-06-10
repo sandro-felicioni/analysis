@@ -60,7 +60,7 @@ Eine Menge $A$ ist abzählbar, wenn sie gleichmächtig zur Menge $\N$ (natürlic
 \subsubsection{Gleichmächtigkeit zeigen}
 Zeigt man durch angeben einer bijektiven Funktion.
 
-\paragraph{Beispiel}
+\textbf{Beispiel:}\\
 Zu zeigen: $U := \{ 2k + 1: k \in \N \}$ gleichmächtig zu $\N$ ist.
 
 \textbf{Beweis}: Sei $f: \N \rightarrow U$ gegeben durch
@@ -85,7 +85,7 @@ Diese Funktion ist offensichtlich bijektiv (sonst Umkehrfunktion angeben), wodur
 \subsection{Teilmengen von $\R$}
 \subsubsection{Intervalle}\index{Intervall}
 \begin{tabular}{|l|l|l|}\hline
-Schreibweise & Definition & Bezeichnung\\\hline
+Schreibweise & Definition & Bezeichnung des Intervalls\\\hline
 $]a, b[, (a,b)$ & $\{x \in \R | a < x < b\}$ & offen\\\hline
 $[a, b[, [a, b)$ & $\{x \in \R | a \leq x < b\}$ & (rechts) halboffen \\\hline
 $]a,b], (a, b]$ & $\{x \in \R | a < x \leq b\}$ & (links) halboffen \\\hline
@@ -94,8 +94,15 @@ $[a,b]$ & $\{x \in \R | a \leq x \leq b\}$ & abgeschlossen \\\hline
 
 Achtung: Ist $a$ oder $b$ ``unendlich'' ($\pm \infty$), so muss es auf der entsprechenden Seite offen sein: z.B. $[a, $\hl{$\infty[$}, \hl{$]-\infty$}$, b[$.
 Unendlich ist keine konkrete Zahl und kann somit nicht gleich einer anderen Zahl sein, was nötig wäre für $\leq$. \\
-%nächster abschnitt aus wikipedia http://de.wikipedia.org/wiki/Intervall_(Mathematik)#Verallgemeinerung
-In der Topologie sind reelle Intervalle Beispiele für zusammenhängende Mengen. Offene Intervalle sind offene Mengen und abgeschlossene Intervalle sind abgeschlossene Mengen. Halboffene Mengen sind weder offen noch abgeschlossen. Abgeschlossene beschränkte Intervalle sind kompakt.
+In der Topologie gilt:
+\begin{description}
+	\item [Abgeschlossene Menge:] Eine Menge ist abgeschlossen, wenn ihr Komplement eine offene Menge ist. Bsp. Alle abgeschlossenen Intervalle (z.B: $[0, 1]$ da $(-\infty, 0) \cup (1, \infty)$)
+
+	\item [Offene Menge:] Anschaulich ist eine Menge offen, wenn kein Element der Menge auf ihrem Rand liegt. Bsp. Alle offenen Intervale (z.B: $(0, 1)$ da $0,1 \notin (0, 1)$)
+
+	\item [Kompakte Menge:] Eine Menge ist kompakt, wenn sie abgeschlossen und beschränkt ist! Bsp. Alle abgeschlossenen Intervalle (z.B: $[0, 1]$ da abgeschlossen und beschränkt)
+\end{description}
+Merke: Halboffene Mengen sind weder offen noch abgeschlossen.
 
 \subsubsection{Beschränktheit}\index{beschränkt}
 Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{beschränkt}, falls es ein $C_1, C_2 \in \R$ gibt, sodass 
@@ -103,16 +110,16 @@ $\forall x \in M: C_1 \leq x \leq C_2$\\
 (Alternativ: $\exists C \in \R \; \forall x \in M: |x| \leq C$)
 
 \vspace{2pt}Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{nach oben beschränkt}, falls 
-$\exists C \in \R \; \forall x \in M: x \leq C$ \hspace{3pt} (C = obere Schranke)
+$\exists C \in \R \; \forall x \in M: x \leq C$ \hspace{2pt} {\scriptsize(jedes derartige C heisst obere Schranke)}
 
 \vspace{2pt}Eine nichtleere Teilmenge $M \subset \R$ heisst \underline{nach unten beschränkt}, falls 
-$\exists C \in \R \; \forall x \in M: C \leq x$ \hspace{3pt} (C = untere Schranke)
+$\exists C \in \R \; \forall x \in M: C \leq x$ \hspace{2pt} {\scriptsize(jedes derartige C heisst untere Schranke)}
 
-\subsubsection{Supremum / Infinum}\index{Supremum}\index{Infinum}\index{Schranke}
-Ist $M \subset \R$ nach oben beschränkt, so nennt man jedes $C$ mit $x \leq C, \forall x \in M$
-eine \underline{obere Schranke} von $M$. Die kleinste obere Schranke (existiert immer in $\R$) nennt man \underline{Supremum} von $M$ ($\sup M$).
+\subsubsection{Supremum / Infimum}\index{Supremum}\index{Infimum}\index{Schranke}
+Jede nach oben beschränkte Menge $M \subset \R$ besitzt eine kleinste obere Schranke $c = \sup \, M$ und nennt es \underline{Supremum von M}.
 
-Analog dazu wird die \underline{untere Schranke} und das \underline{Infinum} ($\inf M$) definiert.
+Jede nach unten beschränkte Menge $M \subset \R$ besitzt eine grösste untere Schranke $\tilde{c} = \inf \, M$ und nennt es \underline{Infimum von M}.
+
 
 Falls die Menge $M$ ein grösstes (bzw. kleinstes) Element besitzt, so nennt man es \underline{Maximum} (bzw. \underline{Minimum}).
 Es gilt:
@@ -145,7 +152,7 @@ Zu jeder Zahl $0 < b \in \R$ gibt es ein $n \in \N$ mit $b < n$
 oder
 
 \begin{satz}[Archimedisches Prinzip V. 2]
-Zu den zwei Zahlen $x, y \in \R, \; y > x > 0$ existiert eine Zahl $n \in \N$, sodass gilt: $nx > y$
+Zu den zwei Zahlen $x, y \in \R, \; y > x > 0$ existiert eine Zahl $n \in \N$, sd gilt: $nx > y$
 \end{satz}
 
 Geometrisch: Hat man zwei Strecken auf einer Geraden, so kann man die grössere von beiden übertreffen, wenn man die kleinere nur oft genug abträgt.
