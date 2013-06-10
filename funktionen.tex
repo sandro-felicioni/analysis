@@ -1,52 +1,12 @@
 \section{Funktionen}
-Eine Funktion $f: D \rightarrow W$ ist eine Vorschrift, nach der jedem Element aus
-$D$ ein Element aus $W$ zugeordnet wird. $D$ ist der \underline{Definitionsbereich}
+Eine Funktion $f: D \rightarrow W$ ist eine Abbildung, in der jedes Element aus
+$D$ einem Element aus $W$ zugeordnet wird. $D$ ist der \underline{Definitionsbereich}
 (Bereich der gültigen Eingaben) und $W$ der \underline{Wertebereich}
 (Bereich der gültigen Ausgaben).
 
-Ist $f: M \rightarrow N$ und $g: N \rightarrow P$, so ist die Funktion $g \circ f: M \rightarrow P$,
-$(g \circ f)(x) = g(f(x))$, eine \underline{Komposition} von $f$ und $g$.
+Bild von D: $f(D) = \{ f(x) \, | \, x \in D \}$ (Muss nicht gleich $W$ sein!)
 
-\subsection{Regeln}
-\begin{itemize}
-	\item $f(A \cap B) \subseteq f(A) \cap f(B)$
-	\item $f(A \cup B) = f(A) \cup f(B)$
-\end{itemize}
-
-\subsection{Absolutbetrag}
-\begin{itemize}
-	\item $|x| = \max(x, -x)$
-	\item $|x \cdot y| = |x| \cdot |y|$
-	\item $|x + y| \leq |x| + |y|$
-\end{itemize}
-
-\subsection{Monotonie}
-Die Funktion $f$ ist\ldots
-\begin{description}
-	\item[monoton steigend,] falls: $x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)$
-	\item[streng monoton steigend,] falls: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
-	\item[monoton fallend,] falls: $x_1 < x_2 \Rightarrow f(x_1) \geq f(x_2)$
-	\item[streng monoton fallend,] falls: $x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
-\end{description}
-
-\subsubsection{Monotonie und Differenzial (Ableitung)}\index{monoton}
-Ist $f$ auf dem Intervall $I$ differenzierbar, so gilt
-\begin{itemize}
-	\item $f'(x) > 0 \; \forall x \in I \Rightarrow f$ streng monoton steigend
-	\item $f'(x) \geq 0 \; \forall x \in I \Leftrightarrow f$ monoton steigend
-	\item $f'(x) < 0 \; \forall x \in I \Rightarrow f$ streng monoton fallend
-	\item $f'(x) \leq 0 \; \forall x \in I \Leftrightarrow f$ monoton fallend
-\end{itemize}
-
-\subsection{Identität (identische Abbildung, $\id_X$)}\index{$\id$}
-Sei $M$ eine Menge, dann ist die \textit{identische Abbildung von $M$} definiert durch:
-$\id_M: M \rightarrow M$ mit $\id_M(x) = x$.
-
-Sei $f: M \rightarrow N$ eine beliebige Funktion, dann gilt:
-\begin{itemize}
-	\item $\id_N \circ f = f$
-	\item $f \circ \id_M = f$
-\end{itemize}
+Urbild von $V \subset W$: $f^{-1}(V) = \{ x \in D \, | \, f(x) \in V \}$
 
 \subsection{Injektiv, surjektiv, bijektiv}
 \subsubsection{Injektiv}\index{injektiv}
@@ -92,11 +52,42 @@ Wenn also für jedes Element aus $N$ mindestens ein (können auch mehr sein) Ele
 Eine Funktion ist bijektiv, wenn sie injektiv und surjektiv ist.
 
 %\includegraphics[scale=0.5]{bijektiv.png}
-
+\vspace{-0.5cm}
 \paragraph{Eigenschaften}
 \begin{itemize}
-	\item Es gelten die Eigenschaften von Injektivität und Surjektivität
+	\item Es gelten die Eigenschaften von Injektivi. und Surjektivi.
 	\item Die Gleichung $f(x) = y$, $f$ ist bijektiv und $y$ gegeben, verfügt über genau eine Lösung für $x$
 	\item Sind die Funktionen $f: A \rightarrow B$ und $g: B \rightarrow C$ bijektiv, dann ist auch die \underline{Komposition} $g \circ f: A \rightarrow C$ bijektiv.
 	\item Ist $g \circ f$ bijektiv, dann ist $f$ injektiv und $g$ surjektiv
+\end{itemize}
+
+\subsection{Absolutbetrag}
+\begin{itemize}
+	\item $|x| = \max(x, -x)$ oder 
+	$\begin{array}{l}
+		x \geq 0 \Rightarrow |x| = x \\
+		x < 0 \Rightarrow |x| = -x
+	\end{array}$
+	\item $|x \cdot y| = |x| \cdot |y|$
+	\item $|x + y| \leq |x| + |y|$
+	\item $|x - a| < \epsilon \Leftrightarrow -\epsilon < x- a < \epsilon$
+	\item $|x - a| \Leftrightarrow |a - x|$
+\end{itemize}
+
+\subsection{Monotonie}
+Die Funktion $f$ ist\ldots
+\begin{description}
+	\item[monoton steigend,] falls: $x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)$
+	\item[streng monoton steigend,] falls: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
+	\item[monoton fallend,] falls: $x_1 < x_2 \Rightarrow f(x_1) \geq f(x_2)$
+	\item[streng monoton fallend,] falls: $x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
+\end{description}
+
+\subsubsection{Monotonie und Differenzial (Ableitung)}\index{monoton}
+Ist $f$ auf dem Intervall $I$ differenzierbar, so gilt
+\begin{itemize}
+	\item $f'(x) > 0 \; \forall x \in I \Rightarrow f$ streng monoton steigend
+	\item $f'(x) \geq 0 \; \forall x \in I \Leftrightarrow f$ monoton steigend
+	\item $f'(x) < 0 \; \forall x \in I \Rightarrow f$ streng monoton fallend
+	\item $f'(x) \leq 0 \; \forall x \in I \Leftrightarrow f$ monoton fallend
 \end{itemize}
