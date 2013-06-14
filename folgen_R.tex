@@ -1,51 +1,77 @@
 \section{Folgen in $\R$}
+Eine Folge $a_n$ ist eine Funktion von $\N \backslash \{0\} \to \R$. Man nennt $(a_1, a_2, .. )$ Folgenglieder. Bsp. $a_n = 1/n \Rightarrow$  $a_1 = 1, a_2 = 1/2, ..$  
 
 \subsection{Definitionen}
 \begin{description}
   \item[konvergent] $\lim_{x \to \infty} a_n$ existiert \index{konvergent}
   \item[divergent] $\lim_{x \to \infty} a_n$ existiert nicht \index{divergent}
   \item[Nullfolge] $\lim_{x \to \infty} a_n = 0$ gilt \index{Nullfolge}
-  \item[beschränkt] Es gibt $C_1, C_2$, so dass gilt $C_1 \leq a_n \leq C_2$
-  bzw. $C$ gibt, so dass $|a_n| \leq C$
+  \item[beschränkt] $\exists \, C_1, C_2 \in \R$, sodass gilt: $C_1 \leq a_n \leq C_2$ \hspace{0.3cm} oder\\
+  $\exists \, C$ sodass gilt: $|a_n| \leq C$
   \item[unbeschränkt] falls $(a_n)$ nicht beschränkt ist. Unbeschränkte folgen
   sind stets \underline{divergent}
   \item[monoton wachsend] $a_n \leq a_{n+1} \quad \forall n \in \N$ \index{monoton}
   \item[streng monoton wachsend] $a_n < a_{n+1} \quad \forall n \in \N$
   \item[monoton fallend] $a_n \geq a_{n+1} \quad \forall n \in \N$
   \item[streng monoton fallend] $a_n > a_{n+1} \quad \forall n \in \N$
-  \item[alternierend] die Vorzeichen der Folgenglieder wechseln sich ab
+  \item[alternierend] {\small die Vorzeichen der Folgenglieder wechseln sich ab}
   \item[bestimmt divergent / uneigentlich konvergent] es gilt $\lim_{n \to
   \infty} a_n = \pm \infty$
 \end{description}
 
-\begin{definition}[Grenzwert] \index{Grenzwert}
-	\begin{align*}
-		\lim_{n \to \infty} a_n = a & \Leftrightarrow a_n \to a \\
-		& \Leftrightarrow \forall \epsilon > 0 \exists n_0 \in \N \forall n \geq n_0:
-		|a_n - a| < \epsilon
-	\end{align*}
+\begin{definition}[Konvergenz / Grenzwert] \index{Konvergenz / Grenzwert}
+Die Folge $a_n$ konvergiert gegen a falls gilt:\\
+\vspace{-0.3cm}\begin{align*}
+\forall \epsilon > 0 \; \exists \, n_0 \in \N \; \forall n \geq n_0: |a_n - a| < \epsilon
+\end{align*}
+Wir nennen $a$ den Grenzwert/Limes und schreiben dann:
+\begin{align*}
+	\lim_{n \to \infty} a_n = a
+\end{align*}
 \end{definition}
 
 \begin{definition}[Teilfolge] \index{Teilfolge}
 Werden von einer Folge beliebig viele Glieder weggelassen, aber nur so viele,
 dass noch unendlich viele übrigbleiben, so erhält man eine Teilfolge.
+Konvergiert eine Folge $a_n$ gegen a, so konvergiert auch jede Teilfolge gegen $a$!
 \end{definition}
 
 \begin{definition}[Häufungspunkt] \index{Häufungspunkt}
+	Ein Häufungspunkt ist ein Grenzwert einer Teilfolge (Bsp. H-Punkte von $(-1)^n$ = $\{1, -1\}$). \\
+	Anderst ausgedrückt: 
 	$a$ ist Häufungspunkt der Folge $(a_n)$, wenn in jeder Umgebung von $a$
-	unendlich viele Folgeglieder liegen. Das ist äquivalent damit, dass $a$ der
-	Limes einer Teilfolge von $(a_n)$ ist.
+	unendlich viele Folgeglieder liegen.
 \end{definition}
 
 \begin{definition}[Limes superior / Limes inferior] \index{$\limsup$}\index{$\liminf$}
-	Ist $(a_n)$ eine beschränkte Folge, so heisst der grösste Häufungspunkt Limes
-	superior ($\limsup_{n \to \infty} a_n$ oder $\overline{\lim}_{n \to \infty}
-	a_n$). Der kleinste Häufungspunkt ist der Limes inferior ($\liminf_{n \to
-	\infty} a_n$ oder $\underline{\lim}_{n \to \infty} a_n$)
+	Ist $a_n$ eine beschränkte Folge so heisst der grösste Häufungspunkt Limes
+	superior ($\limsup_{n \to \infty} a_n$ / $\overline{\lim}_{n \to \infty}
+	a_n$) und der kleinste Häufungspunkt Limes inferior ($\liminf_{n \to
+	\infty} a_n$ / $\underline{\lim}_{n \to \infty} a_n$)
 \end{definition}
+
+\subsection{Cauchy-Folgen}\index{Cauchy-Folge}
+\begin{definition}
+Sei $(a_n)_{n \in \N}$ eine Folge in $\R$. $(a_n)_{n \in \N}$ heisst \textbf{Cauchy-Folge}, falls gilt
+\begin{align*}
+\forall \epsilon > 0 \; \exists \, n_0 \in \N \; \forall n, l \geq n_0: |a_n - a_l| < \epsilon
+\end{align*}
+\end{definition}
+
+Die Definition sagt grundsätzlich aus, dass ab einem $n_0$ (also einem Anfang $n_0$, der nur abhängig von $\epsilon$ ist)
+die Folgeglieder nur noch $\epsilon$ Abstand zu einander haben. Also der Abstand beliebig klein wird zwischen Folgegliedern.
+
+\begin{satz}[Cauchy-Kriterium]
+Für $(a_n)_{n \in \N} \subset \R$ gilt:
+\begin{align*}
+	(a_n) \; \text{ist konvergent} \; \Leftrightarrow \; (a_n) \; \text{ist eine Cauchy-Folge}
+\end{align*}
+\end{satz}
+
 
 \subsection{Rechnen mit Eigenschaften}
 Addition:
+{\small
 \begin{itemize}
   \item $(a_n), (b_n)$ konvergiert $\Rightarrow (a_n + b_n)$ konvergiert
   \item $(a_n)$ konvergiert, $(b_n)$ divergent $\Rightarrow (a_n + b_n)$
@@ -60,8 +86,10 @@ Addition:
   \item $(a_n) \to -\infty$, $(b_n) \to -\infty \Rightarrow (a_n + b_n) \to
   -\infty$
 \end{itemize}
+}
 
 Produkt:
+{\small
 \begin{itemize}
   \item $(a_n)$ Nullfolge, $(b_n)$ beschränkt $\Rightarrow (a_n b_n)$ Nullfolge
   \item $(a_n)$ konvergent, $(b_n)$ beschränkt $\Rightarrow (a_n b_n)$
@@ -71,18 +99,17 @@ Produkt:
   \item $(a_n)$ konvergent gegen $a \neq 0$, $(b_n)$ divergent $\Rightarrow
   (a_n b_n)$ divergent
 \end{itemize}
+}
 
 \subsection{Rechnen mit Grenzwerten}
 $\lim_{n \to \infty} a_n = a$, $\lim_{n \to \infty} b_n = b$\\
-\emph{\underline{Achtung!} Untenstehendes gilt \underline{nur} wenn die Grenzwerte von $a_n$ und $b_n$ existieren. (Nicht $0$ oder $\inf$ sind.)}
+\emph{\underline{Achtung!} Untenstehendes gilt \underline{nur} wenn die Grenzwerte von $a_n$ und $b_n$ existieren. (Nicht $0$ oder $\infty$ sind.)}
 \begin{itemize}
   \item $\lim_{n \to \infty} (a_n \pm b_n) = a \pm b$
   \item $\lim_{n \to \infty} (c \cdot a_n) = c \cdot a$
-  \item $\lim_{n \to \infty} (a_n b_n) = ab$
-  \item \underline{Achtung:} $\lim_{n \to \infty} (a_n)^c = (\lim_{n \to
-  \infty} a_n)^c$, nur wenn $c \neq n$
-  \item $\lim_{n \to \infty} \frac{a_n}{b_n} = \frac{a}{b}, \quad (b_n)$ keine
-  Nullfolge
+  \item $\lim_{n \to \infty} (a_n \cdot b_n) = a \cdot b$
+  \item $\lim_{n \to \infty} (a_n)^c = (\lim_{n \to \infty} a_n)^c, \quad$ nur wenn $c \neq n$
+  \item $\lim_{n \to \infty} \frac{a_n}{b_n} = \frac{a}{b}, \quad$ nur wenn $(b_n)$ keine Nullfolge
 \end{itemize}
 
 \subsection{Hilfsmittel}
@@ -118,43 +145,42 @@ $\infty$
 	\textbf{Beispiel:} Wegen $\left( 1 + \frac{1}{n} \right)^n \to e$, so gilt auch
 	$\left( 1 + \frac{1}{2n} \right)^{2n} \to e$
 	
-	\item Hat die Folge zwei verschiedene Häufungspunkte, so ist die Folge sicher
+	\item \textbf{Divergenzkriterium:} Hat die Folge zwei verschiedene Häufungspunkte, so ist die Folge sicher
 	divergent.
 	
-	\item Ist die Folge monoton steigend und nach oben beschränkt, dann existiert
-	$\lim_{n \to \infty} a_n$. Ist die Folge monoton fallend und nach unten
-	beschränkt, dann existiert $\lim_{n \to \infty} a_n$
+	\item \textbf{Monotone konvergenz:} Ist die Folge monoton steigend (fallend) und nach oben (unten) beschränkt, dann konvergiert $\lim_{n \to \infty} a_n$ zu $\sup \; a_n$ $(\inf \; a_n)$
 	
-	\item Konvergiert $\sum_{n=0}^\infty a_n$, so ist $\lim_{n \to \infty} a_n =
-	0$\\
-	Damit kann die Regeln für Reihen verwenden. Siehe Grenzwerte von Reihen.
+	\item Wenn $\sum_{n=0}^\infty a_n$ konvergiert, so ist $\lim_{n \to \infty} a_n = 0$\\
+	Damit kann man die Grenzwertregeln für Reihen verwenden.
 	
 	\item Gibt es eine Funktion $f$ mit $f(n) = a_n$ und $\lim_{x \to \infty} f(x)
 	= a$, so gilt auch $\lim_{n \to \infty} a_n = a$.\\
 	Damit kann man zum Beispiel die Regel von \underline{l'Hospital} und die
-	restlichen Methoden anwenden. Siehe Grenzwerte von Funktionen.\\
+	restlichen Methoden anwenden. Siehe Grenzwerte von Funktionen.
 	\underline{Achtung:} Es kann sein, dass $f$ keinen Grenzwert besitzt, aber
 	$(a_n)$ schon.
 	
 	\item \textbf{Einschliessungskriterium}: Sind $(a_n), (b_n), (c_n)$ Folgen mit
 	$a_n \leq b_n \leq c_n$ und haben $(a_n), (c_n)$ den gleichen Grenzwert $a$, so
 	konvergiert auch $(b_n)$ nach $a$.
+
+	\item \textbf{Cauchy-Kriterium:} \\
+	Die Folge $a_n$ ist konvergent $\Leftrightarrow$ $a_n$ ist eine Cauchy-Folge 
 \end{itemize}
 
-\subsection{Tipps \& Beispiele}
-\subsubsection{Brüche}
-$\lim_{n \to \infty} \frac{n^2 + \ln n}{\sqrt{n^4 - n^3}}$
-
-Bei Brüchen empfiehlt es sich den am stärksten wachsenden Teil (das am
+\subsection{Konvergenztipps \& Beispiele}
+\subsubsection{Faktoren klammern und kürzen / Brüche}
+Bei Brüchen und auch sonst empfiehlt es sich oft den am stärksten wachsenden Teil (das am
 schnellsten wachsende $n$) zu kürzen. In diesem Fall ist es das $n^4$ in der
 Wurzel, also $n^2$.
-
+\vspace{0.1cm}
 \begin{align*}
-\ldots &= \lim_{n \to \infty} \frac{n^2 + \ln n}{\sqrt{n^4 - n^3}}
+\lim_{n \to \infty} \frac{n^2 + \ln n}{\sqrt{n^4 - n^3}} 
+&= \lim_{n \to \infty} \frac{n^2 + \ln n}{\sqrt{n^4 - n^3}} 
 \cdot \frac{\frac{1}{n^2}}{\frac{1}{n^2}} = \lim_{n \to \infty} \frac{n^2 + \ln
 n}{n^2 \sqrt{1 - \frac{1}{n}}} \cdot \frac{\frac{1}{n^2}}{\frac{1}{n^2}} \\
 &= \lim_{n \to \infty} \frac{1 + \frac{\ln n}{n^2}}{\sqrt{1 - \frac{1}{n}}}
-= \frac{1 + 0}{\sqrt{1 - 0}} = 0
+= \frac{1 + 0}{\sqrt{1 - 0}} = 1
 \end{align*}
 
 \subsubsection{l'Hospital für Folgen (Folge als Funktion)}
@@ -166,7 +192,7 @@ den Grenzwert $\infty$, also wenden wir die Regel von l'Hospital an.
 
 \begin{align*}
 \ldots &= \lim_{x \to \infty} \frac{(\ln x)'}{(x^2)'} = \lim_{x \to \infty}
-\frac{\frac{1}{x}}{2x} = \lim_{x \to \infty} \frac{1}{x^2} = 0
+\frac{\frac{1}{x}}{2x} = \lim_{x \to \infty} \frac{1}{2x^2} = 0
 \end{align*}
 
 Somit geht auch die Folge gegen 0.
@@ -174,12 +200,8 @@ Somit geht auch die Folge gegen 0.
 \subsubsection{Wurzeln}
 $\lim_{n \to \infty} (\sqrt{n^2 + an + 1} - \sqrt{n^2 + 1})$
 
-Hier wendet man die dritte binomische Formel an, um den grenzwert zu berechnen.
-Die einzelnen Terme streben jeweils gegen $\infty$ und $\infty - \infty$ kann
-nicht berechnet werden.
-
-\underline{Achtung} auf die Vorzeichen beim Anwenden der Regel!
-
+Die einzelnen Terme streben jeweils gegen unendlich und \\
+$(\infty - \infty)$ kann nicht direkt berechnet werden. Deshalb macht man hier eine Brucherweiterung \underline{mit geändertem Vorzeichen} in der Mitte!
 \begin{align*}
 &= \lim_{n \to \infty} (\sqrt{n^2 + an + 1} - \sqrt{n^2 + 1}) \cdot
 \left(\frac{\sqrt{n^2 + an + 1} + \sqrt{n^2 + 1}}{\sqrt{n^2 + an + 1} +
@@ -196,9 +218,14 @@ nun verwenden wir den Tipp für Brüche und kürzen das $n$ heraus
 \sqrt{1 + \frac{1}{n^2}}} = \frac{a}{1 + 1} = \frac{a}{2}
 \end{align*}
 
+\subsubsection{Einschliesskriterium}
+Vereinfache $a_n$ zu $b_n$ und $c_n$ so dass gilt: $b_n \leq a_n \leq c_n$. \\
+Die Grenzwerte von $b_n$ und $c_n$ sollten einfach auszurechnen sein! 
+Wenn $b_n$ und $c_n$ gegen $a$ strebt, dann macht dies auch $a_n$.
+
 \subsubsection{Laufvariable im Exponent}
 $\lim_{x \to 0} (3 - |x|)^{\frac{\sin(x)}{x}}$\newline
-$\Rightarrow (3 - |x|)^{\frac{\sin(x)}{x}} = e^{\frac{\sin(x)}{x} \cdot \ln(3 -
+Verwende $(x = e^{\ln x})$ Also: $(3 - |x|)^{\frac{\sin(x)}{x}} = e^{\frac{\sin(x)}{x} \cdot \ln(3 -
 |x|)}$\newline
 $\Rightarrow 
 \lim_{x \to 0} (3 - |x|)^{\frac{\sin(x)}{x}} = \lim_{x \to 0}e^{\frac{\sin(x)}{x} \cdot \ln(3 -
@@ -213,22 +240,3 @@ Hat man zum Beispiel die Folge $s_n = 1 + \frac{1}{3} + \frac{1}{5} + ... + \fra
 einzelnen Therme gruppieren und abschätzen in diesem Fall z.B. mit $\frac{1}{4}$ (zweiter Therm, dritter und vierter Therm,
 fünfter bis achter Therm, nächste 8 Therme, etc.). Wir erhalten dann $s_{2^k} \geq 1 + \frac{k}{4}$ und sehen somit das die 
 Reihe nicht beschränkt ist und somit auch nicht konvergiert.
-
-\subsection{Cauchy-Folgen}\index{Cauchy-Folge}
-\begin{definition}[Cauchy-Folge]
-Sei $(a_n)_{n \in \N}$ eine Folge in $\R$. $(a_n)_{n \in \N}$ heisst \textbf{Cauchy-Folge}, falls gilt
-\begin{align*}
-\forall \epsilon > 0 \; \exists n_n = n_0(\epsilon) \in \N \; \forall n, l \geq n_0: |a_n - a_l| < \epsilon
-\end{align*}
-\end{definition}
-
-Die Definition sagt grundsätzlich aus, dass ab einem $n_0(\epsilon)$ (also einem Anfang $n_0$, der abhängig von $\epsilon$ ist)
-die Folgeglieder nur noch $\epsilon$ Abstand zu einander haben. Also der Abstand beliebig klein wird zwischen Folgegliedern.
-
-\begin{satz}[Cauchy-Kriterium]
-Für $(a_n)_{n \in \N} \subset \R$ sind äquivalent:
-\begin{itemize}
-	\item $(a_n)_{n \in \N}$ ist konvergent
-	\item $(a_n)_{n \in \N}$ ist Cauchy-Folge
-\end{itemize}
-\end{satz}

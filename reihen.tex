@@ -5,19 +5,18 @@ Eine Reihe $\sum_{n = 1}^\infty a_n$ ist \underline{konvergent} mit Grenzwert
 $s$, wenn die Folge der \underline{Partialsummen} $(S_m)$, $S_m :=
 \sum_{n=1}^m a_n$ gegen $s$ konvergiert. Also wenn gilt: $S_m \to s$.
 
-\begin{definition}[$\epsilon$-Kriterium]
-	$\forall \epsilon > 0 \; \exists n_0 \in \N \; \forall m \geq n_0: \left|
+\begin{definition}[$\epsilon$-Kriterium] Die Reihe konvergiert genau dann wenn gilt:
+	$\; \forall \epsilon > 0 \; \exists n_0 \in \N \; \forall m \geq n_0: \left|
 	\sum_{n=1}^m a_n - s \right| < \epsilon$
 \end{definition}
 
 \begin{definition}[Absolute Konvergenz]\index{Konvergenz}
-Wenn auch die Reihe der Absolutbeträge $\sum_{n=1}^\infty |a_n|$ konvergiert, so
-heisst die Reihe absolut konvergent. Aus der absoluten Konvergenz folgt
-Konvergenz. Der Umkehrschluss ist nicht möglich.
+Eine Reihe $\sum_{n=1}^\infty a_n$ heisst absolut konvergent falls $\sum_{n=1}^\infty |a_n| < \infty$. \\
+Merke: absolute Konvergenz $\Rightarrow$ Konvergenz.
 \end{definition}
 
 \subsection{Rechenregeln Reihen}
-Für \underline{konvergente} Reihen gilt:
+Für \underline{absolut konvergente} Reihen gilt:
 \[
 	\sum_{n=1}^\infty a_n = A, \sum_{n=1}^\infty b_n = B \Rightarrow
 	\sum_{n=1}^\infty (\alpha a_n + \beta b_n) = \alpha A + \beta B
@@ -63,13 +62,18 @@ Wenn gilt:
 \end{itemize}
 \ldots dann konvergiert $\sum_{n=1}^\infty a_n$
 
-\paragraph{Majorantenkriterium}
+\paragraph{Majorantenkriterium / Konvergenzkriterium}
 Ist $|a_n| \leq b_n$ und $\sum_{n=1}^\infty b_n$ konvergent, so konvergiert
 $\sum_{n=1}^\infty a_n$ absolut.
 
-\paragraph{Minorantenkriterium}
+\paragraph{Minorantenkriterium / Divergenzkriterium}
 Ist $a_n \geq b_n \geq 0$ und $\sum_{n=1}^\infty b_n$ divergent, so divergiert
 $\sum_{n=1}^\infty a_n$
+
+\paragraph{Keine Nullfolge / Divergenzkriterium}
+Wenn $a_n$ keine Nullfolge ist, divergiert die Reihe! \\
+Also wenn gilt: $\lim_{n \to \infty} a_n \neq 0$ oder $\lim_{n \to \infty} |a_n| \neq 0$ \\
+Beachte: Aussage gilt nur in diese Richtung! Auch wenn $a_n$ eine Nullfolge ist, kann die Reihe immer noch divergieren!
 
 \subsection{Potenzreihe}
 Die Potenzreihe hat die allgemeine Form
@@ -87,3 +91,14 @@ Konvergenzradius $r$:
 $r = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{\|a_n\|}}$ (Wurzelkriterium) bzw.
 $r = \lim_{n\to\infty} \left | \frac{a_n}{a_{n+1}} \right |$
 (Quotientenkriterium).
+
+\subsection{Konvergenztipps \& Beispiele}
+\paragraph{Punkte einsetzen}
+Manchmal lässt sich die Reihe nicht direkt ausrechnen, dann kann es nützlich sein, ein paar Summenglieder auszurechnen um zu schauen wie sich die Reihe entwickelt. Im besten Fall lässt sich dann die Summe durch den Grenzwert ersetzen oder man muss noch den Grenzwert der neuen Folge berechnen. 
+\[
+	\sum_{n=2}^\infty \frac{1}{n-1} - \frac{1}{n} = \left( 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \ldots + \frac{1}{n-1} - \frac{1}{n} \right) = 1 - \frac{1}{n}
+\]
+\[
+	\lim_{n \to \infty} 1 - \frac{1}{n} = 1
+\]
+
