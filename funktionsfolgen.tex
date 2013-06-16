@@ -1,20 +1,32 @@
 \section{Funktionsfolgen}
-\subsection{Definition}
-Eine Funktionsfolge $(f_n)$ \underline{konvergiert punktweise} auf dem
-Definitionsbereich $I$ gegen $f$, wenn für jedes $x \in I$ gilt $f_n(x) \to f(x)$.
-\[
-\forall \epsilon > 0 \; \forall x \in I \; \exists n_0 \in \N: n \geq n_0
-\Rightarrow |f(x) - f_n(x)| < \epsilon
-\]
+Wenn $f_n : \Omega \to \R$ eine Funktion ist (für jedes $n \in \N$) dann nennt man $f_n$ eine Funktionenfolge. Dh: Eine Folge von Funktionen.
 
-Die Folge \underline{konvergiert gleichmässig} auf $I$ gegen $f$, wenn
-$\sup_{x\in I} |f_n(x) - f(x)| \to 0$ gilt. Das bedeutet, dass die obere
-Definition für alle $x$ \underline{dasselbe} $n_0$ verwendet und nicht jeweils
-verschiedene:
+\begin{definition}[punktweise konvergent] \index{punktweise konvergent}
+Die Funktionenfolge $f_n$ \underline{konvergiert punktweise} gegen $f$, falls gilt:
 \[
-\forall \epsilon > 0 \; \exists n_0 \in \N \; \forall x \in I: n \geq n_0
+	\lim_{n \to \infty} f_n(x) = f(x) \hspace{1cm} \text{für} \; \forall x \in \Omega
+\]
+Formal: 
+\[
+\forall \epsilon > 0 \; \forall x \in \Omega \; \exists n_0 \in \N: n \geq n_0
 \Rightarrow |f(x) - f_n(x)| < \epsilon
 \]
+\end{definition}
+
+
+\begin{definition}[gleichmässig konvergent] \index{gleichmässig konvergent}
+Die Funktionenfolge $f_n$ \underline{konvergiert gleichmässig} gegen $f$, falls gilt:
+\[
+	\lim_{n \to \infty} \sup_{x \in \Omega} |f_n(x) - f(x)| = 0 
+\]
+Formal: 
+\[
+\forall \epsilon > 0 \; \exists n_0 \in \N \; \forall x \in \omega: n \geq n_0
+\Rightarrow |f(x) - f_n(x)| < \epsilon
+\]
+Das bedeutet, dass die obere Definition für alle $x$ \underline{dasselbe} $n_0$ verwendet und nicht jeweils
+verschiedene!
+\end{definition}
 
 \underline{Wichtig}: gleichmässige Konvergenz $\Rightarrow$ punktweise
-Konvergenz. Nicht aber andersrum!
+Konvergenz.

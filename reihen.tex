@@ -85,12 +85,19 @@ $x_0$ ist der Entwicklungspunkt der Potenzreihe und $(a_n)_{n \in \N}$ eine
 beliebige Folge.
 
 \subsubsection{Konvergenzradius}
-Die Berechnung des Konvergenzradius ist für solche Reihen einfacher, da der
+Die Berechnung des Konvergenzradius ist für Potenzreihen einfacher, da der
 Faktor $(x - x_0)$ nicht analysiert werden muss. Entsprechend gilt für den
-Konvergenzradius $r$:
-$r = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{\|a_n\|}}$ (Wurzelkriterium) bzw.
-$r = \lim_{n\to\infty} \left | \frac{a_n}{a_{n+1}} \right |$
-(Quotientenkriterium).
+Konvergenzradius $r$ nach Wurzel- bzw. Quotientenkriterium:\\
+$r = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{\|a_n\|}}$ bzw.
+$r = \lim_{n\to\infty} \left | \frac{a_n}{a_{n+1}} \right |$ \\
+Dann gilt:
+$
+\begin{cases}
+	|x - x_0| < r & \Rightarrow \text{ Potenzreihe konvergiert} \\
+	|x - x_0| = r & \Rightarrow \text{ keine Aussage}\\
+	|x - x_0| > r & \Rightarrow \text{ Potenzreihe divergiert}
+\end{cases}
+$
 
 \subsection{Konvergenztipps \& Beispiele}
 \paragraph{Brüche}

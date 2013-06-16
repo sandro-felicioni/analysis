@@ -16,12 +16,12 @@ Der Grenzwert existiert nicht wenn die Funktion eine Division durch 0 enhält od
 wenn er gegen $\infty$, resp. $-\infty$ divergiert.
 
 \subsection{(Punktweise) Stetigkeit}
-Die Definition für punktweise Stetigkeit ist die gleiche, wie die für
-$\lim_{x \to a} f(x) = b$ (siehe die Definition gerade über diesem Kapitel).
+\begin{definition}[(Punktweise) Stetig] \index{(Punktweise) Stetig}
+Die Funktion $f$ heisst an der Stelle $a \in \Omega$ (punktweise) stetig, falls $\lim_{x \to a} f(x) = f(a)$. Dh: wenn der Grenzwert an der a existiert und er gleich dem Funktionswert an der Stelle a ist!
+\end{definition}
 
 Charakterisierungen der Stetigkeit von $f$ im Punkt $a$:
 \begin{itemize}
-	\item $\lim_{x \to a} f(x) = f(a)$ ist die Definition
 	\item Man kann $\lim_{x \to a} f(x)$ auch als $f(\lim_{x \to a} x)$ schreiben.
 	Also die Reihenfolge zwischen Bildung des Grenzwertes und der Anwendung der
 	Funktion vertauschen. Beispiel: $\lim_{x \to \infty} \sin\frac{1}{x} =
@@ -45,7 +45,7 @@ Es gelten folgenden Eigenschaften:
 \subsection{Gleichmässige Stetigkeit}
 Sei $f: D \to \R$, $D \subseteq \R$, dann ist $f$ genau dann stetig wenn gilt:
 \[
-\forall \epsilon > 0 \exists \delta > 0 \forall x,x_0 \in D: |x - x_0| < \delta
+\forall \epsilon > 0 \; \exists \delta > 0 \; \forall x,x_0 \in D: |x - x_0| < \delta
 \Rightarrow |f(x) - f(x_0)| < \epsilon
 \]
 
@@ -76,10 +76,10 @@ L_2 < L_4 < L_6 < ... < L_5 < L_3 < L_1
 
 \subsection{Stetigkeit, Differenzierbarkeit, Integrierbarkeit}
 Sei $f$ eine Funktion, so gilt:
-
-$f$ differenzierbar $\Rightarrow$ $f$ stetig $\Rightarrow$ $f$ integrierbar\\
-\\
-$f$ \emph{nicht} integrierbar $\Rightarrow$ $f$ \emph{nicht} stetig $\Rightarrow$ $f$\emph{nicht} differenzierbar  
+\begin{itemize}
+	\item $f$ differenzierbar $\Rightarrow$ $f$ stetig $\Rightarrow$ $f$ integrierbar
+	\item $f$ \emph{nicht} integrierbar $\Rightarrow$ $f$ \emph{nicht} stetig $\Rightarrow$ $f$\emph{nicht} diffbar
+\end{itemize}
 
 \subsection{Abhängigkeit der Stetigkeitsbegriffe}
 Sei $f$ eine reelle Funktion, so gilt:
@@ -93,19 +93,18 @@ Sei $a \in \R \cup \{\infty, -\infty\}$. Es hat zu gelten:
   \item $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0 \text{ oder } \pm\infty$
   \item In der Nähe von $a$ ist $g'(x) \neq 0$
 \end{itemize}
-
 Dann ist
 \[
 \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a}
 \frac{f'(x)}{g'(x)}
 \]
-
-Diese Regel kann man mehrfach anwenden hintereinander. \underline{Achtung:} Es
-kann sein, dass der Limes $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ nicht existiert,
-aber von $\lim_{x \to a} \frac{f(x)}{g(x)}$ trotzdem.
+Diese Regel kann man mehrfach anwenden hintereinander.
 
 
-\subsection{Tips zur Stetigkeit}
+\subsection{Stetig ergänzbar}
+Die Funktion $f$ heisst an der Stelle $a \notin \Omega$ stetig ergänzbar, falls $\lim_{x \to a} f(x) = b$ existiert. Also genau dann wenn die Grenzwerte von allen Seiten (Bsp. links/rechts in $\R^1$) gegen den gleichen Wert streben!
+
+\textbf{Tip:}
 \begin{itemize}
   \item Um zu zeigen das eine Funktion mit mehreren Parameter in einem Punkt \emph{nicht} stetig ergänzbar ist
 	hilft es häufig die Parameter gleich zu setzen. (Häufig geht dann der Limes nicht gegen den gesuchten Punkt

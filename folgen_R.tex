@@ -218,11 +218,6 @@ nun verwenden wir den Tipp für Brüche und kürzen das $n$ heraus
 \sqrt{1 + \frac{1}{n^2}}} = \frac{a}{1 + 1} = \frac{a}{2}
 \end{align*}
 
-\subsubsection{Einschliesskriterium}
-Vereinfache $a_n$ zu $b_n$ und $c_n$ so dass gilt: $b_n \leq a_n \leq c_n$. \\
-Die Grenzwerte von $b_n$ und $c_n$ sollten einfach auszurechnen sein! 
-Wenn $b_n$ und $c_n$ gegen $a$ strebt, dann macht dies auch $a_n$.
-
 \subsubsection{Laufvariable im Exponent}
 $\lim_{x \to 0} (3 - |x|)^{\frac{\sin(x)}{x}}$\newline
 Verwende $(x = e^{\ln x})$ Also: $(3 - |x|)^{\frac{\sin(x)}{x}} = e^{\frac{\sin(x)}{x} \cdot \ln(3 -
@@ -233,6 +228,18 @@ $\Rightarrow
 $\Rightarrow \lim_{x \to 0}\frac{\sin(x)}{x}\cdot \ln(3-|x|) = \ln(3)$\newline
 $\Rightarrow \lim_{x \to 0}(3 - |x|)^{\frac{\sin(x)}{x}} = e^{\ln(3)} = 3$
 
+\subsubsection{Term erweitern}
+Oft steht ein Term da, der annähernd so aussieht wie etwas das wir bereits kennen. Durch Term/Bruch - Erweiterung lässt er sich oft auf eine bekannte Form bringen, welches separat gelöst werden kann lösen.
+\[
+	\lim_{x \to 0} \frac{\sin |x|}{\sqrt{|x|}} = 
+	\lim_{x \to 0+} \frac{\sqrt{x} \cdot \sin x}{\sqrt{x} \cdot \sqrt{x}} =
+	\lim_{x \to 0+} \sqrt{x} \cdot \frac{\sin x}{x} = 0 \cdot 1 = 0
+\]
+
+\subsubsection{Einschliesskriterium}
+Vereinfache $a_n$ zu $b_n$ und $c_n$ so dass gilt: $b_n \leq a_n \leq c_n$. \\
+Die Grenzwerte von $b_n$ und $c_n$ sollten einfach auszurechnen sein! 
+Wenn $b_n$ und $c_n$ gegen $a$ strebt, dann macht dies auch $a_n$.
 
 \subsubsection{Gruppieren}
 %Aus Analysis II (2012) Serie 1 Aufgabe 2b
