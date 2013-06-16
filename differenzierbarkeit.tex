@@ -12,11 +12,22 @@ auch $f \in C^1(I)$. $C^n(I)$ ist die Menge der $n$-mal stetig differenzierbaren
 Funktionen über dem Intervall $I$.
 
 \subsection{Mittelwertsatz (Satz von Lagrange)}
-Ist $f$ au $[a,b]$ stetig und in $]a, b[$ differenzierbar, so gibt es ein $c
-\in ]a,b[$ mit
-\[
-\frac{f(b) - f(a)}{b-a} = f'(c)
-\]
+Ist $f$ auf $[a,b]$ stetig und in $]a, b[$ differenzierbar, so gibt es ein $c
+\in ]a,b[$ mit\\
+
+% 2 columns (don't insert a new linew between minipage definition, otherwise the layout will break!)
+% In order to place the text on top/middle of column next to the image \vspace{0pt} must be inserted!
+% Otherwise the text will appear on bottom! Go figure..
+\begin{minipage}{0.25\textwidth}
+	\vspace{0pt}
+	\[
+	\frac{f(b) - f(a)}{b-a} = f'(c)
+	\]
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+		\vspace{0pt}
+	\includegraphics[scale=0.15]{mittelwertsatz.png}
+\end{minipage}
 
 \subsubsection{Beispiel: Ungleichungen}
 Zu zeigen: $e^x(y-x) < e^y - e^x < e^y(y-x), \; \forall x < y$:
@@ -40,32 +51,29 @@ Insbesondere besitzt die Funktion $f$ wenn sie streng monoton wachsend/fallend i
 weder kritische Punkte, noch lokale oder globale Extrema.
 
 \subsection{Konvexität}
-\begin{definition}[konvex]
-Eine Funktion $f$ ist konvex, wenn $\forall a,b: f(\frac{a + b}{2}) \leq \frac{f(a) + f(b)}{2}$
-\end{definition}
 
-\begin{definition}[konkav]
-Eine Funktion $f$ ist konkav, wenn $\forall a,b: f(\frac{a + b}{2}) \geq \frac{f(a) + f(b)}{2}$
+\begin{definition}[konvex]
+Eine Funktion $f: \Omega \to \R$ heisst konvex ($\cup$) , wenn $\forall x_1,x_2 \in \Omega$ und $t \in [0, 1]$ gilt:\\
+$f(x_1 + t(x_2 - x_1)) \leq f(x) + t(f(x_2) - f(x_1))$
 \end{definition}
 
 \underline{Anschaulich:} Anschaulich bedeutet das, dass bei einer konvexen Funktion
-der Graph immer unter und bei einer konkaven stets über der Sekante liegt. Der Graph
-konvexer Funktionen ist linksgekrümmt, der konkaver Funktionen ist rechtsgekrümmt.
+der Graph immer unter der Sekante liegt. Der Graph konvexer Funktionen ist linksgekrümmt
 
 \begin{itemize}
 	\item $f'' \geq 0 \Leftrightarrow f$ konvex
-	\item $f'' \leq 0 \Leftrightarrow f$ konkav
 \end{itemize}
 
-\subsubsection{Extremstellen}
+\subsection{Extremstellen}
+Extrema sind lokale und globale Maxima und Minima. 
 \begin{itemize}
+	\item Extrema bei $x_0 \Rightarrow f'(x_0) = 0$
 	\item $f'(x_0) = 0, f''(x_0) > 0 \Rightarrow$ Minimum bei $x_0$
 	\item $f'(x_0) = 0, f''(x_0) < 0 \Rightarrow$ Maximum bei $x_0$
-	\item $f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Wendepunkt in $x_0$
-	\item $f'(x_0) = 0, f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Sattelpunkt in
-  	$x_0$
-	\item Extrema bei $x_0 \Rightarrow f'(x_0) = 0$
+	\item $f'(x_0) = 0, f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Sattelpunkt in $x_0$
+	\item \hspace{1.6cm} $f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Wendepunkt in $x_0$
 \end{itemize}
+Merke: Jeder Sattelpunkt ist auch ein Wendepunkt!
 
 \subsubsection{Beispiel Wendepunkt berechnen}
 %Von http://www.frustfrei-lernen.de/mathematik/wendepunkt-berechnen.html
@@ -105,7 +113,7 @@ $(f^{-1})'(y)$ existiert für alle $y \in f(I)$ mit $f'(f^{-1}(y)) \neq 0)$, und
 (\textit{Folgendes gilt auch für streng monoton fallende Funktionen})
 
 Sei $f: [a, b] \to \R$ stetig und streng monoton wachsend. Es sei dann
-$A = f(a), b = f(b)$, dann gilt: $f: [a,b] \to [A, B]$ ist bijektiv.
+$A = f(a), B = f(b)$, dann gilt: $f: [a,b] \to [A, B]$ ist bijektiv.
 
 $f$ hat also eine Umkehrfunktion $f^{-1}: [A,B] \to [a,b]$ und diese ist stetig
 und streng monoton wachsend.
