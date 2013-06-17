@@ -2,18 +2,17 @@
 \subsection{Definition}
 $f$ ist in $a \in I$ differenzierbar mit der Ableitung $f'(a)$, wenn
 \[
-\lim_{x \to a} \frac{f(x) - f(a)}{x - a} =: f'(a) = \frac{d}{dx}f(a)
+\lim_{x \to a} \frac{f(x) - f(a)}{x - a} =: f'(a) = \frac{d}{dx}f(a) \hspace{1cm} \text{existiert.}
 \]
-existiert.
 
-Ist $f'$ stetig im Definitionsbereich, so heisst $f$ stetig differenzierbar. Man
-kann also $f$ differenzieren und bekommt mit $f'$ eine stetige Funktion. Es gilt
+Ist $f'$ stetig im Definitionsbereich, so heisst $f$ stetig differenzierbar. Wenn man also $f$ differenziert
+ bekommt man mit $f'$ eine stetige Funktion. Es gilt
 auch $f \in C^1(I)$. $C^n(I)$ ist die Menge der $n$-mal stetig differenzierbaren
 Funktionen über dem Intervall $I$.
 
 \subsection{Mittelwertsatz (Satz von Lagrange)}
 Ist $f$ auf $[a,b]$ stetig und in $]a, b[$ differenzierbar, so gibt es ein $c
-\in ]a,b[$ mit\\
+\in ]a,b[$ mit
 
 % 2 columns (don't insert a new linew between minipage definition, otherwise the layout will break!)
 % In order to place the text on top/middle of column next to the image \vspace{0pt} must be inserted!
@@ -29,16 +28,24 @@ Ist $f$ auf $[a,b]$ stetig und in $]a, b[$ differenzierbar, so gibt es ein $c
 	\includegraphics[scale=0.15]{mittelwertsatz.png}
 \end{minipage}
 
-\subsubsection{Beispiel: Ungleichungen}
-Zu zeigen: $e^x(y-x) < e^y - e^x < e^y(y-x), \; \forall x < y$:
+{\small
+\textbf{Beispiel:} 
+Zeige mit dem Mittelwertsatz dass die Gleichung:\\
+$x^2 = x \sin(x) + \cos(x)$ nicht mehr als 2 reelle Lösungen besitzt.
 
+Die Lösungen der Gleichung sind die Nullstellen von:\\ $f(x) = x^2 - x \sin(x) - \cos(x)$. 
+$f$ ist stetig differenzierbar, somit ist:\\ $f'(x) = 2x - x \cos(x) = x(2 - \cos(x))$ \hspace{0.4cm} achte: $2 - \cos(x) > 0 \; \forall x$\\
+Somit hat $f'(x)$ nur eine Nullstelle (x = 0). Also kann $f$ maximal 2 Nullstellen haben. Denn wenn $f$ mehr als 2 Nullstellen hätte, dann gäbe es nach dem Mittelwertsatz in $f'$ auch mehr als eine Nullstelle. Widerspruch, wir wissen dass es nur eine gibt! Wieso? Weil wenn $a < b < d$ Nullstellen von f sind, dann nach dem Mittelwertsatz folgt, dass $\exists c_1, c_2$ mit $\frac{f(b) - f(a)}{b-a} = f'(c_1)$ und $\frac{f(d) - f(b)}{d-b} = f'(c_2)$ wobei also $c_1, c_2$ Nullstellen von $f'$ sind!
+}
+%\subsubsection{Beispiel: Ungleichungen}
+%Zu zeigen: $e^x(y-x) < e^y - e^x < e^y(y-x), \; \forall x < y$:
 
-Der Mittelwertsatz wird auf die Exponentialfunktion angewendet. Damit gilt für
-ein Paar von Zahlen $x < y$ ein $u \in ]x,y[$, für welches gilt: $\frac{e^y
-- e^x}{y-x} = e^u$. Weil die Exponentialfunktion in $\R$ streng monoton wachsend
-ist, gilt $e^x < e^u < e^y$ und somit gilt: $e^x < \frac{e^y-e^x}{y-x} < e^y$.
-Multipliziert man nun mit dem Nenner des Bruchs bekommt man: $e^x (y-x) < e^y -
-e^x < e^y(y-x)$.
+%Der Mittelwertsatz wird auf die Exponentialfunktion angewendet. Damit gilt für
+%ein Paar von Zahlen $x < y$ ein $u \in ]x,y[$, für welches gilt: $\frac{e^y
+%- e^x}{y-x} = e^u$. Weil die Exponentialfunktion in $\R$ streng monoton wachsend
+%ist, gilt $e^x < e^u < e^y$ und somit gilt: $e^x < \frac{e^y-e^x}{y-x} < e^y$.
+%Multipliziert man nun mit dem Nenner des Bruchs bekommt man: $e^x (y-x) < e^y -
+%e^x < e^y(y-x)$.
 
 \subsection{Monotonie}
 \begin{itemize}
@@ -47,25 +54,22 @@ e^x < e^y(y-x)$.
 	\item $f' < 0 \Rightarrow f$ streng monoton fallend
 	\item $f' \leq 0 \Leftrightarrow f$ monoton fallend
 \end{itemize}
-Insbesondere besitzt die Funktion $f$ wenn sie streng monoton wachsend/fallend ist
-weder kritische Punkte, noch lokale oder globale Extrema.
 
-\subsection{Konvexität}
+%\subsection{Konvexität}
+%\begin{definition}[konvex]
+%Eine Funktion $f: \Omega \to \R$ heisst konvex ($\cup$) , wenn $\forall x_1,x_2 \in \Omega$ und $t \in [0, 1]$ gilt:\\
+%$f(x_1 + t(x_2 - x_1)) \leq f(x) + t(f(x_2) - f(x_1))$
+%\end{definition}
 
-\begin{definition}[konvex]
-Eine Funktion $f: \Omega \to \R$ heisst konvex ($\cup$) , wenn $\forall x_1,x_2 \in \Omega$ und $t \in [0, 1]$ gilt:\\
-$f(x_1 + t(x_2 - x_1)) \leq f(x) + t(f(x_2) - f(x_1))$
-\end{definition}
+%\underline{Anschaulich:} Anschaulich bedeutet das, dass bei einer konvexen Funktion
+%der Graph immer unter der Sekante liegt. Der Graph konvexer Funktionen ist linksgekrümmt
 
-\underline{Anschaulich:} Anschaulich bedeutet das, dass bei einer konvexen Funktion
-der Graph immer unter der Sekante liegt. Der Graph konvexer Funktionen ist linksgekrümmt
-
-\begin{itemize}
-	\item $f'' \geq 0 \Leftrightarrow f$ konvex
-\end{itemize}
+%\begin{itemize}
+%	\item $f'' \geq 0 \Leftrightarrow f$ konvex
+%\end{itemize}
 
 \subsection{Extremstellen}
-Extrema sind lokale und globale Maxima und Minima. 
+Extrema sind lokale und globale Maxima und Minima. $x_0$ ist ein kritischer Punkt von $f$, falls $x_0$ ein Randpunkt von $I$ ist (Bsp. $a$ von $[a, b]$), oder $f'(x_0) = 0$ oder $f'$ in $x_0$ nicht definiert ist.
 \begin{itemize}
 	\item Extrema bei $x_0 \Rightarrow f'(x_0) = 0$
 	\item $f'(x_0) = 0, f''(x_0) > 0 \Rightarrow$ Minimum bei $x_0$
@@ -73,7 +77,13 @@ Extrema sind lokale und globale Maxima und Minima.
 	\item $f'(x_0) = 0, f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Sattelpunkt in $x_0$
 	\item \hspace{1.6cm} $f''(x_0) = 0, f'''(x_0) \neq 0 \Rightarrow$ Wendepunkt in $x_0$
 \end{itemize}
-Merke: Jeder Sattelpunkt ist auch ein Wendepunkt!
+\textbf{Tip:}
+\begin{itemize}
+	\item Jeder Sattelpunkt ist auch ein Wendepunkt!
+	\item Wenn $f$ streng monoton wachsend/fallend ist, besitzt f weder kritische Punkte, noch lokale oder globale Extrema.
+	\item Um die maximale Anzahl Nullstellen von $f$ herauszufinden, kann der Mittelwertsatz verwendet werden. Siehe Beispiel.
+\end{itemize}
+
 
 \subsubsection{Beispiel Wendepunkt berechnen}
 %Von http://www.frustfrei-lernen.de/mathematik/wendepunkt-berechnen.html
@@ -119,4 +129,4 @@ $f$ hat also eine Umkehrfunktion $f^{-1}: [A,B] \to [a,b]$ und diese ist stetig
 und streng monoton wachsend.
 \end{satz}
 
-\underline{Tipp:} Differentierbare Funktionen sind stetig.
+%\underline{Tipp:} Differentierbare Funktionen sind stetig.
