@@ -1,6 +1,34 @@
 \section{Differentialgleichung (DGL)}
-\subsection{Lineare DGL 1. Ordnung ($y' + f(x) \cdot y = g(x)$)}
-\subsubsection{Variation der Konstanten}
+\subsection{Lineare DGL 1. Ordnung}
+\subsubsection{Separierbare DGL}
+Eine Differentialgleichung für die Funktion $y$ heisst separierbar, wenn sie auf diese Form gebracht werden kann.
+\[
+	y' = p(x) \cdot g(y) \hspace{1cm} \text{Merke: $y' = \frac{dy}{dx}$}
+\]
+Vorgehen:
+\begin{enumerate}
+	\item DGL auf obige Form bringen.
+
+	\item $y'$ mit $\frac{dy}{dx}$ ersetzen und Variabeln trennen: $\frac{1}{g(y)} \, dy = p(x) \, dx$
+
+	\item Beidseitig integrieren: $\int \frac{1}{g(y)} \, dy = \int p(x) \, dx$
+
+	\item Nach $y$ auflösen
+\end{enumerate}
+\textbf{Merke:} Weitere Lösungen kann die Gleichung $g(y) = 0$ liefern, muss es aber nicht. Diese Lösungen sind konstanten (also $\in \R$).
+
+\textbf{Beispiel:} $y' = \cos(x) \cdot y$
+\begin{align*}
+	\frac{dy}{dx} = \cos(x) \cdot y \Leftrightarrow \frac{1}{y} \, dy &= \cos(x) \, dx\\
+	\int \frac{1}{y} \, dy &= \int \cos(x) \, dx \\
+	\ln(y) &= \sin(x) + \ln(C)\\
+	y &= e^{\sin(x) + \ln(C)} \\
+	 &= C \cdot e^{\sin(x)}
+\end{align*}
+{\small Allgemeiner Hinweis: Bei logarithmischer Terme, wird Integrationskonstante zweckgemäss $\ln(C)$ gewählt (damit später C $\pm$ sein kann). Beachte das $y = 0$ auch eine Lösung ist!}
+
+
+\subsubsection{Lineare DGL 1. Ordnung mit variablen Koeffizienten}
 %Nach http://de.wikipedia.org/wiki/Variation_der_Konstanten#Motivation
 Sei:\[
 F(x) = \int f(t) dt.

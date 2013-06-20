@@ -50,28 +50,36 @@ $\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{y}{x}$
 \subsection{Trigonometrische Funktionen \& Additionstheorem}
 \begin{itemize}[leftmargin=*]
 	\item $\sin^2(x) + \cos^2(x) = 1$
-	\item $\frac{1}{\cos^2(\alpha)} = 1 + \tan^2(\alpha)$
+	
+	% sinus equations
 	\item $\sin(90^\circ \pm \alpha) = \cos(\alpha)$
 	\item $\sin(180^\circ \pm \alpha) = \mp \sin(\alpha)$
+	\item $\sin(\alpha \pm \beta) = \sin(\alpha)\cos(\beta) \pm	\cos(\alpha)\sin(\beta)$
+	\item $\sin(2\alpha) = 2 \sin(\alpha)\cos(\alpha)$
+	\item $\sin(\alpha)^2 = \frac{1}{2} (1 - \cos(2\alpha))$
+
+	% cosinus equations
 	\item $\cos(90^\circ \pm \alpha) = \mp \sin(\alpha)$
 	\item $\cos(180^\circ \pm \alpha) = - \cos(\alpha)$
-	\item $\sin(\alpha \pm \beta) = \sin(\alpha)\cos(\beta) \pm
-	\cos(\alpha)\sin(\beta)$
-	\item $\cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)
-	\sin(\beta)$
-	\item $\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp
-	\tan(\alpha)\tan(\beta)}$
-	\item $\sin(2\alpha) = 2 \sin(\alpha)\cos(\alpha)$
-	\item $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 2 \cos^2(\alpha) - 1
-	= 1 - 2 \sin^2(\alpha)$
+	\item $\cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha) \sin(\beta)$
+	\item $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 2 \cos^2(\alpha) - 1 = 1 - 2 \sin^2(\alpha)$
+	\item $\cos(\alpha)^2 = \frac{1}{2} (1 + \cos(2\alpha))$
+	\item $\frac{1}{\cos^2(\alpha)} = 1 + \tan^2(\alpha)$
+
+	% tangens equations
+	\item $\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha)\tan(\beta)}$
 	\item $\tan(2\alpha) = \frac{2 \tan(\alpha)}{1 - \tan^2(\alpha)}$
 	\item $\tan(\alpha) = \frac{\sin(\alpha)}{\cos{(\alpha)}}$
 \end{itemize}
 
 \subsection{Hyperbelfunktionen}
 \begin{itemize}[leftmargin=*]
-	\item $\sinh(x) = \frac{1}{2}(e^x - e^{-x}) = -i \sin(ix)$
-	\item $\cosh(x) = \frac{1}{2}(e^x + e^{-x}) = \cos(ix)$
+	\item $1 + \sinh(x)^2 = \cosh(x)^2$ $\Leftrightarrow$ $\sqrt{1 + \sinh(x)^2} = \cosh(x)$
+	\item $1 + \sinh(x)^2 = \cosh(x)^2$ $\Leftrightarrow$ $\cosh(x)^2 - \sinh(x)^2 = 1$
+	\item $\sinh(x) = \frac{1}{2}(e^x - e^{-x})$
+	\item $\sinh(x)^2 = \frac{1}{2} (\cosh(2x) - 1)$
+	\item $\cosh(x) = \frac{1}{2}(e^x + e^{-x})$
+	\item $\cosh(x)^2 = \frac{1}{2} (\cosh(2x) + 1)$
 	\item $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x +
 	e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1} = 1 - \frac{2}{e^{2x} + 1}$
 	\item $\arcsinh(x) = \ln(x + \sqrt{x^2 + 1})$
@@ -158,33 +166,46 @@ Es gelte: $\int f(x) \, dx = F(x)$
 \end{itemize}
 \subsubsection{typische Integrale}
 \begin{itemize}[leftmargin=*]
+	% typ: x^n
+	\item $\int x^n \, dx = \frac{x^{n+1}}{n+1}$ \hspace{0.3cm} für $n \neq -1$
+  	\item $\int(ax + b)^n \,dx = \frac{(ax + b)^{n+1}}{(n + 1)a}$ \hspace{0.3cm} für $n \neq -1$
+	\item $\int x(ax+b)^n \,dx = \frac{(ax + b)^{n+2}}{(n+2)a^2} - \frac{b(ax+b)^{n+1}}{(n+1)a^2}$
+
+  	% typ: 1/x resulting in ln
   	\item $\int \frac{1}{x} \,dx = \ln |x|$
 	\item $\int \frac{1}{x^2} \,dx = -\frac{1}{x}$
-  	\item $\int \frac{1}{x+a} \,dx = \ln |x+a|$
+  	\item $\int \frac{1}{a+x} \,dx = \ln |a+x|$
+  	\item $\int \frac{1}{(a+x)^2} \,dx = - \frac{1}{a+x}$
+	\item $\int \frac{1}{ax+b} \,dx = \frac{1}{a} \ln |ax+b|$
+	\item $\int \frac{x}{1 + x^2} \, dx = \frac{1}{2} \ln |1 + x^2|$
+
+	% typ: 1/x resulting in arctan
+	\item $\int \frac{1}{1 + x^2} \, dx = \arctan(x)$
+	\item $\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \arctan(\frac{x}{a})$
+	\item $\int \frac{1}{a^2 - x^2} \,dx = \frac{1}{a} \arctanh(\frac{x}{a})$
+	\item $\int \frac{1}{1 + (a + x)^2} \, dx = \arctan(a + x)$
+	
+	
+	% typ: ln
   	\item $\int \ln(x) \,dx = x(\ln(x) - 1)$
   	\item $\int \ln(ax + b) \,dx = \frac{(a x+b) \ln (a x+b)-a x}{a}$
-  	\item $\int \frac{1}{(x+a)^2} \,dx = - \frac{1}{x+a}$
-	\item $\int \frac{1}{ax+b} \,dx = \frac{1}{a} \ln |ax+b|$
-	\item $\int \frac{1}{1 + x^2} \,dx = \frac{1}{2} \ln |1 + x^2|$
-	\item $\int(ax + b)^n \,dx = \frac{(ax + b)^{n+1}}{(n + 1)a}, (n \neq -1)$
-	\item $\int x(ax+b)^n \,dx = \frac{(ax + b)^{n+2}}{(n+2)a^2} -
-	\frac{b(ax+b)^{n+1}}{(n+1)a^2}$
-	\item $\int \frac{ax + b}{px + q} \,dx = \frac{ax}{p} + \frac{bp - aq}{p^2} \ln
-	|pq+q|$
-	\item $\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \arctan(\frac{x}{a})$
-	\item $\int \frac{1}{a^2 - x^2} \,dx = \frac{1}{2a} \ln \left | \frac{a+x}{a-x}
-	\right |$
+	
+	% typ: sqrt
 	\item $\int \sqrt{x} \,dx = \frac{2}{3}\sqrt{x^3}$
 	\item $\int \frac{1}{\sqrt{x}} \,dx = 2 \sqrt{x}$	
 	%mühsamer kerl der teilweise in prüfungen verwendet wird. Kann man über subsitution von x mit sin(u) lösen.
-	\item $\int \sqrt{1-x^2} \,dx = \frac{1}{2}\left( x\sqrt{1-x^2}+\frac{1}{\sin(x)} \right)$
+	\item $\int \sqrt{1-x^2} \,dx = \frac{1}{2}\left( x\sqrt{1-x^2}+ \arcsin(x) \right)$
+	\item $\int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin(x)$
+	\item $\int \frac{1}{\sqrt{1 + x^2}} \, dx = \arcsinh(x)$
+
 	\item $\int a^{xb + c} \,dx = \frac{a^{bx + c}}{b \log(a)}$
+	\item $\int \frac{ax + b}{px + q} \,dx = \frac{ax}{p} + \frac{bp - aq}{p^2} \ln |pq+q|$
 \end{itemize}
 
 \subsubsection{trionometrische Funktionen}
 \begin{itemize}[leftmargin=*]
-	\item $\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
-	\item $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
+	\item $\int \sin(x) \, dx = - \cos(x)$; \hspace{1cm} $\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
+	\item $\int \cos(x) \, dx = \sin(x)$; \hspace{1cm} $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
 	\item $\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
 	\item $\int \frac{1}{\sin^2 x} \,dx = -\cot x$
 	\item $\int x \sin(ax) \,dx = \frac{\sin(ax)}{a^2} - \frac{x \cos(ax)}{a}$
@@ -200,12 +221,9 @@ Es gelte: $\int f(x) \, dx = F(x)$
 
 \subsubsection{Hyperbelfunktionen}
 \begin{itemize}[leftmargin=*]
-	\item $\int \sinh(ax + b) \,dx = \frac{\cosh(ax + b)}{a}$; $\int \sinh(x) \,dx
-	= \cosh(x)$
-	\item $\int \cosh(ax + b) \,dx = \frac{\sinh(ax + b)}{a}$; $\int \cosh(x) \,dx
-	= \sinh(x)$
-	\item $\int \tan(ax + b) \,dx = \frac{\log(\cosh(ax+b))}{a}$; $\int \tan(x)
-	\,dx = \log(\cosh(x))$
+	\item $\int \sinh(x) \,dx = \cosh(x)$; $\int \sinh(ax + b) \,dx = \frac{\cosh(ax + b)}{a}$
+	\item $\int \cosh(x) \,dx = \sinh(x)$; $\int \cosh(ax + b) \,dx = \frac{\sinh(ax + b)}{a}$
+	\item $\int \tan(x) \,dx = \log(\cosh(x))$; $\int \tan(ax + b) \,dx = \frac{\log(\cosh(ax+b))}{a}$
 \end{itemize}
 
 \subsubsection{Exponentialfunktion}
@@ -218,8 +236,8 @@ Es gelte: $\int f(x) \, dx = F(x)$
 
 \subsection{Reihenentwicklung}
 \begin{itemize}[leftmargin=*]
-	\item $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + \frac{x}{1!} +
-	\frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$
+	\item $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + 
+	\frac{x^4}{4!} + \cdots$
 	\item $\sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} = x -
 	\frac{x^3}{3!} + \frac{x^5}{5!} + \cdots$
 	\item $\cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = 1 -
@@ -410,9 +428,11 @@ $\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1 = 0$.
 	\end{tabular}
 	\end{multicols}
 
-\subsubsection*{Rotationskörper}
-Rotation um die x Achse $V=\pi \int_a^b f(x)^2 dx.$\\
-Rotation um die y Achse $V=2\pi \int_a^b x \cdot f(x) dx.$
+\subsubsection*{Rotationskörper (Volumen / Mantelfläche)}
+Rotation um die x Achse $V =\pi \int_a^b f(x)^2 dx.$\\
+Rotation um die x Achse $M = 2\pi \int_a^b f(x) \, \sqrt{1 + f'(x)^2} dx$\\
+{\small \textbf{Achtung:} Für ganze Fläche muss Deckel dazu berechnet werden!}
+% Rotation um die y Achse $V=2\pi \int_a^b x \cdot f(x) dx$ => falsch!
 
 \subsection{Trigonometrie}
 \subsubsection{Kosinussatz}

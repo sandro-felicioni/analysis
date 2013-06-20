@@ -54,28 +54,34 @@ q > 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ divergiert}
 \]
 
 \paragraph{Leibnizkriterium}
+\vspace{-0.3cm}
+{\small
 Wenn gilt:
 \begin{itemize}
-  \item $(a_n)$ ist alternierende Folge, d.h die Vorzeichen wechseln jedes Mal
+  \item $(a_n)$ ist alternierende Folge, d.h Vorzeichen wechseln jedes Mal
   \item $a_n \to 0$ oder $|a_n| \to 0$
   \item $(|a_n|)$ ist monoton fallend
 \end{itemize}
-\ldots dann konvergiert $\sum_{n=1}^\infty a_n$
+\ldots dann konvergiert $\sum_{n=1}^\infty a_n$}
 
 \paragraph{Majorantenkriterium / Konvergenzkriterium}
+\vspace{-0.2cm}
 Ist $|a_n| \leq b_n$ und $\sum_{n=1}^\infty b_n$ konvergent, so konvergiert
 $\sum_{n=1}^\infty a_n$ absolut.
 
 \paragraph{Minorantenkriterium / Divergenzkriterium}
+\vspace{-0.2cm}
 Ist $a_n \geq b_n \geq 0$ und $\sum_{n=1}^\infty b_n$ divergent, so divergiert
 $\sum_{n=1}^\infty a_n$
 
 \paragraph{Keine Nullfolge / Divergenzkriterium}
+\vspace{-0.2cm}
 Wenn $a_n$ keine Nullfolge ist, divergiert die Reihe! \\
 Also wenn gilt: $\lim_{n \to \infty} a_n \neq 0$ oder $\lim_{n \to \infty} |a_n| \neq 0$ \\
 Beachte: Aussage gilt nur in diese Richtung! Auch wenn $a_n$ eine Nullfolge ist, kann die Reihe immer noch divergieren!
 
 \subsection{Potenzreihe}
+\vspace{-0.2cm}
 Die Potenzreihe hat die allgemeine Form
 \[
 \sum_{n=0}^\infty a_n (x - x_0)^n
@@ -85,6 +91,7 @@ $x_0$ ist der Entwicklungspunkt der Potenzreihe und $(a_n)_{n \in \N}$ eine
 beliebige Folge.
 
 \subsubsection{Konvergenzradius}
+\vspace{-0.2cm}
 Die Berechnung des Konvergenzradius ist für Potenzreihen einfacher, da der
 Faktor $(x - x_0)$ nicht analysiert werden muss. Entsprechend gilt für den
 Konvergenzradius $r$ nach Wurzel- bzw. Quotientenkriterium:\\
@@ -100,14 +107,17 @@ $
 $
 
 \subsection{Konvergenztipps \& Beispiele}
+\vspace{-0.2cm}
 \paragraph{Brüche}
-Bei Brüchen ist es oft sinvoll das Quotientenkriterium anzuwenden. Vorallem wenn Zähler und Nenner nur aus Produkten bestehen, oft lassen sich dann diese Faktoren wieder wegkürzen!
+\vspace{-0.2cm}
+Um zu prüfen ob die Reihe konvergiert, ist es bei Brüchen oft sinvoll das Quotientenkriterium anzuwenden. Vorallem wenn Zähler und Nenner nur aus Produkten bestehen, oft lassen sich dann diese Faktoren wieder wegkürzen!
 \[
 	\sum_{n=1}^\infty \frac{n!}{n^n}: = \frac{(n+1)! \cdot n^n}{(n+1)^{(n+1)} \cdot n!} 
 	= \frac{(n+1) \cdot n^n}{(n+1)^{(n+1)}} = \left( \frac{n}{n+1} \right)^n = \frac{1}{e}
 \]
 
 \paragraph{Punkte einsetzen}
+\vspace{-0.2cm}
 Manchmal lässt sich die Reihe nicht direkt ausrechnen, dann kann es nützlich sein, ein paar Summenglieder auszurechnen um zu schauen wie sich die Reihe entwickelt. Im besten Fall lässt sich dann die Summe durch den Grenzwert ersetzen oder man muss noch den Grenzwert der neuen Folge berechnen. 
 \[
 	\sum_{n=2}^\infty \frac{1}{n-1} - \frac{1}{n} = \left( 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \ldots + \frac{1}{n-1} - \frac{1}{n} \right) = 1 - \frac{1}{n}
@@ -116,3 +126,6 @@ Manchmal lässt sich die Reihe nicht direkt ausrechnen, dann kann es nützlich s
 	\lim_{n \to \infty} 1 - \frac{1}{n} = 1
 \]
 
+\paragraph{Umformen}
+\vspace{-0.2cm}
+Um eine Reihe auszurechnen kann sie oft umgeformt werden (Bsp. Konstante vor Summe) auf eine Reihe von der eine geschlossene Formel bereits bekannt ist. Siehe Formeltafel!

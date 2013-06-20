@@ -143,7 +143,16 @@ Die Berechnung findet in drei Schritten statt:
 \end{enumerate}
 
 \subsection{Bogenlänge}
-Für die Bogenlänge L, auf dem Weg beschrieben durch $x(t)$ und $y(t)$, ergibt sich: \[
-L = \int ds = \int_a^b \sqrt{\dot{x}^2 + \dot{y}^2} dt
+\begin{definition}[Bogenlänge in kartesischen Koordinaten] Die Bogenlänge des Graphen einer stetig differenzierbaren Funktion $f: [a, b] \to \R$ ist definiert durch:
+\[
+	L = \int_a^b \sqrt{1 + (f'(x)^2)}
 \]
+\end{definition}
+
+\begin{definition}[Bogenlänge in Parameterform] Für die Bogenlänge L, auf dem Weg beschrieben durch $x(t)$ und $y(t)$, ergibt sich: 
+\[
+	L = \int ds = \int_a^b \sqrt{\dot{x}^2 + \dot{y}^2} dt
+\]
+\end{definition}
+
 
