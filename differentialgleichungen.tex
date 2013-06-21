@@ -1,34 +1,35 @@
 \section{Differentialgleichung (DGL)}
-\subsection{Lineare DGL 1. Ordnung}
-\subsubsection{Separierbare DGL}
-Eine Differentialgleichung für die Funktion $y$ heisst separierbar, wenn sie auf diese Form gebracht werden kann.
+Lineare DGL haben die allgemeine Form:
 \[
-	y' = p(x) \cdot g(y) \hspace{1cm} \text{Merke: $y' = \frac{dy}{dx}$}
+	y^{(n)} + p_{n-1}(x) \cdot y^{(n-1)} + ... + p_1(x) \cdot y' + p_0(x) \cdot y = q(x) 
 \]
-Vorgehen:
-\begin{enumerate}
-	\item DGL auf obige Form bringen.
 
-	\item $y'$ mit $\frac{dy}{dx}$ ersetzen und Variabeln trennen: $\frac{1}{g(y)} \, dy = p(x) \, dx$
+\begin{description}
+	\item [$y$] steht für $y(x)$ eine noch unbekannte Funktion von x.\\
+			$y^{(i)}$ ist einfach die $i$-te Ableitung davon.
 
-	\item Beidseitig integrieren: $\int \frac{1}{g(y)} \, dy = \int p(x) \, dx$
+	\item [$p_i(x)$] steht für irgendeine Funktion mit der $y$ (oder $y^{(i)}$) multipliziert wird. Kann auch eine Konstante sein (z.B. 1).
 
-	\item Nach $y$ auflösen
-\end{enumerate}
-\textbf{Merke:} Weitere Lösungen kann die Gleichung $g(y) = 0$ liefern, muss es aber nicht. Diese Lösungen sind konstanten (also $\in \R$).
+	\item [$q(x)$] nennt man Störfunktion. Ist $q(x) = 0$ nennt man die DGL Homogen, sonst Inhomogen.
+\end{description}
 
-\textbf{Beispiel:} $y' = \cos(x) \cdot y$
-\begin{align*}
-	\frac{dy}{dx} = \cos(x) \cdot y \Leftrightarrow \frac{1}{y} \, dy &= \cos(x) \, dx\\
-	\int \frac{1}{y} \, dy &= \int \cos(x) \, dx \\
-	\ln(y) &= \sin(x) + \ln(C)\\
-	y &= e^{\sin(x) + \ln(C)} \\
-	 &= C \cdot e^{\sin(x)}
-\end{align*}
-{\small Allgemeiner Hinweis: Bei logarithmischer Terme, wird Integrationskonstante zweckgemäss $\ln(C)$ gewählt (damit später C $\pm$ sein kann). Beachte das $y = 0$ auch eine Lösung ist!}
+Die allgemeine Lösung einer DGL ist gegeben durch:
+\[
+	y(x) = y_h(x) + y_p(x)
+\]
+$y_h(x)$ ist die allgemeine Lösung der Homogenen DGL und\\
+$y_p(x)$ ist die partikuläre Lösung der Inhomogenen DGL.
 
+\subsection{Lineare DGL 1. Ordnung}
+Diese DGL haben die allgemeine Form: $y' + p(x) \cdot y = q(x)$
 
-\subsubsection{Lineare DGL 1. Ordnung mit variablen Koeffizienten}
+\subsubsection{Lineare DGL 1. Ordnung mit konst. Koeffizienten}
+Diese DGL hat die Form: $y' + a \cdot y = q(x)$ mit $a \in \R$\\
+
+Vorgehen: Gleich wie im Fall von n, einfach mit n = 1.
+
+\subsubsection{Lineare DGL 1. Ordnung mit var. Koeffizienten}
+Diese DGL hat die Form: $y' + p(x) \cdot y = q(x)$\\
 %Nach http://de.wikipedia.org/wiki/Variation_der_Konstanten#Motivation
 Sei:\[
 F(x) = \int f(t) dt.
@@ -57,6 +58,39 @@ Die Lösungsmenge der generellen Lösung der allgemeinen Lösung ist somit $y$:
 Gibt es nun einen Ansatz, kann diese menge durch Einsetzen des Funktionswert und Gleichsetzen mit dem Resultat genau bestummen werde in dem die Konstanten $c$  aufgelöst werden.\\
 \\
 Konkret reicht es also aus. $F$ und $u$ zu berechnen. 
+
+\subsubsection{Separierbare DGL}
+Ist ein Spezialfall wo $q(x) = 0$ ist.
+Eine Differentialgleichung für die Funktion $y$ heisst separierbar, wenn sie auf diese Form gebracht werden kann.
+\[
+	y' = p(x) \cdot y \hspace{1cm} \text{Merke: $y' = \frac{dy}{dx}$}
+\]
+Vorgehen:
+\begin{enumerate}
+	\item DGL auf obige Form bringen.
+
+	\item $y'$ mit $\frac{dy}{dx}$ ersetzen und Variabeln trennen: $\frac{1}{y} \, dy = p(x) \, dx$
+
+	\item Beidseitig integrieren: $\int \frac{1}{y} \, dy = \int p(x) \, dx$
+
+	\item Nach $y$ auflösen
+
+	\item Lösung: $y = C \cdot e^{\int p(x) \, dx}$ \hspace{0.5cm} $(C \in \R)$
+\end{enumerate}
+\textbf{Merke:} Weitere Lösungen kann die Gleichung $y = 0$ liefern, muss es aber nicht. Diese Lösungen sind konstanten (also $\in \R$).
+
+\textbf{Beispiel:} $y' = \cos(x) \cdot y$
+\begin{align*}
+	\frac{dy}{dx} = \cos(x) \cdot y \Leftrightarrow \frac{1}{y} \, dy &= \cos(x) \, dx\\
+	\int \frac{1}{y} \, dy &= \int \cos(x) \, dx \\
+	\ln(y) &= \sin(x) + \ln(C)\\
+	y &= e^{\sin(x) + \ln(C)} \\
+	 &= C \cdot e^{\sin(x)}	\hspace{1cm} (C \in \R)
+\end{align*}
+{\small Allgemeiner Hinweis:\\
+Bei logarithmischer Terme, wird Integrationskonstante zweckgemäss $\ln(C)$ gewählt (sonst müsste man später neue Konstante $C' = e^C$ einführen). Beachte das $y = 0$ auch eine Lösung ist!}
+
+
 
 \subsubsection{genereller Ansatz}
 Wenn $g(x) = 0$ ist, dann ist die DGL homogen. Falls $g(x) \neq 0$, so handelt
@@ -221,7 +255,7 @@ Diese DGL haben genau n Nullstellen und die Form:
 	\text{wobei} \; g(x) = 0 \hspace{10pt} \text{oder} \hspace{10pt} g(x) \neq 0
 \end{eqnarray*}
 
-\textbf{Vorgehen:}
+\textbf{Vorgehen im homogenen Fall:}
 \begin{enumerate}
 	\item Homogene DGL aufstellen und dazu das charakteristische Polynom $p(\lambda)$ notieren mit Ansatz $y(x) = e^{\lambda x}$ mit $\lambda \in \C$:
 	\begin{align*}
@@ -250,7 +284,7 @@ Diese DGL haben genau n Nullstellen und die Form:
 				e^{\lambda_i x}, x e^{\lambda_i x}, \ldots, x^{k-1} e^{\lambda_i x}
 				= \; &e^{x(a+ib)}, x e^{x(a+ib)}, \ldots, x^{k-1} e^{x(a+ib)}, \\
 				&e^{x(a-ib)}, x e^{x(a-ib)} \ldots, x^{k-1} e^{x(a-ib)}
-		\end{align*}}Merke: Durch anwenden der Eulersche Identität lässt sich obige Lösung auch schreiben als:
+		\end{align*}}Merke: Durch anwenden der Eulersche Identität lässt sich obige komplexe Lösung auch reell schreiben als:
 		\vspace{3pt}
 		\begin{align*}
 			&e^{a x} \, \cos(bx), \, x e^{a x} \, \cos(bx), \ldots, \, x^{k-1} e^{a x} \, \cos(bx) \hspace{10pt} \text{und}\\
@@ -263,9 +297,24 @@ Diese DGL haben genau n Nullstellen und die Form:
 	\begin{align*}
 	 y_h(x) = C_1 e^{\lambda_1 x} + \ucomment{\lambda_2: \text{2-fache Nullstelle}}{C_2 e^{\lambda_2 x} + C_3 x e^{\lambda_2 x}}
 	\end{align*}
-	Die Unbekannten $C_i$ können gefunden werden, wenn genügend Punkte gegeben sind, an denen der Funktionswert bekannt ist.
+	Die Unbekannten $C_i$ können gefunden werden, wenn genügend Punkte gegeben sind, an denen der Funktionswert bekannt ist. Einfach $y$ an den gegebenen Punkte auswerten und Gleichung mit dem bekannten Resultat aufstellen.
 \end{enumerate}
 
+\textbf{\textbf{Vorgehen im inhomogenen Fall:}}
+\begin{enumerate}
+	\item Zuerst die homogene Lösung finden (siehe oben)!
+
+	\item Zuerst wähl man einen geeigneten Ansatz für das $y_p$ siehe \ref{sec:ansatz-dgl})
+
+	\item Hat man einen allgmeinen Ansatz für $y_p$ mit noch unbekannten konstanten bestummen, so werden jetzt die nächsten $n$ Ableitung davon berechnet. ($n$ = Ordnung der DGL). 
+
+	\item Nun setzt man die berechneten Ableitungen in die ursprüngliche inhomogene DGL ein. Dh: ersetze $y$ mit $y_p$, $y'$ mit der 1. Ableitung von $y_p$ etc. Wenn möglich Terme vereinfachen.
+
+	\item Jetzt die unbekannten Konstanten bestimmen indem man einen Koeffizientenvergleich macht. Dh: Gleichungen aufstellen, so das linke Seite der DGL der rechten Seite entspricht. 
+
+	\item Gefundene Konstanten können jetzt in die partikuläre Lösunge eingesetzt werden.\\
+	Die allgemeine Form der DGL ist $y(t) = y_h(t) + y_p(t)$
+\end{enumerate}
 
 Hat man ursprünglich eine inhomogene DGL vorliegen, so muss man für die allgemeine Lösung
 noch die partikuläre Lösung des inhomogenen DGL berechnen. Dazu werden die Unbekannten
@@ -350,8 +399,15 @@ des inhomogenen DGL berechnen:
 $\underline{\underline{y}} = y_h + y_p = \underline{\underline{D_1 \sin(x) + D_2 \cos(x) + 2 \ln(\cos(x)) \sin(x) + 2x \cos(x)}}$
 
 \subsection{Ansätze für partikuläre Lösung}
-	\textbf{Hinweis}: nur brauchbar für lineare DGL mit konstanten Koeffizienten \\
-	\\
+\label{sec:ansatz-dgl}
+	\textbf{Hinweis}:
+	\begin{itemize}
+		\item Ansätze nur brauchbar für lineare DGL mit konstanten Koeffizienten.
+
+		\item Die gesuchte Funktion $y$ ist immer vom gleichen Grad wie die Störfunktion $q(x)$.
+
+		\item Wenn $q(x)$ eine Linearkombination von Funktionen ist, so muss man auch einen entsprechenden Ansatz wählen! Dh: Für jeden Summanden von $q(x)$ einzeln eine partikuläre Lösung finden und am Ende addieren!
+	\end{itemize}
 	Bezeichnungen:
 	\begin{align*}
 	P(x)  &  \quad \text{charakt. Polynom der DGL}  \\
@@ -363,12 +419,16 @@ $\underline{\underline{y}} = y_h + y_p = \underline{\underline{D_1 \sin(x) + D_2
 	
 	
 	\begin{tabular}{l|l}
-		$g(x)$ & $Ansatz$ \\ \hline \hline
-		$ c e^{mx} $  & $A e^{mx}$ , falls $P(m) \neq 0$\\
+		$q(x)$ & $Ansatz$ \\ \hline \hline
+		
+		$ S_k(x) $ & $R_k(x)$ , falls $P(0) \neq 0$\\
+		\small{$S_1(x): ax + b$} &  $x^q R_k(x)$, falls $0$ $q$-fache NST von $P$ \\ 
+		\small{$S_2(x): ax^2 + bx + c$} & \\ \hline
+
+		$ c e^{mx} $  & $A e^{mx}$ , falls $P(m) \neq 0$\\ 
 		&  $A x^q e^{mx}$, falls $m$ $q$-fache NST von $P$ \\ \hline
-		$ S_k(x) $  & $R_k(x)$ , falls $P(0) \neq 0$\\
-		&  $x^q R_k(x)$, falls $0$ $q$-fache NST von $P$ \\ \hline
-		$ P_k(x) e^{mx} $  & $R_k(x) e^{mx}$ , falls $P(m) \neq 0$\\
+
+		$ S_k(x) e^{mx} $  & $R_k(x) e^{mx}$ , falls $P(m) \neq 0$\\
 		&  $x^q R_k(x) e^{mx}$, falls $m$ $q$-fache NST von $P$ \\ \hline
 		$ \sin wx, \cos wx $  & $A \cos wx + B \sin wx$ , falls $P(\pm iw) \neq 0$\\
 		&  $x^q (A \cos wx + B \sin wx)$, falls $\pm iw$ \\
