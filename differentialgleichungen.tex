@@ -30,66 +30,71 @@ Vorgehen: Gleich wie im Fall von n, einfach mit n = 1.
 
 \subsubsection{Lineare DGL 1. Ordnung mit var. Koeffizienten}
 Diese DGL hat die Form: $y' + p(x) \cdot y = q(x)$\\
-%Nach http://de.wikipedia.org/wiki/Variation_der_Konstanten#Motivation
-Sei:\[
-F(x) = \int f(t) dt.
-\]
-Dann ist $\{y_{Hom}(x) = c_1e^{F(x)}| c_1 \in \R\}$ die Menge aller Lösungen der homogenen Differnentialgleichung ($y' + f(x) \cdot y = 0$). Als Ansatz für die Lösung des inhomogenen Problems setze man $y_p(x) = u(x)e^{F(x)}$, d.h. man \textit{lässt die Konstante $c_1$ variieren}. Dies ergibt eine eindeutige Zuordnung zwischen den Funktion $y$ und $u$. Denn $e^{F(x)}$ ist eine stets positive, stetig differnezierbare Funktion. Die Ableitung dieser Ansatzfunktion ist \[
-y_p'(x) = u(x)f(x)e^{F(x)} + u'(x)e^{F(x)} = y(x)f(x) + u'(x)e^{F(x)}
-\]
-Also löst $y$ die inhomogene Differntialgleichung \[
-y_p'(x) = y(x)f(x) + g(x)
-\]
-genau dann, wenn\[
-u'(x) = y(x)f(x) + g(x)
-\]
-gilt. Also folgt\[
-u(x) = \int  g(t)e^{-F(t)} dt
-\]
-Somit ist die Lösungsmenge von $y_p$
-\[
-\{ y_p'(x) = e^{F(x)} (u(x) + c_2) | c_2 \in \R \}
-\]
-Die Lösungsmenge der generellen Lösung der allgemeinen Lösung ist somit $y$:
-\begin{align*}
-&\{y\}=\{y = y_{Hom} + y_p\}\\
-& =\{ y(x) =  c_1e^{F(x)} +  e^{F(x)} (u(x) + c_2) | c_1, c_2 \in \R\} 
-\end{align*}
-Gibt es nun einen Ansatz, kann diese menge durch Einsetzen des Funktionswert und Gleichsetzen mit dem Resultat genau bestummen werde in dem die Konstanten $c$  aufgelöst werden.\\
-\\
-Konkret reicht es also aus. $F$ und $u$ zu berechnen. 
+
+Wir haben nur DGL mit $q(x) = 0$ behandelt.
+Vorgehen: Siehe separierbare DGL.
+
+% Nicht behandelt...
+%Sei:\[
+%F(x) = \int f(t) dt.
+%\]
+%Dann ist $\{y_{Hom}(x) = c_1e^{F(x)}| c_1 \in \R\}$ die Menge aller Lösungen der homogenen Differnentialgleichung ($y' + f(x) \cdot y = 0$). Als Ansatz für die Lösung des inhomogenen Problems setze man $y_p(x) = u(x)e^{F(x)}$, d.h. man \textit{lässt die Konstante $c_1$ variieren}. Dies ergibt eine eindeutige Zuordnung zwischen den Funktion $y$ und $u$. Denn $e^{F(x)}$ ist eine stets positive, stetig differnezierbare Funktion. Die Ableitung dieser Ansatzfunktion ist \[
+%y_p'(x) = u(x)f(x)e^{F(x)} + u'(x)e^{F(x)} = y(x)f(x) + u'(x)e^{F(x)}
+%\]
+%Also löst $y$ die inhomogene Differntialgleichung \[
+%y_p'(x) = y(x)f(x) + g(x)
+%\]
+%genau dann, wenn\[
+%u'(x) = y(x)f(x) + g(x)
+%\]
+%gilt. Also folgt\[
+%u(x) = \int  g(t)e^{-F(t)} dt
+%\]
+%Somit ist die Lösungsmenge von $y_p$
+%\[
+%\{ y_p'(x) = e^{F(x)} (u(x) + c_2) | c_2 \in \R \}
+%\]
+%Die Lösungsmenge der generellen Lösung der allgemeinen Lösung ist somit $y$:
+%\begin{align*}
+%&\{y\}=\{y = y_{Hom} + y_p\}\\
+%& =\{ y(x) =  c_1e^{F(x)} +  e^{F(x)} (u(x) + c_2) | c_1, c_2 \in \R\} 
+%\end{align*}
+%Gibt es nun einen Ansatz, kann diese menge durch Einsetzen des Funktionswert und Gleichsetzen mit dem Resultat genau bestummen werde in dem die Konstanten $c$  aufgelöst werden.\\
+%\\
+%Konkret reicht es also aus. $F$ und $u$ zu berechnen. 
 
 \subsubsection{Separierbare DGL}
-Ist ein Spezialfall wo $q(x) = 0$ ist.
+Ist ein Spezialfall von DGL 1. Ordnung wo $q(x) = 0$ ist. Die DGL muss aber nicht zwingend linear sein! Das Ziel ist es alle $y$ und $x$ auf eine Seite zu bringen.
 Eine Differentialgleichung für die Funktion $y$ heisst separierbar, wenn sie auf diese Form gebracht werden kann.
 \[
-	y' = p(x) \cdot y \hspace{1cm} \text{Merke: $y' = \frac{dy}{dx}$}
+	y' = p(x) \cdot h(y) \hspace{1cm} \text{Merke: $y' = \frac{dy}{dx}$}
 \]
 Vorgehen:
 \begin{enumerate}
-	\item DGL auf obige Form bringen.
+	\item DGL auf obige Form bringen. (wichtig: nur $y'$ links!)
 
-	\item $y'$ mit $\frac{dy}{dx}$ ersetzen und Variabeln trennen: $\frac{1}{y} \, dy = p(x) \, dx$
+	\item $y'$ mit $\frac{dy}{dx}$ ersetzen und Variabeln trennen: $\frac{1}{h(y)} \, dy = p(x) \, dx$
 
-	\item Beidseitig integrieren: $\int \frac{1}{y} \, dy = \int p(x) \, dx$
+	\item Beidseitig integrieren: $\int \frac{1}{h(y)} \, dy = \int p(x) \, dx$
 
 	\item Nach $y$ auflösen
 
-	\item Lösung: $y = C \cdot e^{\int p(x) \, dx}$ \hspace{0.5cm} $(C \in \R)$
-\end{enumerate}
-\textbf{Merke:} Weitere Lösungen kann die Gleichung $y = 0$ liefern, muss es aber nicht. Diese Lösungen sind konstanten (also $\in \R$).
+	\item Lösung: $y = C \cdot e^{\int p(x) \, dx}$ \hspace{0.5cm} (Für: $h(y) = y$ und $C \in \R)$
 
-\textbf{Beispiel:} $y' = \cos(x) \cdot y$
+	\item Anfangswertproblem lösen: Wenn genügend Punkte bekannt sind, kann C bestummen werden.
+\end{enumerate}
+\textbf{Merke:} Weitere Lösungen kann die Gleichung $h(y) = 0$ liefern, muss es aber nicht. Diese Lösungen sind konstanten (also $\in \R$).
+
+\textbf{Beispiel:} $y' = \cos(x) \cdot y$ \\
+{\small Wir bemerken, dass für $y = 0$, die DGL bereits erfüllt ist. Also ist die konstante Funktion $y_1(x) = 0$ bereits eine Lösung!}
 \begin{align*}
 	\frac{dy}{dx} = \cos(x) \cdot y \Leftrightarrow \frac{1}{y} \, dy &= \cos(x) \, dx\\
 	\int \frac{1}{y} \, dy &= \int \cos(x) \, dx \\
-	\ln(y) &= \sin(x) + \ln(C)\\
-	y &= e^{\sin(x) + \ln(C)} \\
-	 &= C \cdot e^{\sin(x)}	\hspace{1cm} (C \in \R)
+	\ln(y) &= \sin(x) + C\\
+	y &= e^{\sin(x) + C} \\
+	y &= e^{\sin(x)} \cdot e^C \\
+	 &= C' \cdot e^{\sin(x)}	\hspace{1cm} (C' \in \R)
 \end{align*}
-{\small Allgemeiner Hinweis:\\
-Bei logarithmischer Terme, wird Integrationskonstante zweckgemäss $\ln(C)$ gewählt (sonst müsste man später neue Konstante $C' = e^C$ einführen). Beachte das $y = 0$ auch eine Lösung ist!}
-
 
 
 \subsubsection{genereller Ansatz}
@@ -297,106 +302,28 @@ Diese DGL haben genau n Nullstellen und die Form:
 	\begin{align*}
 	 y_h(x) = C_1 e^{\lambda_1 x} + \ucomment{\lambda_2: \text{2-fache Nullstelle}}{C_2 e^{\lambda_2 x} + C_3 x e^{\lambda_2 x}}
 	\end{align*}
-	Die Unbekannten $C_i$ können gefunden werden, wenn genügend Punkte gegeben sind, an denen der Funktionswert bekannt ist. Einfach $y$ an den gegebenen Punkte auswerten und Gleichung mit dem bekannten Resultat aufstellen.
+
+	\item Anfangswertproblem lösen: (nur wenn es keine inhomogene DGL ist, sonst kommt es erst später!) Vorgehen ist das gleiche wie bei inhomogenen DGL. 
 \end{enumerate}
 
 \textbf{\textbf{Vorgehen im inhomogenen Fall:}}
 \begin{enumerate}
 	\item Zuerst die homogene Lösung finden (siehe oben)!
 
-	\item Zuerst wähl man einen geeigneten Ansatz für das $y_p$ siehe \ref{sec:ansatz-dgl})
+	\item Dann wählt man einen geeigneten Ansatz für das $y_p$ (siehe \ref{sec:ansatz-dgl})\\
+	Merke: Ist $q(x)$ eine linearkombination, dann mache die folgenden Schritte für jeden Summanden von $q(x)$ einzeln und addiere am Ende die Lösungen! (Superpositionsprinzip)
 
-	\item Hat man einen allgmeinen Ansatz für $y_p$ mit noch unbekannten konstanten bestummen, so werden jetzt die nächsten $n$ Ableitung davon berechnet. ($n$ = Ordnung der DGL). 
+	\item Hat man einen allgmeinen Ansatz für $y_p$ mit noch unbekannten Konstanten bestummen, so werden jetzt die nächsten $n$ Ableitung davon berechnet. ($n$ = Ordnung der DGL). 
 
 	\item Nun setzt man die berechneten Ableitungen in die ursprüngliche inhomogene DGL ein. Dh: ersetze $y$ mit $y_p$, $y'$ mit der 1. Ableitung von $y_p$ etc. Wenn möglich Terme vereinfachen.
 
-	\item Jetzt die unbekannten Konstanten bestimmen indem man einen Koeffizientenvergleich macht. Dh: Gleichungen aufstellen, so das linke Seite der DGL der rechten Seite entspricht. 
+	\item Jetzt die unbekannten Konstanten bestimmen indem man einen Koeffizientenvergleich macht. Dh: Gleichungen aufstellen, so das linke Seite der DGL der rechten entspricht. 
 
-	\item Gefundene Konstanten können jetzt in die partikuläre Lösunge eingesetzt werden.\\
+	\item Gefundene Konstanten können jetzt in die partikuläre Lösung eingesetzt werden.\\
 	Die allgemeine Form der DGL ist $y(t) = y_h(t) + y_p(t)$
+
+	\item Anfangswertproblem lösen: Die Unbekannten $C_i$ können gefunden werden, wenn genügend Punkte gegeben sind, an denen der Funktionswert bekannt ist. Einfach die allgemeine Lösung $y(x)$ an den gegebenen Punkten auswerten (evtl. noch ableiten) und Gleichung mit dem bekannten Resultat aufstellen.
 \end{enumerate}
-
-Hat man ursprünglich eine inhomogene DGL vorliegen, so muss man für die allgemeine Lösung
-noch die partikuläre Lösung des inhomogenen DGL berechnen. Dazu werden die Unbekannten
-$C_i$ durch Funktionen $u_i(x)$ ersetzt. So wird aus
-$y_h = C_2 x e^{\lambda_1 x} + C_1 e^{\lambda_1 x} \Rightarrow
-y_p = u_2(x) x e^{\lambda_1 x} + u_1(x) e^{\lambda_1 x}$ (eine doppelte Nullstelle).
-
-Jetzt geht es darum die Funktionen $u_i(x)$ zu bestimmen, um sie in die vorherige
-$y_p$-Gleichung einsetzen zu können. Dazu stellen wir $i$ Gleichungen auf.
-Also so viele, wie wir unbekannte Funktionen $u_i(x)$ haben:
-\begin{align*}
-u_2(x)' (x e^{\lambda_1 x}) + u_1(x)' (e^{\lambda_1 x}) &= 0\\
-u_2(x)' (x e^{\lambda_1 x})' + u_1(x)' (e^{\lambda_1 x})' &= g(x)
-\end{align*}
-
-Das Prinzip ist folgendes: Bis auf die letzte Gleichung, wird gleich $0$ gesetzt.
-Die letzte Gleichung wird gleich $g(x)$ gesetzt.
-Unsere unbekannten Funktionen werden jeweils einmal abgeleitet, egal in welcher
-Gleichung wir sind. Pro Zeile, die man weiter runter geht, wird der Term mit $e^{\lambda_i x}$
-jeweils einmal mehr abgeleitet. In der ersten Zeile wird zum Beispiel $e^{\lambda_1 x}$ nicht abgeleitet,
-in der nächsten Gleichung wird es einmal abgeleitet. Hätten wir mehr Unbekannte Funktionen,
-so würde in der folgenden Zeile zwei mal abgeleitet werden. Im Allgemeinen gilt also:
-{\footnotesize
-\begin{align*}
-u_1(x)' y_{h1}(x) + u_2(x)' y_{h2}(x) + \ldots + u_n(x)' y_{hn}(x) &= 0\\
-u_1(x)' y_{h1}(x)' + u_2(x)' y_{h2}(x)' + \ldots + u_n(x)' y_{hn}(x)' &= 0\\
-u_1(x)' y_{h1}(x)'' + u_2(x)' y_{h2}(x)'' + \ldots + u_n(x)' y_{hn}(x)'' &= 0\\
-&\ldots\\
-u_1(x)' y_{h1}(x)^{(n-1)} + u_2(x)' y_{h2}(x)^{(n-1)} + \ldots + u_n(x)' y_{hn}(x)^{(n-1)} &= g(x)
-\end{align*}
-}
-
-Diese Gleichungen werden nun jeweils aufgelöst, bis man $u_i(x)$ erhält. Um zu
-$u_i(x)$ zu gelangen, muss auf dem Weg einmal die Gleichung auf beiden Seiten
-integriert werden. Hat man alle $u_i(x)$, so setzt man diese in unsere
-ursprüngliche $y_p$ Gleichung ein.
-
-Nun kann die allgemeine Lösung des inhomogenen DGL berechnet werden. Dazu
-summiert man $y_h$ und $y_p$: $y = y_h + y_p$. Dies ist die allgemeine Lösung.
-Hat man konkrete Punkte, an denen die Funktion ausgewertet wurde, so kann man
-die Unbekannten $C_i$ berechnen.
-
-\subsubsection*{Beispiel}
-Es soll $y'' + y = \frac{2}{\cos(x)}$ ausgerechnet werden.
-
-Zuerst sehen wir uns das homogene DGL an:
-\begin{align*}
-y'' + y &= 0\\
-\Rightarrow \lambda^2 e^{\lambda x} + e^{\lambda x} &= 0\\
-\Leftrightarrow e^{\lambda x} (\lambda^2 + 1) &=0 \\
-\Rightarrow \lambda^2 + 1 &= 0\\
-\Leftrightarrow \lambda^2 &= -1 \quad
-\Rightarrow \underline{\lambda_1 = i},\, \underline{\lambda_2 = -i}
-\end{align*}
-
-Somit ist die allgemeine Lösung des homogenen DGL:
-\begin{align*}
-y_h &= C_1 \cdot e^{ix} + C_2 \cdot e^{-ix}\\
-&= C_1 (\cos(x) + i\sin(x)) + C_2(\cos(x) - i\sin(x))\\
-&= \sin(x) \underbrace{(i C_1 + i C_2)}_{ = D_1} + \cos(x) \underbrace{(C_1 + C_2)}_{= D_2}\\
-&= \underline{D_1 \sin(x) + D_2 \cos(x) = y_h}
-\end{align*}
-
-Da es sich um ein inhomogenes DGL handelt, berechnen wir als nächstes die partikuläre
-Lösung:
-\begin{align*}
-y_p &= \underbrace{u_1(x)}_{D_1 \text{ in } y_h} \sin(x) + \underbrace{u_2(x)}_{D_2 \text{ in } y_h} \cos(x)\\
-&\Rightarrow \left|
-	\begin{aligned}
-		u_1(x)' \sin(x) + u_2(x)' \cos(x) &= 0\\
-		u_1(x)' \sin(x)' + u_2(x)' \cos(x)' &= \frac{2}{\cos(x)}
-	\end{aligned}
-\right|\\
-&= \ldots\\
-&\Rightarrow u_1(x)' = -2 \tan(x),\, u_2(x)' = 2\\
-&\Leftrightarrow u_1(x) = 2 \ln(\cos(x)),\, u_2(x) = 2x\\
-&\Rightarrow \underline{y_p = 2 \ln(\cos(x)) \sin(x) + 2x \cos(x)}
-\end{align*}
-
-Da wir nun auch die partikuläre Lösung haben, können wir die allgemeine Lösung
-des inhomogenen DGL berechnen:
-$\underline{\underline{y}} = y_h + y_p = \underline{\underline{D_1 \sin(x) + D_2 \cos(x) + 2 \ln(\cos(x)) \sin(x) + 2x \cos(x)}}$
 
 \subsection{Ansätze für partikuläre Lösung}
 \label{sec:ansatz-dgl}
