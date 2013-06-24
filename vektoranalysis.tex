@@ -1,7 +1,7 @@
 \section{Vektoranalysis}
 \begin{definition}[Vektorfeld]
-Die Abbildung $\vec{v}(\vec{r}): \R^n \to \R^n$ ist ein Vektorfeld. Es weist jedem
-Vektor $\vec{r}$ einen Vektor $\vec{v}(\vec{r})$ zu.
+Die Abbildung $f: \R^n \to \R^n$ ist ein Vektorfeld. Es weist jedem
+Vektor $\vec{x} \in \R^n$ einen Vektor $f(\vec{x}) \in \R^n$ zu.
 \end{definition}
 
 \begin{definition}[Skalarfeld]
@@ -11,11 +11,20 @@ Räumliches Skalarfeld: $f: \R^3 \to \R$ (Pro Raumpunkt ein Skalar)
 \end{definition}
 
 \begin{definition}[Gradient]
-Ist $f: \R^n \to \R$ (Skalarfeld), so ist der Gradient von $f$ der Vektor
-$\vec{v} = \grad f = \nabla f$. (Im Fall $f: \R^3 \to \R$:   $\grad f = (f_x, f_y, f_z) =
-\left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)$). ) 
-Der Gradient $\nabla f$ von einer Funktion $f : \R^2 \to \R$ beschreibt die Richtung 
-und den Betrag des steilsten Anstiegs des Graphen von $f$.
+Ist $f: \R^n \to \R$ (ein Skalarfeld), so ist der Gradient von $f$ der Vektor
+$\vec{v} = \grad f = \nabla f$. 
+
+\[
+	\text{Im Fall } f: \R^3 \to \R:   \nabla f = (f_x, f_y, f_z) =
+	\left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)
+\]
+
+Der Gradient ist also einfach ein Vektor, der aus den partiellen Ableitungen dieser Funktion besteht. Der Gradient beschreibt (von einem Punkt aus) immer die Richtung und den Betrag des steilsten Anstiegs der Funktion. 
+
+Analog wird die maximale Fallrichtung bezeichnet: $- \nabla f$
+\end{definition}
+
+\begin{definition}[Richtungsvektor] Der Richtungsvektor ist ein normiert Vektor auf länge 1. Dh: Wenn die Richtung der grössten Steigung gefragt ist, ist der normierte Gradient gemeint! Also $\frac{\vec{v}}{|\vec{v}|}$
 \end{definition}
 
 \begin{definition}[Richtungsableitung]
@@ -72,10 +81,12 @@ Ein Vektorfeld $\vec{v}$ heisst Vektorpotential zu $\vec{w}$, falls $\vec{w} = \
 \end{definition}
 
 \begin{definition}[Divergenz]
-Die Divergenz eines Vektorfelds $\operatorname{div} \vec{K}(x,y,z)$ ist definiert durch:
-$\operatorname{div} \vec{K}(x,y,z) := \frac{\partial
-K_1}{\partial x} + \frac{\partial K_2}{\partial y} + \frac{\partial
-K_3}{\partial z}$
+Ist eine reelle Zahl, und ist ein Mass für das ''auseinanderströmer einer Flüssigkeit''. 
+Die Divergenz eines Vektorfelds $\vec{F}(x, y, z) = (F_x, F_y, F_z)^T$ ist definiert als:
+\[
+	\operatorname{div} \vec{F}(x,y,z) := \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + 
+	\frac{\partial F_z}{\partial z}
+\] 
 \end{definition}
 
 \begin{lemma}[Geschlossener Weg]
@@ -152,25 +163,103 @@ senkrecht auf der Niveaufläche $f=1$. Da er vom Ursprung weg orientiert ist, li
 Der Vektor $\begin{pmatrix} yz(1/b^2-1/c^2)\\ xz(1/c^2-1/a^2)\\ xy(1/a^2-1/b^2) \end{pmatrix}$ ist tangential 
 zum Rand $\partial B$
 
+\subsection{Hesse Matrix}
+Die Hesse-Matrix besteht aus den Ergebnissen, wenn $f$ zweimal hintereinander nach $x_i$ und $x_j$ partiell abgeleitet wird. Ist die Funktion zweimal stetig differenzierbar kann die Hesse-Matrix gebildet werden, welche immer symemtrisch ist (dh: $f_{xy} = f_{yx}$). \\
+Also gilt für $f: \R^n \to \R$ und $i,j = 1, \ldots, n$:
+\[
+	H_{f(x_1, \ldots, x_n)} = 
+	\left(
+		\begin{array}{c}
+			\frac{\partial^2 f}{\partial x_i \, \partial x_j}
+		\end{array}
+	\right)
+\]
+Für $f: \R^2 \to \R$ gilt also:
+\[
+	H_{f(x, y)} = 
+	\left(
+		\begin{array}{cc}
+			f_{xx} & f_{xy}\\
+			f_{yx} & f_{yy}
+		\end{array}
+	\right)	=
+	\left(
+		\begin{array}{cc}
+			\vspace{0.1cm} \frac{\partial^2 f}{\partial x \, \partial x} & \frac{\partial^2 f}{\partial x \, \partial y} \\
+			\frac{\partial^2 f}{\partial y \, \partial x} & \frac{\partial^2 f}{\partial y \, \partial y}
+		\end{array}
+	\right)
+\]
+
+\subsection{Determinante}
+{\small
+$
+	\text{det} A = 
+	\left|
+		\begin{array}{cc}
+			a_{11} & a_{12}\\
+			a_{21} & a_{22}\\
+		\end{array}
+	\right| = a_{11} \, a_{22} - a_{12} \, a_{21}
+$
+\[
+	\text{det} A = 
+	\left|
+		\begin{array}{ccc}
+			a_{11} & a_{12} & a_{13}\\
+			a_{21} & a_{22} & a_{23}\\
+			a_{31} & a_{32} & a_{33}
+		\end{array}
+	\right| = 
+	\begin{array}{c}
+			a_{11} \, a_{22} \, a_{33} + a_{12} \, a_{23} \, a_{31} + a_{13} \, a_{21} \, a_{32}\\
+			- a_{31} \, a_{22} \, a_{13} - a_{32} \, a_{23} \, a_{11} - a_{33} \, a_{21} \, a_{12}
+	\end{array}
+\]}
+
 \subsection{Kritische Punkte im $\R^n$}
-Sei $f: \Omega \to \R$ mit $\Omega \subseteq \R^n$ und $F$ = Nebenbedingung ((Un)gleichung).
-Um kritische Punkte(Minima,Maxima,Sattelpunkte) zu bestimmen geht man wie folgt vor. 
-\begin{itemize}
-	\item Wenn $\Omega$ offen und kein $F$ existiert:
-	\begin{enumerate}
-		\item Berechne alle Punkte, die die Gleichung $\nabla f = 0$ erfüllen. Jeder dieser Punkte ist ein kritischer Punkt.
+Sei $f: \Omega \to \R$, $\Omega \subseteq \R^n$,  $x_0 \in \Omega$ und $\Omega$ \uline{offen}. Dann gilt: 
+\[
+	x_0 \text{ ist ein kritischer Punkt} \Leftrightarrow \nabla f(x_0) = 0
+\]
+Ein kritischer Punkt kann also ein Minima, Maxima oder ein Sattelpunkt sein! Oft müssen Extrema (Minima, Maxima) von $f$ berechnet werden welche zusätzlich eine gewisse Nebenbedingung $F$ erfüllen. $F$ ist oft in Form einer (Un)Gleichung 
+gegeben. 
 
-		\item  \todo Prüfe mit Determinantenkriterium ob es sich um ein Min/Max/Sattelp handelt. Ausführlicher..
+\textbf{Vorgehen - kritische Punkte bestimmen:} 
+\begin{enumerate}[leftmargin=0.5cm]
+	\item Berechne alle Punkte, die die Gleichung $\nabla f = 0$ erfüllen. Jeder dieser Punkte ist ein kritischer Punkt.
+
+	\item Nur diejenige Punkte sind relevant, welche in $\Omega$ liegen und Nebenbedingungen $F$ erfüllen. Dies lässt sich meist durch einfaches betrachten der Punkte und $\Omega$ bzw. $F$ feststellen.
+
+	\item Wenn der Typ der Punkte bestummen werden soll:
+	\begin{enumerate}[leftmargin=0.3cm]
+		\item Allgemeine Hesse Matrix $H_f$ berechnen
+
+		\item Mit Determinantenkriterium Punkttyp bestimmen.\\
+		- det $H_f(x_0) > 0$ \& $f_{xx}(x_0) > 0 \Rightarrow x_0$ = lokales Minimum.\\
+		- det $H_f(x_0) > 0$ \& $f_{xx}(x_0) < 0 \Rightarrow x_0$ = lokales Maximum.\\
+		- det $H_f(x_0) < 0 \Rightarrow x_0$ = Sattelpunkt.\\
+		- det $H_f(x_0) = 0 \Rightarrow x_0$ = Entarteter Punkt (Man kann nur etwas darüber Aussagen, wenn man seine Umgebung betrachtet!)
 	\end{enumerate}
+\end{enumerate}
 
-	\item Sonst:
-	\begin{enumerate}
-		\item Untersuche alle kritischen Punkte im inneren: $\nabla f = 0$. Analog zu oben.
+\textbf{Vorgehen - globale Extrema bestimmen:} 
+Meistens ist $\Omega$ nicht offen. Denn wenn $\Omega$ offen wäre, dann lassen sich alle Extrema mit $\nabla f = 0$ finden! Zusätzlich ist oft ein $F$ gegeben.
+\begin{enumerate}[leftmargin=0.5cm]
+	\item Identifizieren der Eckpunkte (ablesen)
 
-		\item Untersuche alle kritischen Punkte am Rand (mit Lagrange Multiplikator): $\nabla f = \lambda \nabla F$. Beachte dass nun eine Variable $\lambda$ dazugekommen ist. Um also auch $\lambda$ aufzulösen verwendet man $F$ als zusätzliche Gleichung!
+	\item Identifizieren der kritischen Punkte am Rand. \\
+	Dieser Rand ist quasi der neue Definitionsbereich von $f$ auf welchem Extrema gefunden werden sollen. Es gibt verschiedene Ansätze:
+	\begin{enumerate}[leftmargin=0.3cm]
+		\item Versuche $f$ so zu ändern, dass $f$ nur noch für Punkte auf dem Rand berechnet wird. Brauchbar wenn Rand eine Gerade und sich o.B.d.A. $y$ durch $x$ ausdrücken lässt oder $x, y$ Wert konstant ist. Durch direktes einsetzen in $f$ wird $f$ also so geändert, dass es nur noch für Punkte auf dem Rand berechnet wrid. Jetzt kann wieder der gewohnte Ansatz $f' = 0$ verwendet werden! Wichtig: Prüfe am Ende ob Punkte wirklich auf Randabschnitt!
 
-		\item Untersuche alle Ecken (= Ränder vom Rand): Meistens einfach Ecken in Funktion einsetzen und berechnen.
+		\item Verwende Ansatz mit Lagrange Multiplikator: $\nabla f = \lambda \nabla F$.\\
+		Brauchbar wenn $F$ explizit gegeben oder sich der Rand implizit als Gleichung (Bsp. Kreis) ausdrücken lässt! Beachte dass nun eine Variable $\lambda$ dazugekommen ist. Um also auch $\lambda$ aufzulösen verwendet man $F$ als zusätzliche Gleichung! 
+		Bsp. Nebenbedingung: $\ucomment{F(x,y) = x^2 + y^2 - 1}{x^2 + y^2 = 1}$
+ 	\end{enumerate}
 
-		\item Von allen berechneten Punkte nehme das Min/Max. Prüfe auch immer ob die Punkte den Nebenbedingungen genügen! Falls nicht, verwerfe sie!
-	\end{enumerate}
-\end{itemize}
+ 	\item Identifizieren alle kritischen Punkte im inneren: $\nabla f = 0$. \\
+	Analog zu oben, einfach ohne Typ zu bestimmen.
+
+	\item Alle berechneten Punkte auswerten und Min/Max nehmen.
+\end{enumerate}

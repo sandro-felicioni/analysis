@@ -23,13 +23,33 @@ Eigenschaften:
 	\item $\forall x,y \in \R^n: \|x + y\| \leq \|x\|+\|y\|$
 \end{itemize}
 
-\subsection{Partielle Differenzierbarkeit}
-$f: \R^n \to \R^m$ ist in $a = (a_1, \ldots, a_n)$ partiell differenzierbar nach
-der $i$-ten Variable $x_i$, wenn die Funktion
-$f: x_i \to f(x_1, \ldots, x_i, \ldots, x_n)$ differnzierbar ist. Man berechnet
-die partielle Ableitung also folgendermassen: Eine Funktion $f$ wird nach einer
-Variable partiell differenziert, indem man alle anderen Variablen als Konstanten
-behandelt und die Rechenregeln für Funktionen mit einer Variable anwendet.
+\subsection{Partielle Ableitung}
+$\frac{\partial f}{\partial x} = f_{x} = $ partielle Ableitung von $f$ nach $x$. Dabei leitet man die Funktion nach $x$ ab und betrachtet die anderen Variabeln als Konstant. \\
+Merke: partielle differenzierbarkeit impliziert nicht stetigkeit!
+
+\begin{definition}A heisst die Ableitung von f (einfach jede Komponente nach jeder Variabel ableiten) und wir schreiben:
+\[	
+	A = Df(x)
+\]
+ \\
+Bsp. Sei $f: \R^2 \to \R^3$ eine Funktion:\\
+$f(x, y) = 
+\left(
+	\begin{array}{c}
+		g_1(x, y) \\
+		g_2(x, y) \\
+		g_3(x, y)
+	\end{array}
+\right)$  
+Dann ist: $Df(x, y) = 
+\left(
+	\begin{tabular}{c|c}
+		\vspace{0.1cm}$\frac{\partial g_1}{\partial x}$ & $\frac{\partial g_1}{\partial y}$ \\
+		\vspace{0.1cm}$\frac{\partial g_2}{\partial x}$ & $\frac{\partial g_2}{\partial y}$ \\
+		$\frac{\partial g_3}{\partial x}$ & $\frac{\partial g_3}{\partial y}$
+	\end{tabular}
+\right)$
+\end{definition}
 
 \begin{satz}[Satz von Schwarz]
 Ist $f$ nach $x$ und $y$ zweimal partiell differenzierbar und sind die gemischten
