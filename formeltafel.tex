@@ -204,15 +204,22 @@ Es gelte: $\int f(x) \, dx = F(x)$
 
 \subsubsection{trionometrische Funktionen}
 \begin{itemize}[leftmargin=*]
+	% sin
 	\item $\int \sin(x) \, dx = - \cos(x)$; \hspace{1cm} $\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
-	\item $\int \cos(x) \, dx = \sin(x)$; \hspace{1cm} $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
-	\item $\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
-	\item $\int \frac{1}{\sin^2 x} \,dx = -\cot x$
+	\item $\int \sin(x)^2 \, dx = \frac{x}{2} - \frac{\sin(x) \cos(x)}{2}$; \hspace{0.5cm}  
+		  $\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
 	\item $\int x \sin(ax) \,dx = \frac{\sin(ax)}{a^2} - \frac{x \cos(ax)}{a}$
-	\item $\int \cos^2(ax) \,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$
-	\item $\int \frac{1}{\cos^2(x)} \,dx = \tan x$
+	\item $\int \frac{1}{\sin^2 x} \,dx = -\cot x$
+   	\item $\int \sin(ax) \cos(ax) \,dx = -\frac{\cos^2(ax)}{2a}$
+
+   	% cos
+   	\item $\int \cos(x) \, dx = \sin(x)$; \hspace{1cm} $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
+	\item $\int \cos(x)^2 \, dx = \frac{x}{2} + \frac{\sin(x) \cos(x)}{2}$; \hspace{0.5cm}
+		  $\int \cos^2(ax) \,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$
 	\item $\int \cos(ax) \,dx = \frac{\cos(ax)}{a^2} + \frac{x \sin(ax)}{a}$
-	\item $\int \sin(ax) \cos(ax) \,dx = -\frac{\cos^2(ax)}{2a}$
+	\item $\int \frac{1}{\cos^2(x)} \,dx = \tan x$
+	
+	% rest
 	\item $\int \tan(ax) \,dx = - \frac{1}{a} \ln | \cos(ax) |$
 	\item $\int \arcsin(x) \,dx = x \arcsin(x) + \sqrt{1 - x^2}$
 	\item $\int \arccos(x) \,dx = x \arccos(x) - \sqrt(1-x^2)$

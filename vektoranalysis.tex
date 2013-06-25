@@ -1,7 +1,7 @@
 \section{Vektoranalysis}
 \begin{definition}[Vektorfeld]
-Die Abbildung $f: \R^n \to \R^n$ ist ein Vektorfeld. Es weist jedem
-Vektor $\vec{x} \in \R^n$ einen Vektor $f(\vec{x}) \in \R^n$ zu.
+Die Abbildung $F: \R^n \to \R^n$ ist ein Vektorfeld. Es weist jedem
+Vektor $\vec{x} \in \R^n$ einen Vektor $F(\vec{x}) \in \R^n$ zu.
 \end{definition}
 
 \begin{definition}[Skalarfeld]
@@ -24,7 +24,7 @@ Der Gradient ist also einfach ein Vektor, der aus den partiellen Ableitungen die
 Analog wird die maximale Fallrichtung bezeichnet: $- \nabla f$
 \end{definition}
 
-\begin{definition}[Richtungsvektor] Der Richtungsvektor ist ein normiert Vektor auf länge 1. Dh: Wenn die Richtung der grössten Steigung gefragt ist, ist der normierte Gradient gemeint! Also $\frac{\vec{v}}{|\vec{v}|}$
+\begin{definition}[Richtungsvektor] Der Richtungsvektor ist ein normiert Vektor auf länge 1. Dh: Wenn die Richtung der grössten Steigung gefragt ist, ist der normierte Gradient gemeint! Also $\frac{\nabla f}{|\nabla f|}$
 \end{definition}
 
 \begin{definition}[Richtungsableitung]
@@ -33,16 +33,11 @@ $\frac{\partial f}{\partial \vec{a}} = \nabla f \cdot \vec{e_a} = \nabla f \cdot
 Merke: Die Richtungsableitung ist maximal, wenn $\vec{a}$ in gleiche Richtung wie Gradient zeigt!
 \end{definition}
 
-\begin{definition}[Potential]
-Ist $\vec{v} = \nabla f$, so ist $f$ das Potential oder Stammfunktion zu $\vec{v}$.
-Existiert wenn $\rot \vec{f} = \vec{0}$ und der Definitionsbereich zusamenhängend ist.
-\end{definition}
-
-\begin{definition}[Gradientenfeld / Potentialfeld]
-Ist $\vec{v} = \nabla f$, so ist das Vektorfeld $\vec{v}$
-ein Gradientenfeld / Potentialfeld. Es besitzt dabei die folgenden
-Eigenschaften:
-\begin{itemize}
+\begin{definition}[Gradientenfeld / Potentialfeld] Sei\\ 
+$f: \R^n \to \R$ (ein Skalarfeld), dann ist $\vec{v} = \nabla f$ ein Vektorfeld und nennt $\vec{v}$
+Gradientenfeld / Potentialfeld.\\
+Es besitzt folgende Eigenschaften:
+\begin{itemize}[leftmargin=0.5cm]
 	\item Der Wert des Kurvenintegrals entlang eines beliebigen Weges innerhalb des
 	Feldes ist unabhängig vom Weg selbst, sondern nur vom Anfangs- und Endpunkt
 	\item Ein Kurvenintegral mit einem Weg bei dem Anfangs- und Endpunkt der
@@ -51,17 +46,35 @@ Eigenschaften:
 \end{itemize}
 \end{definition}
 
+\begin{definition}[Potential]
+Ist $\vec{v} = \nabla f$ (ein Potentialfeld), so ist $f: \R^n \to \R$ das Potential oder Stammfunktion zu $\vec{v}$. Gesucht ist also die Funktion $f$, welche abgeleitet das Potentialfeld $\vec{v}$ ergibt!
+Existiert wenn $\rot \vec{f} = \vec{0}$ und der Definitionsbereich zusamenhängend ist.
+\end{definition}
+
 \begin{definition}[Rotor / Rotation]
-Gibt die Tendenz eines Vektorfeldes an, um Punkte zu rotieren. Es ist ein Vektorfeld, welches aus einem anderen Vektorfeld hergeleitet wird. Die Rotation des Vektorfelds $\vec{F} (x, y, z)$ ist das Vektorfeld rot$\vec{F}$. Also: 
-$\vec{F} (x, y, z) = 
+Gibt die Tendenz eines Vektorfeldes an, um Punkte zu rotieren. Es ist ein Vektorfeld, welches aus einem anderen Vektorfeld hergeleitet wird. Die Rotation des Vektorfelds $F$ ist das Vektorfeld $\operatorname{rot} F$. Also: 
+$F (x, y) = 
+\left(
+	\begin{array}{c}
+		F_x (x, y) \\
+		F_y (x, y)
+	\end{array}
+\right) \Rightarrow
+ \operatorname{rot} F = 
+\left(
+	\begin{array}{c}
+		\vspace{3pt} \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
+	\end{array}
+\right)$\\
+$F(x, y, z) = 
 \left(
 	\begin{array}{c}
 		F_x (x, y, z) \\
 		F_y (x, y, z) \\
 		F_z (x, y, z)
 	\end{array}
-\right) \Rightarrow$
- rot$\vec{F} = 
+\right) \Rightarrow
+ \operatorname{rot} F = 
 \left(
 	\begin{array}{c}
 		\vspace{3pt} \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \\
@@ -69,7 +82,7 @@ $\vec{F} (x, y, z) =
 		\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
 	\end{array}
 \right)$\\
-Das Vektorfeld rot$\vec{F}$ wird häufig auch als Wirbelfeld zu $\vec{F}$ bezeichnet. $\vec{F}$ heisst in einem Bereich Wirbelfrei / Konservativ, wenn dort überall rot$\vec{F} = 0$ gilt.
+Das Vektorfeld $\operatorname{rot} F$ wird häufig auch als Wirbelfeld zu $F$ bezeichnet. $F$ heisst in einem Bereich Wirbelfrei / Konservativ, wenn dort überall $\operatorname{rot} F = 0$ gilt.
 \end{definition}
 
 \begin{definition}[Wirbelfrei / konservativ]
@@ -81,19 +94,32 @@ Ein Vektorfeld $\vec{v}$ heisst Vektorpotential zu $\vec{w}$, falls $\vec{w} = \
 \end{definition}
 
 \begin{definition}[Divergenz]
-Ist eine reelle Zahl, und ist ein Mass für das ''auseinanderströmer einer Flüssigkeit''. 
-Die Divergenz eines Vektorfelds $\vec{F}(x, y, z) = (F_x, F_y, F_z)^T$ ist definiert als:
+Ist eine reelle Zahl, und ist ein Mass für die ''Quellen-/Senken-stärke'' eines bestimmten Punktes. 
+Die Divergenz eines Vektorfelds $\vec{F}(x, y, z)$ ist definiert als div $\vec{F}$. Also:
 \[
-	\operatorname{div} \vec{F}(x,y,z) := \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + 
+\vec{F} (x, y, z) = 
+\left(
+	\begin{array}{c}
+		F_x (x, y, z) \\
+		F_y (x, y, z) \\
+		F_z (x, y, z)
+	\end{array}
+\right) \Rightarrow
+	\operatorname{div} \vec{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + 
 	\frac{\partial F_z}{\partial z}
 \] 
+$
+\operatorname{div} F(x_0, y_0, z_0) > 0 \Rightarrow \text{Quelle}\\
+\operatorname{div} F(x_0, y_0, z_0) < 0 \Rightarrow \text{Senke}\\
+\operatorname{div} F(x_0, y_0, z_0) = 0 \Rightarrow \text{Quellenfrei}
+$
 \end{definition}
 
 \begin{lemma}[Geschlossener Weg]
 Wenn $F = grad \phi$, respektive $\rot \vec{F} =\vec{0}$ und der Definitionsbereich zusammenhängend ist,
 sowie $\gamma$ geschlossen ist, so folgt $\int_\gamma F = 0$.
 \end{lemma}
-
+\pagebreak
 \subsection{Bestimmung eines Potentials im $\R^2$}
 Sei $\vec{v} = \begin{pmatrix}
 P(x,y)\\
@@ -101,7 +127,7 @@ Q(x,y)
 \end{pmatrix}$.
 
 Um schnell zu prüfen, ob man überhaupt den folgenden Algorithmus anwenden muss,
-kann man prüfen ob gilt: $P_y = Q_x$, wenn nicht, so hat $\vec{v}$ kein Potential $f$.
+kann man prüfen ob gilt: $Q_x = P_y$ (rot $\vec{v} = 0)$, wenn nicht, so hat $\vec{v}$ kein Potential $f$.
 
 \begin{enumerate}[itemsep=1em]
 	\item $f(x,y) = \int P(x,y)\;dx + C(y)$ berechnen (Integral berechnen)
@@ -123,7 +149,7 @@ R(x,y,z)
 \end{pmatrix}$.
 
 Um zu prüfen, ob man überhaupt ein Potential finden kann für $\vec{v}$ hat $\rot \vec{v} = 0$
-zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} = 0$): $P_y = Q_x, P_z = R_x, Q_z = R_y$.
+zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} = 0$): $R_y = Q_z, R_x = P_z, Q_x = P_y$.
 
 \begin{enumerate}[itemsep=1em]
 	\item $f(x,y,z) = \int P(x,y,z)\;dx + C(y,z)$ lösen (Integral berechnen)
@@ -142,26 +168,27 @@ zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} 
 	\item Das berechnete $D(z)$ in die $f(x,y,z)$ Gleichung aus Punkt 6 einsetzen, fertig.
 \end{enumerate}
 
-\subsection{Geometrisches Verständniss}
-Sei B ein drei dimensionaler Körper (beschrieben durch Punkte in $\R^3$ mit der Funktion $f$) so sei $\nabla f$ senkrecht dazu.
+% Kein Platz
+%\subsection{Geometrisches Verständniss}
+%Sei B ein drei dimensionaler Körper (beschrieben durch Punkte in $\R^3$ mit der Funktion $f$) so sei $\nabla f$ senkrecht dazu.
 
-\subsubsection*{Beispiel}
+%\subsubsection*{Beispiel}
 %aus analysis 2 (2012) serie 11 mc 3
-Gib einen Vektoren der ein nach aussen gerichteter Normalenvektor
-(nicht notwendigerweise normiert) auf dem Rand des Ellipsoids ist \[
-B := 
-\left\{ 
-	\begin{pmatrix} x\\ y\\ z \end{pmatrix} \in \R^3  
-	\middle\vert
-	f\begin{pmatrix} x\\ y\\ z \end{pmatrix} 
-		= \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1
-\right\}
-\]
+%Gib einen Vektoren der ein nach aussen gerichteter Normalenvektor
+%(nicht notwendigerweise normiert) auf dem Rand des Ellipsoids ist \[
+%B := 
+%\left\{ 
+%	\begin{pmatrix} x\\ y\\ z \end{pmatrix} \in \R^3  
+%	\middle\vert
+%	f\begin{pmatrix} x\\ y\\ z \end{pmatrix} 
+%		= \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1
+%\right\}
+%\]
 
-Der Vektor $\begin{pmatrix} 2x/a^2\\ 2y/b^2\\ 2z/c^2 \end{pmatrix}$ ist gleich $\nabla f$ und steht somit 
-senkrecht auf der Niveaufläche $f=1$. Da er vom Ursprung weg orientiert ist, liefert er die richtige Antwort.\\
-Der Vektor $\begin{pmatrix} yz(1/b^2-1/c^2)\\ xz(1/c^2-1/a^2)\\ xy(1/a^2-1/b^2) \end{pmatrix}$ ist tangential 
-zum Rand $\partial B$
+%Der Vektor $\begin{pmatrix} 2x/a^2\\ 2y/b^2\\ 2z/c^2 \end{pmatrix}$ ist gleich $\nabla f$ und steht somit 
+%senkrecht auf der Niveaufläche $f=1$. Da er vom Ursprung weg orientiert ist, liefert er die richtige Antwort.\\
+%Der Vektor $\begin{pmatrix} yz(1/b^2-1/c^2)\\ xz(1/c^2-1/a^2)\\ xy(1/a^2-1/b^2) \end{pmatrix}$ ist tangential 
+%zum Rand $\partial B$
 
 \subsection{Hesse Matrix}
 Die Hesse-Matrix besteht aus den Ergebnissen, wenn $f$ zweimal hintereinander nach $x_i$ und $x_j$ partiell abgeleitet wird. Ist die Funktion zweimal stetig differenzierbar kann die Hesse-Matrix gebildet werden, welche immer symemtrisch ist (dh: $f_{xy} = f_{yx}$). \\
@@ -254,7 +281,7 @@ Meistens ist $\Omega$ nicht offen. Denn wenn $\Omega$ offen wäre, dann lassen s
 		\item Versuche $f$ so zu ändern, dass $f$ nur noch für Punkte auf dem Rand berechnet wird. Brauchbar wenn Rand eine Gerade und sich o.B.d.A. $y$ durch $x$ ausdrücken lässt oder $x, y$ Wert konstant ist. Durch direktes einsetzen in $f$ wird $f$ also so geändert, dass es nur noch für Punkte auf dem Rand berechnet wrid. Jetzt kann wieder der gewohnte Ansatz $f' = 0$ verwendet werden! Wichtig: Prüfe am Ende ob Punkte wirklich auf Randabschnitt!
 
 		\item Verwende Ansatz mit Lagrange Multiplikator: $\nabla f = \lambda \nabla F$.\\
-		Brauchbar wenn $F$ explizit gegeben oder sich der Rand implizit als Gleichung (Bsp. Kreis) ausdrücken lässt! Beachte dass nun eine Variable $\lambda$ dazugekommen ist. Um also auch $\lambda$ aufzulösen verwendet man $F$ als zusätzliche Gleichung! 
+		Brauchbar wenn $F$ explizit gegeben oder sich der Rand implizit als Gleichung (Bsp. Kreis) ausdrücken lässt! Beachte dass nun eine Variable $\lambda$ dazugekommen ist. Um auch $\lambda$ aufzulösen verwendet man $F = 0$ als zusätzliche Gleichung! 
 		Bsp. Nebenbedingung: $\ucomment{F(x,y) = x^2 + y^2 - 1}{x^2 + y^2 = 1}$
  	\end{enumerate}
 
