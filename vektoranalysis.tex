@@ -56,30 +56,30 @@ Gibt die Tendenz eines Vektorfeldes an, um Punkte zu rotieren. Es ist ein Vektor
 $F (x, y) = 
 \left(
 	\begin{array}{c}
-		F_x (x, y) \\
-		F_y (x, y)
+		F_1 (x, y) \\
+		F_2 (x, y)
 	\end{array}
 \right) \Rightarrow
  \operatorname{rot} F = 
 \left(
 	\begin{array}{c}
-		\vspace{3pt} \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
+		\vspace{3pt} F_{2_x} - F_{1_y}
 	\end{array}
 \right)$\\
 $F(x, y, z) = 
 \left(
 	\begin{array}{c}
-		F_x (x, y, z) \\
-		F_y (x, y, z) \\
-		F_z (x, y, z)
+		F_1 (x, y, z) \\
+		F_2 (x, y, z) \\
+		F_3 (x, y, z)
 	\end{array}
 \right) \Rightarrow
  \operatorname{rot} F = 
 \left(
 	\begin{array}{c}
-		\vspace{3pt} \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \\
-		\vspace{3pt} \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \\
-		\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
+		\vspace{3pt} F_{3_y} - F_{2_z} \\
+		\vspace{3pt} F_{1_z} - F_{3_x} \\
+					 F_{2_x} - F_{1_y}
 	\end{array}
 \right)$\\
 Das Vektorfeld $\operatorname{rot} F$ wird häufig auch als Wirbelfeld zu $F$ bezeichnet. $F$ heisst in einem Bereich Wirbelfrei / Konservativ, wenn dort überall $\operatorname{rot} F = 0$ gilt.
@@ -95,18 +95,18 @@ Ein Vektorfeld $\vec{v}$ heisst Vektorpotential zu $\vec{w}$, falls $\vec{w} = \
 
 \begin{definition}[Divergenz]
 Ist eine reelle Zahl, und ist ein Mass für die ''Quellen-/Senken-stärke'' eines bestimmten Punktes. 
-Die Divergenz eines Vektorfelds $\vec{F}(x, y, z)$ ist definiert als div $\vec{F}$. Also:
+Die Divergenz eines Vektorfelds $F(x, y, z)$ ist definiert als div $F$. Also:
 \[
-\vec{F} (x, y, z) = 
+F(x, y, z) = 
 \left(
 	\begin{array}{c}
-		F_x (x, y, z) \\
-		F_y (x, y, z) \\
-		F_z (x, y, z)
+		F_1 (x, y, z) \\
+		F_2 (x, y, z) \\
+		F_3 (x, y, z)
 	\end{array}
 \right) \Rightarrow
-	\operatorname{div} \vec{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + 
-	\frac{\partial F_z}{\partial z}
+	\operatorname{div} F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + 
+	\frac{\partial F_3}{\partial z}
 \] 
 $
 \operatorname{div} F(x_0, y_0, z_0) > 0 \Rightarrow \text{Quelle}\\
@@ -119,22 +119,23 @@ $
 Wenn $F = grad \phi$, respektive $\rot \vec{F} =\vec{0}$ und der Definitionsbereich zusammenhängend ist,
 sowie $\gamma$ geschlossen ist, so folgt $\int_\gamma F = 0$.
 \end{lemma}
+
 \pagebreak
 \subsection{Bestimmung eines Potentials im $\R^2$}
 Sei $\vec{v} = \begin{pmatrix}
-P(x,y)\\
-Q(x,y)
-\end{pmatrix}$.
+F_1(x,y)\\
+F_2(x,y)
+\end{pmatrix} \hspace{1.5cm} \text{Merke: } F_{1_x}$ steht führ: $\frac{\partial F_1}{\partial x}$.
 
 Um schnell zu prüfen, ob man überhaupt den folgenden Algorithmus anwenden muss,
-kann man prüfen ob gilt: $Q_x = P_y$ (rot $\vec{v} = 0)$, wenn nicht, so hat $\vec{v}$ kein Potential $f$.
+kann man prüfen ob gilt: $F_{2_x} = F_{1_y}$ (rot $\vec{v} = 0)$, wenn nicht, so hat $\vec{v}$ kein Potential $f$.
 
 \begin{enumerate}[itemsep=1em]
-	\item $f(x,y) = \int P(x,y)\;dx + C(y)$ berechnen (Integral berechnen)
+	\item $f(x,y) = \int F_1(x,y)\;dx + C(y)$ berechnen (Integral berechnen)
 	\item Die berechnete Gleichung $f(x,y)$ nun nach $y$ ableiten:
-	$\frac{\partial}{\partial y} f(x,y) = \frac{\partial}{\partial y}\int P(x,y)\;dx + C'(y)$
+	$\frac{\partial}{\partial y} f(x,y) = \frac{\partial}{\partial y}\int F_1(x,y)\;dx + C'(y)$
 	(berechnetes Integral nach $y$ ableiten)
-	\item $\frac{\partial}{\partial y} f(x,y) = Q(x,y)$ setzen und $C'(y)$ berechnen durch umformen
+	\item $\frac{\partial}{\partial y} f(x,y) = F_2(x,y)$ setzen und $C'(y)$ berechnen durch umformen
 	und integrieren
 	\item Berechnetes $C(y)$ in die Gleichung im 1. Punkt einsetzen. Fertig. Achtung: Im Grunde hat
 	$C(y)$ durch integrieren (aufleiten) noch einen konstanten Wert, der beliebigen Wert haben kann.
@@ -143,27 +144,28 @@ kann man prüfen ob gilt: $Q_x = P_y$ (rot $\vec{v} = 0)$, wenn nicht, so hat $\
 
 \subsection{Bestimmung eines Potentials im $\R^3$}
 Sei $\vec{v} = \begin{pmatrix}
-P(x,y,z)\\
-Q(x,y,z)\\
-R(x,y,z)
+F_1(x,y,z)\\
+F_2(x,y,z)\\
+F_3(x,y,z)
 \end{pmatrix}$.
 
 Um zu prüfen, ob man überhaupt ein Potential finden kann für $\vec{v}$ hat $\rot \vec{v} = 0$
-zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} = 0$): $R_y = Q_z, R_x = P_z, Q_x = P_y$.
+zu sein, also wirbelfrei zu sein. Dazu muss gelten (zu zeigen mit $\rot \vec{v} = 0$): 
+$F_{3_y} = F_{2_z}, F_{1_z} = F_{3_x}, F_{2_x} = F_{1_y}$.
 
 \begin{enumerate}[itemsep=1em]
-	\item $f(x,y,z) = \int P(x,y,z)\;dx + C(y,z)$ lösen (Integral berechnen)
+	\item $f(x,y,z) = \int F_1(x,y,z)\;dx + C(y,z)$ lösen (Integral berechnen)
 	\item Nun die berechnete Gleichung $f(x,y,z)$ nach $y$ ableiten $\Rightarrow f_y(x,y,z)$.
-	\item Die abgeleitete Gleichung $f_y$ mit $Q(x,y,z)$ gleichsetzen: $f_y(x,y,z) = Q(x,y,z)$
+	\item Die abgeleitete Gleichung $f_y$ mit $F_2(x,y,z)$ gleichsetzen: $f_y(x,y,z) = F_2(x,y,z)$
 	und damit $C_y(y,z)$ bestimmen.
 	\item Durch Integration von $C_y(y,z)$ nach $y$ ($\int C_y(y,z)\;dy$) wird $C(y,z)$ bestimmt
 	bis auf eine Konstante $D(z)$, die von $z$ abhängt. $C(y,z)$ hat also die Form:
 	$C(y,z) = \int C_y(y,z)\; dy + D(z)$.
 	\item Dieses $C(y,z)$ setzt man nun in die Gleichung $f(x,y,z)$ ein, die im 1. Punkt steht.
 	\item Nun wird die daraus erzeugte
-	$f(x,y,z) = \int P(x,y,z)\;dx + C(y,z) = \int P(x,y,z)\;dx + \int C_y(y,z)\; dy + D(z)$
+	$f(x,y,z) = \int F_1(x,y,z)\;dx + C(y,z) = \int F_1(x,y,z)\;dx + \int C_y(y,z)\; dy + D(z)$
 	Gleichung nach $z$ abgeleitet.
-	\item Durch Gleichsetzen von $f_z(x,y,z) = R(x,y,z)$ lässt sich $D_z(z)$ bestimmen.
+	\item Durch Gleichsetzen von $f_z(x,y,z) = F_3(x,y,z)$ lässt sich $D_z(z)$ bestimmen.
 	\item $D_z(z)$ wird wiederrum durch Integration zu $D(z) = \int D_z(z)\; dz + c, \quad c \in \R$
 	\item Das berechnete $D(z)$ in die $f(x,y,z)$ Gleichung aus Punkt 6 einsetzen, fertig.
 \end{enumerate}
