@@ -56,13 +56,20 @@ q > 1 & \Rightarrow \sum_{n=1}^\infty a_n \text{ divergiert}
 \paragraph{Leibnizkriterium}
 \vspace{-0.3cm}
 {\small
-Wenn gilt:
-\begin{itemize}
-  \item $(a_n)$ ist alternierende Folge, d.h Vorzeichen wechseln jedes Mal
+Wenn nachfolgende Punkte alle gelten, dann konvergiert $\sum_{n=1}^\infty a_n$}
+\begin{itemize}[leftmargin=0.5cm]
+  \item $a_n$ ist alternierende Folge, dh: Vorzeichen wechselt jedes Mal
   \item $a_n \to 0$ oder $|a_n| \to 0$
-  \item $(|a_n|)$ ist monoton fallend
+  \item $|a_n|$ ist monoton fallend
 \end{itemize}
-\ldots dann konvergiert $\sum_{n=1}^\infty a_n$}
+
+\paragraph{Integralkriterium / Konvergenzkriterium}
+\vspace{-0.2cm}
+Sei $f$ eine monoton fallende Funktion (Folge) die nur positive Werte annimmt und auf $[a, \infty)$ mit $a \in \Z$ definiert ist, so gilt:
+\[
+	\sum_{n = a}^{\infty} f(n) \text{ konvergiert} \Leftrightarrow \int_a^{\infty} f(n) \, dn 
+	\text{ existiert (also $< \infty$)}
+\] 
 
 \paragraph{Majorantenkriterium / Konvergenzkriterium}
 \vspace{-0.2cm}
@@ -73,7 +80,7 @@ $\sum_{n=1}^\infty a_n$ absolut.
 \vspace{-0.2cm}
 Ist $a_n \geq b_n \geq 0$ und $\sum_{n=1}^\infty b_n$ divergent, so divergiert
 $\sum_{n=1}^\infty a_n$
-
+\pagebreak
 \paragraph{Keine Nullfolge / Divergenzkriterium}
 \vspace{-0.2cm}
 Wenn $a_n$ keine Nullfolge ist, divergiert die Reihe! \\
@@ -106,8 +113,21 @@ $
 \end{cases}
 $
 
-\subsection{Konvergenztipps \& Beispiele}
+\subsection{Tips zu Konvergenz/Divergenz}
 \vspace{-0.2cm}
+\begin{description}
+	\item [Quotientenkriterium] Gut für Reihen, die Fakultäten $n!$ oder Glieder der Form $a^n$ enthalten. Nicht auf Reihen anwendbar, in denen die Glieder nur Form $n^a$ haben.
+
+	\item [Wurzelkriterium] Gut in Reihen, deren Glieder Form $a^n$ enthalten. Zusammen mit Stirlingformel auch auf Fakultäten anwendbar.
+
+	\item [Leibnizkriterium] Nur für alternierende Reihen.
+
+	\item [Integralkriterium] Anwendbar auf Reihen mit monoton fallenden Folgenglieder.
+
+	\item [Majoranten- und Minorantenkriterium] Gut wenn Glieder einfach abgeschätzt werden können.
+\end{description}
+
+\subsection{Tips zu Konvergenz ausrechnen}
 \paragraph{Brüche}
 \vspace{-0.2cm}
 Um zu prüfen ob die Reihe konvergiert, ist es bei Brüchen oft sinvoll das Quotientenkriterium anzuwenden. Vorallem wenn Zähler und Nenner nur aus Produkten bestehen, oft lassen sich dann diese Faktoren wieder wegkürzen!
@@ -129,3 +149,4 @@ Manchmal lässt sich die Reihe nicht direkt ausrechnen, dann kann es nützlich s
 \paragraph{Umformen}
 \vspace{-0.2cm}
 Um eine Reihe auszurechnen kann sie oft umgeformt werden (Bsp. Konstante vor Summe) auf eine Reihe von der eine geschlossene Formel bereits bekannt ist. Siehe Formeltafel!
+\pagebreak

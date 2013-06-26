@@ -29,51 +29,51 @@ Bsp. 4.Polynom um $x_0 = 0$ von $e^{x^2}$:  $1 + x^2 + \frac{x^4}{2!}$  (da $e^x
 Merke: Wenn beim ausrechnen der Summenglieder höhere Polynome als Ordnung n (hier = 4) resultieren, können diese weggelassen werden, wir sind ja nur am 4. Taylor Polynom interessiert!
 }
 
-\subsection{Rechenregeln}
-\vspace{-0.2cm}
-\subsubsection{Addition}
-\vspace{-0.2cm}
-{\small
-$f, g$ sind $m$-mal differenzierbar:
+%\subsection{Rechenregeln}
+%\vspace{-0.2cm}
+%\subsubsection{Addition}
+%\vspace{-0.2cm}
+%{\small
+%$f, g$ sind $m$-mal differenzierbar:
+%
+%$T_m (f + g)(x;x_0) = T_m f(x;x_0) + T_m g(x;x_0)$
+%}
+%
+%\subsubsection{Multiplikation}
+%\vspace{-0.2cm}
+%{\small
+%$f, g$ sind $m$-mal differenzierbar:
+%
+%$T_m (f \cdot g)(x;x_0) = T_m(T_m f(x;x_0) \cdot T_m g(x;x_0))$
+%
+%\underline{Achtung}: Anschaulich bedeutet es folgendes: Man
+%multipliziert die beiden Taylorreihen von $f$ und $g$ miteinander ($T_m f(x;x_0) \cdot T_m g(x;x_0)$).
+%Danach entfernt man alle Terme der Ordnung $> m$.
+%}
 
-$T_m (f + g)(x;x_0) = T_m f(x;x_0) + T_m g(x;x_0)$
-}
-
-\subsubsection{Multiplikation}
-\vspace{-0.2cm}
-{\small
-$f, g$ sind $m$-mal differenzierbar:
-
-$T_m (f \cdot g)(x;x_0) = T_m(T_m f(x;x_0) \cdot T_m g(x;x_0))$
-
-\underline{Achtung}: Anschaulich bedeutet es folgendes: Man
-multipliziert die beiden Taylorreihen von $f$ und $g$ miteinander ($T_m f(x;x_0) \cdot T_m g(x;x_0)$).
-Danach entfernt man alle Terme der Ordnung $> m$.
-}
-
-\subsubsection{Kettenregel}
-\vspace{-0.2cm}
-{\small
-$f: A \to B, g: B \to \R$ zwei $m$-mal differenzierbare Funktionen.
-Entwickelt wird um den Punkt $x_0 \in A$ mit $g(x_0) = q$ ($q$ muss man berechnen).
-Dann gilt:
-\begin{align*}
-T_m (g \circ f)(x;x_0) &= T_m (f(g))(x;x_0)\\
-&= T_m(T_m g(x;x_0) \circ T_m f(x;q))\\
-& = T_m(T_m f(T_m g(x;x_0))(x;q))
-\end{align*}
-}
-
-\vspace{-0.5cm}
-\subsubsection{Bemerkungen / Eigenschaften / Konvergenz}
-\vspace{-0.2cm}
-{\small
-\begin{itemize}
-	\item Der Konvergenzradius kann 0 sein
-	\item Falls Taylor-Reihe konvergiert, dann ist sie nicht notwendig gleich
-	der Funktion, die sie beschreibt. Gegenbeispiel:\\
-	$f(x) = 
-	\begin{cases} e^{-\frac{1}{x}} & x > 0\\
-	0 & x \leq 0\end{cases}$
-\end{itemize}
-}
+%\subsubsection{Kettenregel}
+%\vspace{-0.2cm}
+%{\small
+%$f: A \to B, g: B \to \R$ zwei $m$-mal differenzierbare Funktionen.
+%Entwickelt wird um den Punkt $x_0 \in A$ mit $g(x_0) = q$ ($q$ muss man berechnen).
+%Dann gilt:
+%\begin{align*}
+%T_m (g \circ f)(x;x_0) &= T_m (f(g))(x;x_0)\\
+%&= T_m(T_m g(x;x_0) \circ T_m f(x;q))\\
+%& = T_m(T_m f(T_m g(x;x_0))(x;q))
+%\end{align*}
+%}
+%
+%\vspace{-0.5cm}
+%\subsubsection{Bemerkungen / Eigenschaften / Konvergenz}
+%\vspace{-0.2cm}
+%{\small
+%\begin{itemize}
+%	\item Der Konvergenzradius kann 0 sein
+%	\item Falls Taylor-Reihe konvergiert, dann ist sie nicht notwendig gleich
+%	der Funktion, die sie beschreibt. Gegenbeispiel:\\
+%	$f(x) = 
+%	\begin{cases} e^{-\frac{1}{x}} & x > 0\\
+%	0 & x \leq 0\end{cases}$
+%\end{itemize}
+%}
