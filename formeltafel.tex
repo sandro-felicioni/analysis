@@ -6,17 +6,8 @@
 \subsection{Binomialkoeffizient}
 \[ \binom nk = \frac{n!}{k!\,(n-k)!} \quad \mbox{für }\ 0\leq k\leq n \]
 
-\subsection{Argument}
-\[
-	\arg(x,y) := \begin{cases}
-		\arctan(\frac{y}{x}) & x \geq 0 \\
-		-\arctan(\frac{y}{x}) & x < 0 \\
-		\frac{\pi}{2} & x=0, y < 0 \\
-		\frac{3\pi}{2} & x = 0, y > 0
-	\end{cases}
-\]
-
 \subsection{Kreisfunktionen}
+% sin cos tan
 {\footnotesize
 \begin{tabular}{|l||c|c|c|c|c|c|c||c|c|}\hline
 \multirow{2}{*}{$\alpha$} & $0$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ &
@@ -36,18 +27,48 @@ $\cos$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & $0$
 
 
 $\tan$ & $0$ & $\frac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\pm \infty$ &
-$-\sqrt{3}$ & $0$ & $\tan(\alpha + k \cdot$\hl{$\pi$}$)$ & $]-\infty, \infty[$
+$-\sqrt{3}$ & $0$ & $\tan(\alpha + k \cdot$\hl{$\pi$}$)$ & $\R$
 \\
 \hline
 \end{tabular}
 }
 \includegraphics[width=\columnwidth]{sin_cos_tan.eps}
 
+% sinh cosh tanh
+% 2 columns (don't insert a new linew between minipage definition, otherwise the layout will break!)
+% In order to place the text on top/middle of column next to the image \vspace{0pt} must be inserted!
+% Otherwise the text will appear on bottom! Go figure..
+\begin{minipage}{0.25\textwidth}
+	\vspace{0pt}
+	{\footnotesize
+	\begin{tabular}{|l||c|c|c|c|c||c|c|}\hline
+		 & 0 & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & 1 & DB & WB\\ \hline
+		$\arcsin$ & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & 
+		$[-1, 1]$ & $[-\frac{\pi}{2}, \frac{\pi}{2}]$\\ \hline 
+
+		$\arccos$ & $\frac{\pi}{2}$ & $\frac{\pi}{3}$ & $\frac{\pi}{4}$ & $\frac{\pi}{6}$ & $0$ & 
+		$[-1, 1]$ & $[0, \pi]$\\ \hline 
+
+		$\arctan$ & $0$ & - & - & - & $\frac{\pi}{4}$ & $\R$ & $]- \frac{\pi}{2}, \frac{\pi}{2}[$\\ \hline 
+
+		$\sinh$ & 0 & - & - & - & - & $\R$ & $\R$\\ \hline
+		$\cosh$ & 1 & - & - & - & - & $\R$ & $[1, \infty[$\\ \hline
+		$\tanh$ & 0 & - & - & - & - & $\R$ & $]-1, 1[$\\ \hline
+	\end{tabular}
+	}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+		\vspace{0pt}
+		\hspace{1.05cm}\includegraphics[scale=0.22]{sinh_cosh_tanh_big.png}
+\end{minipage}
+
+
 \subsubsection{Einheitskreis}
 \includegraphics[width=\columnwidth]{einheitskreis_sin_cos.eps}
 $\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{y}{x}$
+\pagebreak
 
-\subsection{Trigonometrische Funktionen \& Additionstheorem}
+\subsection{Trigonom. Funktionen \& Additionstheoreme}
 \begin{itemize}[leftmargin=*]
 	\item $\sin^2(x) + \cos^2(x) = 1$
 	
@@ -74,10 +95,11 @@ $\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{y}{x}$
 
 \subsection{Hyperbelfunktionen}
 \begin{itemize}[leftmargin=*]
-	\item $1 + \sinh(x)^2 = \cosh(x)^2$ $\Leftrightarrow$ $\sqrt{1 + \sinh(x)^2} = \cosh(x)$
-	\item $1 + \sinh(x)^2 = \cosh(x)^2$ $\Leftrightarrow$ $\cosh(x)^2 - \sinh(x)^2 = 1$
 	\item $\sinh(x) = \frac{1}{2}(e^x - e^{-x})$
+	\item $\sinh(2x) = 2 \sinh(x) \cosh(x)$
 	\item $\sinh(x)^2 = \frac{1}{2} (\cosh(2x) - 1)$
+	\item $1 + \sinh(x)^2 = \cosh(x)^2$ $\Leftrightarrow$ $\sqrt{1 + \sinh(x)^2} = \cosh(x)$
+	\item $\cosh(x)^2 - \sinh(x)^2 = 1$
 	\item $\cosh(x) = \frac{1}{2}(e^x + e^{-x})$
 	\item $\cosh(x)^2 = \frac{1}{2} (\cosh(2x) + 1)$
 	\item $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x +
@@ -91,79 +113,171 @@ $\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{y}{x}$
 
 
 \subsection{Ableitungen}
-\subsubsection{Regeln}
+{\small
 \begin{itemize}[leftmargin=*]
 	\item (Summenregel) $(f + g)'(x) = f'(x) + g'(x)$
 	\item (Produktregel) $(fg)'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)$
 	\item (Quotientenregel) $(\frac{f}{g})'(x) = \frac{f'(x) \cdot g(x) -
 	f(x) \cdot g'(x)}{g^2(x)}$
 	\item (Kettenregel) $(g \circ f)'(x) = (g(f(x)))' = g'(f(x)) \cdot f'(x)$
-\end{itemize}
+\end{itemize}}
+
+%\begin{minipage}{0.5\columnwidth}
+%	$\frac{d}{dx}\; e^x = e^x$
+%\end{minipage}
+%\begin{minipage}{0.45\columnwidth}
+%	\hfill $\frac{d}{dx}\; e^{\alpha x + \beta} = \alpha e^{\alpha x + \beta}$
+%\end{minipage}
 
 \subsubsection{Ableitungs-Tafel}
 \begin{itemize}[leftmargin=*]
 	\item $\frac{d}{dx}\; x^n = nx^{n-1}$
 	\item $\frac{d}{dx}\; \frac{1}{x^n} = -n \frac{1}{x^{n+1}}$
-	\item $\frac{d}{dx}\; \sqrt[n]{x} = \frac{1}{n\sqrt[n]{x^{n-1}}}$
-	\item $\frac{d}{dx}\; e^{\alpha x + \beta} = \alpha e^{\alpha x + \beta}$
+	
+	% sqrt
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \sqrt{x} = \frac{1}{2\sqrt{x}}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \sqrt[n]{x} = \frac{1}{n\sqrt[n]{x^{n-1}}}$
+	\end{minipage}
+	
+	% e^x
+	\item
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; e^x = e^x$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; e^{\alpha x + \beta} = \alpha e^{\alpha x + \beta}$
+	\end{minipage}
+	
 	\item $\frac{d}{dx}\; e^{x^\alpha} = \alpha x^{\alpha - 1} e^{x^\alpha}$
+
+
 	\item $\frac{d}{dx}\; \ln(x) = \frac{1}{x}$
 	\item $\frac{d}{dx}\; \alpha^x = \alpha^x \ln(\alpha)$
 	\item $\frac{d}{dx}\; x^x = x^x (1 + \ln(x))$
-	\item $\frac{d}{dx}\; x^{x^\alpha} = x^{x^\alpha + \alpha - 1} (\alpha
-	\log(x) + 1)$
-	\newline
-	\item $\frac{d}{dx}\; \sin(x) = \cos(x)$;
-	$\frac{d}{dx}\; \sin(\alpha x + \beta) = \alpha \cos(\alpha x +
-	\beta)$
-	\item $\frac{d}{dx}\; \cos(x) = -\sin(x)$;
-	$\frac{d}{dx}\; \cos(\alpha x + \beta) = -\alpha \sin(\alpha x + \beta)$
-	\item $\frac{d}{dx}\; \tan(x) = \frac{1}{cos^2(x)}$;
-	$\frac{d}{dx}\; \tan(\alpha x + \beta) = \alpha \frac{1}{\cos^2(\alpha x
-	+ \beta)}$
+	\item $\frac{d}{dx}\; x^{x^\alpha} = x^{x^\alpha + \alpha - 1} (\alpha \log(x) + 1)$ 
+	\vspace{0.1cm}\hrule
+
+	% sin cos tan
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \sin(x) = \cos(x)$	
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \sin(\alpha x + \beta) = \alpha \cos(\alpha x + \beta)$	
+	\end{minipage}
+	
+	
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \cos(x) = -\sin(x)$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \cos(\alpha x + \beta) = -\alpha \sin(\alpha x + \beta)$
+	\end{minipage}
+
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \tan(x) = \frac{1}{cos^2(x)}$	
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \tan(\alpha x + \beta) = \alpha \frac{1}{\cos^2(\alpha x + \beta)}$	
+	\end{minipage}
+	
 	\item $\frac{d}{dx}\; \tan(x) = 1 + \tan(x)^2$
-	\item $\frac{d}{dx}\; \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$;  
-		$\frac{d}{dx}\; \arcsin(\alpha x + \beta) =
-	\frac{\alpha}{\sqrt{1-(\alpha x + \beta)^2}}$
-	\item $\frac{d}{dx}\; \arccos(x) = -\frac{1}{\sqrt{1-x^2}}$;
-		$\frac{d}{dx}\; \arccos(\alpha x + \beta) = -\frac{\alpha}{\sqrt{1 -
-	(\alpha x + \beta)^2}}$
-	\item $\frac{d}{dx}\; \arctan(x) = \frac{1}{x^2+1}$; 
-		$\frac{d}{dx}\; \arctan(\alpha x + \beta) = \frac{\alpha}{(\alpha x +
-	\beta)^2 + 1}$
-	\newline
-	\item $\frac{d}{dx}\; \sinh(x) = \cosh(x)$;
-	$\frac{d}{dx}\; \sinh(\alpha x + \beta) = \alpha \cosh(\alpha x + \beta)$
-	\item $\frac{d}{dx}\; \cosh(x) = \sinh(x)$;
-	$\frac{d}{dx}\; \cosh(\alpha x + \beta) = \alpha \sinh(\alpha x + \beta)$
-	\item $\frac{d}{dx}\; \tanh(x) = \frac{1}{\cosh^2(x)}$;
-	$\frac{d}{dx}\; \tanh(\alpha x + \beta) = \alpha
-	\frac{1}{\cosh^2(\alpha x + \beta)}$
-	\item $\frac{d}{dx}\; \arcsinh(x) = \frac{1}{\sqrt{x^2 + 1}}$;
-	$\frac{d}{dx}\; \arcsinh(\alpha x + \beta) = \frac{\alpha}{\sqrt{(\alpha x
-	+ \beta)^2 + 1}}$
-	\item $\frac{d}{dx}\; \arcosh(x) = \frac{1}{\sqrt{x-1} \sqrt{x + 1}}$;
-	$\frac{d}{dx}\; \arcosh(\alpha x + \beta) = \frac{\alpha}{\sqrt{\alpha x + \beta
-	- 1} \sqrt{\alpha x + \beta + 1}}$
-	\item $\frac{d}{dx}\; \arctanh(x) = \frac{1}{1-x^2}$;
-	$\frac{d}{dx}\; \arctanh(\alpha x + \beta) = \frac{\alpha}{1 - (\alpha x +
-	\beta)^2}$
+
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$	
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arcsin(\alpha x + \beta) = \frac{\alpha}{\sqrt{1-(\alpha x + \beta)^2}}$
+	\end{minipage}
+		
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arccos(x) = -\frac{1}{\sqrt{1-x^2}}$ 
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arccos(\alpha x + \beta) = -\frac{\alpha}{\sqrt{1 - (\alpha x + \beta)^2}}$
+	\end{minipage}
+	
+	\item 
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arctan(x) = \frac{1}{x^2+1}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arctan(\alpha x + \beta) = \frac{\alpha}{(\alpha x + \beta)^2 + 1}$
+	\end{minipage}
+	\vspace{-0.2cm}
+	\hrule
+	\item 
+	{\small
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \sinh(x) = \cosh(x)$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \sinh(\alpha x + \beta) = \alpha \cosh(\alpha x + \beta)$
+	\end{minipage}}
+
+	\item
+	{\small
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \cosh(x) = \sinh(x)$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \cosh(\alpha x + \beta) = \alpha \sinh(\alpha x + \beta)$
+	\end{minipage}}
+	
+	\item 
+	{\small
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \tanh(x) = \frac{1}{\cosh^2(x)}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \tanh(\alpha x + \beta) = \alpha \frac{1}{\cosh^2(\alpha x + \beta)}$
+	\end{minipage}}
+
+	\item 
+	{\small
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arcsinh(x) = \frac{1}{\sqrt{x^2 + 1}}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arcsinh(\alpha x + \beta) = \frac{\alpha}{\sqrt{(\alpha x + \beta)^2 + 1}}$
+	\end{minipage}}
+	
+	\item
+	{\footnotesize
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arcosh(x) = \frac{1}{\sqrt{x-1} \sqrt{x + 1}}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arcosh(\alpha x + \beta) = \frac{\alpha}{\sqrt{\alpha x + \beta - 1} \sqrt{\alpha x + \beta + 1}}$
+	\end{minipage}}
+
+	\item 
+	{\small
+	\begin{minipage}{0.4\columnwidth}
+		$\frac{d}{dx}\; \arctanh(x) = \frac{1}{1-x^2}$
+	\end{minipage}
+	\begin{minipage}{0.55\columnwidth}
+		$\frac{d}{dx}\; \arctanh(\alpha x + \beta) = \frac{\alpha}{1 - (\alpha x + \beta)^2}$
+	\end{minipage}}
 \end{itemize}
 
 \subsection{Integrale}
 \subsubsection{Integralregeln}
-Es gelte: $\int f(x) \, dx = F(x)$
 \begin{itemize}[leftmargin=*]
-	\item $\int u'\cdot v dx = uv - \int u \cdot v' dx$
-	\item $\int f(x) dx = \int f(g(t)) \cdot g'(t) dt, \; x=g(t), dx = g'(t) dt$\newline\hfill
-	\item $\int f(a + x) \,dx = F(a + x)$
-	\item $\int f(a - x) \,dx = -F(a-x)$
-	\item $\int f(-x) \,dx = -F(-x)$
-	\item $\int f(\alpha x) \,dx = \frac{1}{\alpha}F(\alpha x)$
-	\item $\int \frac{g'(x)}{g(x)} \, dx = \ln|g(x)|$
-	\item $\int g(x)g'(x) \, dx = \frac{1}{2}g(x)^2$\\
+	\item $\int u'\cdot v \, dx = uv - \int u \cdot v' \, dx$
+	\item $\int \frac{f'(x)}{f(x)} \, dx = \ln|f(x)|$
+	\item $\int f(x)f'(x) \, dx = \frac{1}{2}f(x)^2$
 	\item $|\int f(x)| \leq \int |f(x)|$ (wenn f, Riemann-Integrable ist)
 \end{itemize}
+
 \subsubsection{typische Integrale}
 \begin{itemize}[leftmargin=*]
 	% typ: x^n
@@ -205,17 +319,43 @@ Es gelte: $\int f(x) \, dx = F(x)$
 \subsubsection{trionometrische Funktionen}
 \begin{itemize}[leftmargin=*]
 	% sin
-	\item $\int \sin(x) \, dx = - \cos(x)$; \hspace{1cm} $\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
-	\item $\int \sin(x)^2 \, dx = \frac{x}{2} - \frac{\sin(x) \cos(x)}{2}$; \hspace{0.5cm}  
-		  $\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
+	\item
+	\begin{minipage}{0.5\columnwidth}
+		$\int \sin(x) \, dx = - \cos(x)$
+	\end{minipage}
+	\begin{minipage}{0.45\columnwidth}
+		$\int \sin(ax) \,dx = -\frac{1}{a}\cos(ax)$
+	\end{minipage}
+
+	\item
+	\begin{minipage}{0.5\columnwidth}
+		 $\int \sin(x)^2 \, dx = \frac{x}{2} - \frac{\sin(x) \cos(x)}{2}$
+	\end{minipage}
+	\begin{minipage}{0.45\columnwidth}
+		$\int \sin(ax)^2 \,dx = \frac{x}{2} - \frac{sin(2ax)}{4a}$
+	\end{minipage}
+		  
 	\item $\int x \sin(ax) \,dx = \frac{\sin(ax)}{a^2} - \frac{x \cos(ax)}{a}$
 	\item $\int \frac{1}{\sin^2 x} \,dx = -\cot x$
    	\item $\int \sin(ax) \cos(ax) \,dx = -\frac{\cos^2(ax)}{2a}$
 
    	% cos
-   	\item $\int \cos(x) \, dx = \sin(x)$; \hspace{1cm} $\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
-	\item $\int \cos(x)^2 \, dx = \frac{x}{2} + \frac{\sin(x) \cos(x)}{2}$; \hspace{0.5cm}
-		  $\int \cos^2(ax) \,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$
+   	\item 
+	\begin{minipage}{0.5\columnwidth}
+		$\int \cos(x) \, dx = \sin(x)$
+	\end{minipage}
+	\begin{minipage}{0.45\columnwidth}
+		$\int \cos(ax) \,dx = \frac{1}{a}\sin(ax)$
+	\end{minipage}
+
+	\item
+	\begin{minipage}{0.5\columnwidth}
+		$\int \cos(x)^2 \, dx = \frac{x}{2} + \frac{\sin(x) \cos(x)}{2}$
+	\end{minipage}
+	\begin{minipage}{0.45\columnwidth}
+		$\int \cos^2(ax) \,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$
+	\end{minipage}
+		  
 	\item $\int \cos(ax) \,dx = \frac{\cos(ax)}{a^2} + \frac{x \sin(ax)}{a}$
 	\item $\int \frac{1}{\cos^2(x)} \,dx = \tan x$
 	
@@ -228,9 +368,29 @@ Es gelte: $\int f(x) \, dx = F(x)$
 
 \subsubsection{Hyperbelfunktionen}
 \begin{itemize}[leftmargin=*]
-	\item $\int \sinh(x) \,dx = \cosh(x)$; $\int \sinh(ax + b) \,dx = \frac{\cosh(ax + b)}{a}$
-	\item $\int \cosh(x) \,dx = \sinh(x)$; $\int \cosh(ax + b) \,dx = \frac{\sinh(ax + b)}{a}$
-	\item $\int \tan(x) \,dx = \log(\cosh(x))$; $\int \tan(ax + b) \,dx = \frac{\log(\cosh(ax+b))}{a}$
+	\item 
+	\begin{minipage}{0.43\columnwidth}
+		$\int \sinh(x) \,dx = \cosh(x)$
+	\end{minipage}
+	\begin{minipage}{0.52\columnwidth}
+		$\int \sinh(ax + b) \,dx = \frac{\cosh(ax + b)}{a}$
+	\end{minipage}
+
+	\item
+	\begin{minipage}{0.43\columnwidth}
+		$\int \cosh(x) \,dx = \sinh(x)$
+	\end{minipage}
+	\begin{minipage}{0.52\columnwidth}
+		$\int \cosh(ax + b) \,dx = \frac{\sinh(ax + b)}{a}$
+	\end{minipage}
+	
+	\item
+	\begin{minipage}{0.43\columnwidth}
+		$\int \tan(x) \,dx = \log(\cosh(x))$
+	\end{minipage}
+	\begin{minipage}{0.52\columnwidth}
+		$\int \tan(ax + b) \,dx = \frac{\log(\cosh(ax+b))}{a}$
+	\end{minipage}
 \end{itemize}
 
 \subsubsection{Exponentialfunktion}
@@ -240,31 +400,29 @@ Es gelte: $\int f(x) \, dx = F(x)$
 	\item $\int x \ln(x) \,dx = \frac{1}{2} x^2 (\ln(x) - \frac{1}{2})$
 	\item $\int_{-\infty}^\infty e^{-\frac{1}{a}x^2} \,dx = \sqrt{a \pi}$
 \end{itemize}
-
+\pagebreak
 \subsection{Reihenentwicklung}
 \begin{itemize}[leftmargin=*]
 	\item $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + 
-	\frac{x^4}{4!} + \cdots$
-	\item $\sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} = x -
-	\frac{x^3}{3!} + \frac{x^5}{5!} + \cdots$
-	\item $\cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = 1 -
-	\frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + \cdots$
+				 \frac{x^4}{4!} + \cdots$
+	\item $\sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots$
+	\item $\cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + \cdots$
 	\item $\sinh x = \sum_{n=0}^\infty \frac{x^{2n+1}}{(2n + 1)!}$
 	\item $\cosh x = \sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}$
-	\item $\ln x = \sum_{n=0}^\infty \frac{2}{2n + 1} \cdot \left(
-	\frac{x-1}{x+1} \right)^{2n}$
+	\item $\ln x = \sum_{n=0}^\infty \frac{2}{2n + 1} \cdot \left(\frac{x-1}{x+1} \right)^{2n}$
 \end{itemize}
 
 \subsection{Grenzwerte}
 \begin{itemize}[leftmargin=*]
-	\item \textbf{Bernoullische Ungleichung}: $x \geq -1, n \in \N: \; (1+x)^n \geq
-	1+nx$
+	\item \textbf{Bernoullische Ungleich.}: $x \geq -1, n \in \N: \; (1+x)^n \geq 1+nx$
 	\item \textbf{Vergleich von Folgen}: weiter rechts stehende Folgen streben
-	schneller gegen $\infty$ als die links davon stehenden: $1, \quad \ln n, \quad
-	n^\alpha (\alpha > 0), \quad q^n (q > 1), \quad n!, \quad n^n$ $\Rightarrow
-	\lim_{x \to \infty} \frac{\ln n}{n^\alpha} = 0$
+	schneller gegen $\infty$:
+	\[
+		1, \quad \ln n, \quad n^\alpha (\alpha > 0), \quad q^n (q > 1), \quad n!, \quad n^n \Rightarrow
+		\lim_{x \to \infty} \frac{\ln n}{n^\alpha} = 0
+	\]
 \end{itemize}
-\subsubsection*{$\lim_{n \to \infty}$}
+$\lim_{n \to \infty}$
 \begin{itemize}[leftmargin=*]
 	\item $\lim_{n \to \infty} \sqrt[n]{a} \rightarrow 1$
 	\item $\lim_{n \to \infty} \sqrt[n]{n} \rightarrow 1$
@@ -286,11 +444,13 @@ Es gelte: $\int f(x) \, dx = F(x)$
 	\item $\lim_{n \to \infty} \left( 1+\frac{x}{n} \right)^n = e^x \quad$
 	\item $\lim_{n \to \infty} \sqrt[n]{n} = 1$
 	\item $\lim_{n \to \infty} n^p q^n = 0 \qquad p \in \N \text{ und } 0 < q < 1$
-	\item $\lim_{x \to \infty} \sqrt{x^2-x}-x = \frac{1}{2}$ \newline{\small (Lösungsansatz mit Taylorreihe
-	($\sqrt{1-x} = 1 + \frac{x}{2}+O(x^2)$): $\sqrt{x^2-x}-x = x(\sqrt{1-\frac{1}{x}}-1) =
-	x((1+\frac{1}{2x}+O(\frac{1}{x^2}))-1) = \frac{1}{2}+O(\frac{1}{x}) \underset{n \to \infty}{\longrightarrow} \frac{1}{2}$ )}
+	\item $\lim_{x \to \infty} \sqrt{x^2-x}-x = \frac{1}{2}$ 
+	%\newline
+	%{\small (Lösungsansatz mit Taylorreihe
+	%($\sqrt{1-x} = 1 + \frac{x}{2}+O(x^2)$): $\sqrt{x^2-x}-x = x(\sqrt{1-\frac{1}{x}}-1) =
+	%x((1+\frac{1}{2x}+O(\frac{1}{x^2}))-1) = \frac{1}{2}+O(\frac{1}{x}) \underset{n \to \infty}{\longrightarrow} \frac{1}{2}$ )}
 \end{itemize}
-\subsubsection*{$\lim_{x \to 0}$}
+$\lim_{x \to 0}$
 \begin{itemize}[leftmargin=*]
 	\item $\lim_{x \to 0} \frac{a^x - 1}{x} = \ln a$
 	\item $\lim_{x \to 0} \frac{\sin x}{x} = 1$
@@ -304,18 +464,43 @@ Es gelte: $\int f(x) \, dx = F(x)$
 
 \subsection{Reihen}
 \begin{itemize}[leftmargin=*]
-	\item $\sum_{n=1}^\infty \frac{1}{n}$ divergiert (``harmonische Reihe'')
+	\item
+	\begin{minipage}{0.35\columnwidth}
+		$\sum_{n=1}^\infty \frac{1}{n}$
+	\end{minipage}
+	\begin{minipage}{0.60\columnwidth}
+		divergiert (``harmonische Reihe'')
+	\end{minipage}
+
 	\item $\sum_{n=1}^\infty \frac{(-1)^n}{n} = \ln \frac{1}{2}$
-	\item $\sum_{n=1}^\infty \frac{1}{n^\alpha}$ konvergiert für $\alpha > 1$,
-	divergiert für $\alpha \leq 1$
-	\item $\sum_{n=0}^\infty q^n = \frac{1}{1-q}$ für $|q| < 1$ (``geometrische
-	Reihe'')
-	\item $\sum_{n=0}^\infty (-1)^n q^n = \frac{1}{1-q}$ für $|q| < 1$ (``geometrische
-	Reihe'')
+	\item 
+	\begin{minipage}{0.35\columnwidth}
+		$\sum_{n=1}^\infty \frac{1}{n^\alpha}$
+	\end{minipage}
+	\begin{minipage}{0.60\columnwidth}
+		konver. für $\alpha > 1$, divergiert für $\alpha \leq 1$
+	\end{minipage}
+	 
+	\item 
+	\begin{minipage}{0.35\columnwidth}
+		$\sum_{n=0}^\infty q^n = \frac{1}{1-q}$
+	\end{minipage}
+	\begin{minipage}{0.60\columnwidth}
+		für $|q| < 1$ (``geometrische Reihe'')
+	\end{minipage}
+	
+	\item
+	\begin{minipage}{0.35\columnwidth}
+		$\sum_{n=0}^\infty (-1)^n q^n = \frac{1}{1-q}$
+	\end{minipage}
+	\begin{minipage}{0.60\columnwidth}
+		für $|q| < 1$ (``geometrische Reihe'')
+	\end{minipage}
+
 	\item $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$
 	\newline
-	\item $\sum_{n=1}^m n = \frac{m(m+1)}{2}$
 	\item $\sum_{n=0}^m q^n = \frac{1-q^{m+1}}{1-q}$ 
+	\item $\sum_{n=1}^m n = \frac{m(m+1)}{2}$
 	\item  $\sum_{n=0}^m n^2 = \frac{1}{6}m(m+1)(2m+1)$
 	\item  $\sum_{n=0}^m n^3 = \frac{1}{4}m^2(m+1)^2$
 \end{itemize}
@@ -343,12 +528,14 @@ Es gelte: $\int f(x) \, dx = F(x)$
 \subsection{Exponent}
 \begin{itemize}[leftmargin=*]
   \item $a^n a^m = a^{n + m}$
+  \item $\frac{a^n}{a^m} = a^{n - m}$
   \item $(a^n)^m = a^{nm}$
   \item $(ab)^n = a^n b^n$
   \item $\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n}$
   \item $a^{-n} = \frac{1}{a^n}$
   \item $\left( \frac{a}{b} \right)^{-n} = \left( \frac{b}{a} \right)^n$
   \item $a^\frac{n}{m} = (a^\frac{1}{m})^n = (a^n)^\frac{1}{m}$
+  \item $a^{n^m} = a^{(n^m)}$
 \end{itemize}
 \columnbreak
 
@@ -407,7 +594,7 @@ Es gelte: $\int f(x) \, dx = F(x)$
 	\item $(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i$
 	\item $\frac{a + bi}{c + di} = \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}\cdot i$
 \end{itemize}
-
+\pagebreak
 \subsection{Geometrische Körper}
 \subsubsection{Ellipsoid}
 Hat die Form eines Rugbyballs. In kartesischen Koordinaten definert durch
@@ -441,14 +628,17 @@ Rotation um die x Achse $M = 2\pi \int_a^b f(x) \, \sqrt{1 + f'(x)^2} dx$\\
 {\small \textbf{Achtung:} Für ganze Fläche muss Deckel dazu berechnet werden!}
 % Rotation um die y Achse $V=2\pi \int_a^b x \cdot f(x) dx$ => falsch!
 
-\subsection{Trigonometrie}
-\subsubsection{Kosinussatz}
-\includegraphics[scale=0.45]{kosinussatz.jpg}
-\begin{eqnarray*}
-	a^2 = b^2 + c^2 - 2bc \, \cdot \, \cos(\alpha)\\
-	b^2 = a^2 + c^2 - 2ac \, \cdot \, \cos(\beta)\\
-	c^2 = a^2 + b^2 - 2ab \, \cdot \, \cos(\gamma)
-\end{eqnarray*}
+\subsection{Kosinussatz}
+\begin{minipage}{0.35\columnwidth}
+	\includegraphics[width=\columnwidth]{kosinussatz.jpg}
+\end{minipage}
+\begin{minipage}{0.60\columnwidth}
+	\begin{eqnarray*}
+		a^2 = b^2 + c^2 - 2bc \, \cdot \, \cos(\alpha)\\
+		b^2 = a^2 + c^2 - 2ac \, \cdot \, \cos(\beta)\\
+		c^2 = a^2 + b^2 - 2ab \, \cdot \, \cos(\gamma)
+	\end{eqnarray*}
+\end{minipage}
 
 \subsection{Ausklammern}
 \begin{itemize}[leftmargin=*]
@@ -459,17 +649,9 @@ Rotation um die x Achse $M = 2\pi \int_a^b f(x) \, \sqrt{1 + f'(x)^2} dx$\\
 
 \subsection{Aus Serien}
 \begin{itemize}[leftmargin=*]
-	\item Ableitung von $x^x$ kann man berechnen, indem man $x = e^{\log(x)}$
-	setzt. Also in diesem Fall $e^{\log(x^x)} = e^{x \log(x)}$ ableitet, was $e^{x
-	\log(x)} (1 + \log(x))$ (Serie 10)
-	\item Cauchy-Schwarz Ungleichung: $|x \cdot y| \leq \|x\| \cdot \|y\|, \; x,y \in \R^n$
+	\item Ableitung von $x^x$ kann man mit Ansatz $x = e^{\log(x)}$ berechnen.
+	Also:$ \frac{d}{dx}  e^{\log(x^x)} = \frac{d}{dx} e^{x \log(x)} = x^x (1 + \log(x))$
 	\item Euler Identität (komplexe Zahlen): $e^{ix} = \cos(x) + i \sin(x)$
-	\item $\arctan$ Identität: $\arctan(\frac{1}{x}) + \arctan(x) = \operatorname{sgn}(x) \frac{\pi}{2},\quad x \neq 0$
-	\item $\operatorname{sgn}(x) := \begin{cases}
-		+1 & x > 0\\
-		0 & x = 0\\
-		-1 & x < 0
-	\end{cases}$
 \end{itemize}
 
 \subsection{Polynomdivision}
