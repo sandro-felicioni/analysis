@@ -76,7 +76,7 @@ Bestimmt: $\int_a^b f(g(x)) \, g'(x) \, dx = \int_{g(a)}^{g(b)} f(u) \, du$ mit 
 	$x = a \cdot \sinh(u) $ und $dx = a \cdot \cosh(u) \, du$ und $\sqrt{a^2 + x^2} = a \cdot \cosh(u)$
 
 	\vspace{0.1cm}
-	\item Integrale die $\sqrt{x^2 - a^2}$ enthalten:\\
+	\item Integrale die $\sqrt{x^2 - a^2}$ enthalten: $u = x^2 - a^2$ oder\\
 	$x = a \cdot \cosh(u) $ und $dx = a \cdot \sinh(u) \, du$ und $\sqrt{x^2 - a^2} = a \cdot \sinh(u)$
 \end{itemize}
 \textbf{Bsp:} $\int \sqrt{1 + x^2} \; dx$\\
@@ -121,12 +121,14 @@ Bsp: $\int \ucomment{u}{x} \, \ucomment{v'}{\cos(x)} = x \sin(x) - \int 1 \cdot 
 \textbf{Tip:} Wenn $f(x)$ aus einem Produkt mit Polynomen besteht, muss man meist das Polynom ableiten (Also u = Polynom). Eventuell mehrmals partiell integrieren. Bei jeder partiellen Integration wird so das Polynom um 1 verringert! 
 
 \subsubsection{Allgemeine Tips}
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 	\item Hat man einen Bruch und Grad im Zähler $\geq$ Grad im Nenner. Führe immer eine Polynomdivision durch. Nun kann meist direkt ein einfacheres Resultat integriert werden. Falls immer noch zu kompliziert, siehe nächster Punkt.
 
-	\item Hat man ein Bruch und Grad im Zähler $<$ Grad im Nenner und sieht trotzdem kompliziert aus, dann mache eine Partialbruchzerlegung.
+	\item Hat man komplizierten Bruch und Grad im Zähler $<$ Grad im Nenner, hilft oft eine Partialbruchzerlegung.
 
-	\item Die Integralgrenzen können aufschluss über die zu verwendende Substitution geben.
+	\item Integral mit sin/cos wie: $\int_0^{\pi/2} \sin(x) \cos(2x)$ muss oft 2x partiell integriert werden und dann mit Startintegral gleichsetzen!
+
+	\item Integralgrenzen können aufschluss über Substitution geben.
 
 	\item Oft ist besser Wurzel als Polynome aufzufassen, $\sqrt{x} = x^{1/2}$
 \end{itemize}
@@ -177,7 +179,7 @@ Wenn das unbestimmte Integral innerhalb der Integralsgrenzen an einer Stelle nic
 \textbf{Beispiel:}
 \vspace{-0.2cm}
 \begin{align*}
-	\hspace{-0.35cm} \int_{-2}^{2} \frac{1}{x} \; dx = \int_{-2}^{0} \frac{1}{x} \; dx + \int_{0}^{2} \frac{1}{x} \; dx = \lim_{b \to 0^-} \int_{-2}^{b} \frac{1}{x} \; dx + \lim_{a \to 0+} \int_{a}^{2} \frac{1}{x} \; dx = \dots
+	\hspace{-0.35cm} \int_{-2}^{2} \frac{1}{x} \; dx = \int_{-2}^{0} \frac{1}{x} \; dx + \int_{0}^{2} \frac{1}{x} \; dx = \lim_{b \to 0^-} \int_{-2}^{b} \frac{1}{x} \; dx + \lim_{a \to 0^+} \int_{a}^{2} \frac{1}{x} \; dx = \dots
 \end{align*}}
 
 

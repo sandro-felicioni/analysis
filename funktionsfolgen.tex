@@ -16,30 +16,31 @@ Die Funktionenfolge $f_n$ \underline{konvergiert punktweise} gegen $f$, falls gi
 \begin{definition}[gleichmässig konvergent] \index{gleichmässig konvergent}
 Die Funktionenfolge $f_n$ \underline{konvergiert gleichmässig} gegen $f$, falls gilt:
 \[
-	\lim_{n \to \infty} \sup_{x \in \Omega} |f_n(x) - f(x)| = 0 
+	\lim_{n \to \infty} \sup_{x \in \Omega} |f_n(x) - f(x)| =  0 
 \]
-\[
-\text{Formal: } \forall \epsilon > 0 \; \exists n_0 \in \N \; \forall x \in \Omega: n \geq n_0
+\[\text{Formal: } \forall \epsilon > 0 \; \exists n_0 \in \N \; \forall x \in \Omega: n \geq n_0
 \Rightarrow |f(x) - f_n(x)| < \epsilon
 \]
-Das bedeutet, dass die obere Definition für alle $x$ \underline{dasselbe} $n_0$ verwendet und nicht jeweils
-verschiedene!\\
+{\small
+Merke: Für alle $x$ wird \uline{dasselbe} $n_0$ verwendet\\
+Beweis mit: max $x$ von $|f_n - f|$ suchen ($(f_n - f)' = 0$) dann abschätzen\\
 \textbf{Merke:}\\
 gleichmässige Konvergenz $\Rightarrow$ punktweise Konvergenz.\\
 $f(x)$ nicht stetig $\Rightarrow$ $f_n$ konvergiert nicht gleichmässig gegen $f(x)$
+}
 \end{definition}
 
 \textbf{Beispiel:} Zeige dass $f_n(x) = 1 + x^n(1 - x)^n$ auf dem Intervall $[0, 1]$ gleichmässig konvergiert.
 \begin{enumerate}
 \item Wir zeigen dass $f_n$ Punktweise stetig ist.
 \[
-	\lim_{n \to \infty} f_n(x) = \lim_{n \to \infty} 1 + x^n(1 - x)^n = 1 = f(x) \text{  weil $x \in [0, 1]$}
+	\lim_{n \to \infty} f_n(x) = \lim_{n \to \infty} 1 + x^n(1 - x)^n = 1 = f(x) \, \checkmark \text{  weil $x \in [0, 1]$}
 \]
 
 \item Wir zeigen dass $f_n$ auch gleichmässig stetig ist.
 \begin{flalign*}
-	\hspace{-0.4cm}&*\text{Abschätzen: } x(1-x) \leq 0.5(1 - 0.5) = \frac{1}{4} \text{ für } \forall x \in [0, 1]&\\
+	\hspace{-0.4cm}&*\text{Max Abschätzen: } x(1-x) \leq 0.5(1 - 0.5) = \frac{1}{4} \text{ für } \forall x \in [0, 1]&\\
 	\hspace{-0.4cm}&|f_n(x) - f(x)| = | 1 + x^n(1 - x)^n - 1| = |\left(x(1 - x)\right)^n| \overset{*}{\leq} \left(\frac{1}{4}\right)^n&\\
-	\hspace{-0.4cm}&\text{Somit gilt:} \lim_{n \to \infty} \sup_{x \in [0, 1]} |f_n(x) - f(x)| \leq \lim_{n \to \infty} \left(\frac{1}{4}\right)^n = 0&
+	\hspace{-0.4cm}&\text{Somit gilt:} \lim_{n \to \infty} \max_{0 \leq x \leq 1} |f_n(x) - f(x)| \leq \lim_{n \to \infty} \left(\frac{1}{4}\right)^n = 0 \, \checkmark &
 \end{flalign*}
 \end{enumerate}

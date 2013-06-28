@@ -12,10 +12,12 @@ Die Feinheit der Zerlegung ist:
 \]
 
 
-\begin{figure}
-	\includegraphics[width=\columnwidth]{riemann.png}
-	\caption[Bildunterschrift]{Darstellung Riemannintegral mit $\xi_i = t_i$ und unsymetrischer Intervaleinteilung $E$.}
-\end{figure}
+\begin{minipage}{0.4\columnwidth}
+	Riemannintegral mit $\xi_i = t_i$ und unsymetrischer Intervaleinteilung $E$.
+\end{minipage}
+\begin{minipage}{0.60\columnwidth}
+	\includegraphics[scale=0.36]{riemann.png}
+\end{minipage}
 
 Somit können wir die Riemannsumme konkret berechnen:
 \begin{align*}
@@ -31,7 +33,6 @@ Somit können wir die Riemannsumme konkret berechnen:
 \[
 	\lim_{N \to \infty} = \sum_{k = 1}^N f(\xi_k) \cdot \Delta x = I \hspace{0.5cm} \text{mit } \xi_k \in [x_{k-1}, x_k]
 \]
-
 \end{definition}
 
 \begin{definition}[Riemann integrierbar v.2] \index{Riemann integrierbar v.2}
