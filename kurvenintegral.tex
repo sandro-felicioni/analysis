@@ -76,35 +76,40 @@ schneller auf die Parametrisierung zu kommen.
 %\end{enumerate}
 
 \subsection{2. Art (Weg über Vektorfeld)}
-Das Wegintegral über ein \underline{stetiges Vektorfeld} $\vec{f}: \R^n \to \R^n$
+Das Wegintegral über ein \underline{stetiges Vektorfeld} $F: \R^n \to \R^n$
 entlang eines stetig differenzierbaren Weges $\gamma: [a,b] \to \R^n$ ist definiert
 durch:
 \[
-\oint_\gamma \vec{f}(\vec{x}) d\vec{x} := \oint_a^b \left< \vec{f}(\gamma(t)), \gamma(t)' \right> dt
+\int_\gamma F(\vec{x}) d\vec{x} := \int_a^b \left< F(\gamma(t)), \gamma(t)' \right> dt
 \]
 
-\underline{Skalarprodukt}: $\left< \vec{a}, \vec{b} \right> = a_x b_x + a_y b_y + \ldots$
+\underline{Skalarprodukt}: $\left< \vec{a}, \vec{b} \right> = a_x b_x + a_y b_y + \ldots$\\
+
+\begin{lemma}[Geschlossener Weg]
+Wenn das Vektorfeld $F$ ein Potential besitzt \uline{und} $\gamma$ geschlossen ist, so folgt $\int_\gamma F = 0$.\\
+Merke: $F$ besitzt genau dann ein Potential wenn:\\
+$F = \grad \phi$ oder ($\rot F = \vec{0}$ und der DB zusammenhängend ist)
+\end{lemma}
 
 \textbf{Beispiel}\\
 %Beispiel Analysis II Serie 11 4a)
-Berechne des Linienintegral $\oint_\gamma \vec{K} d\vec{x} $ für $ \vec{K}(x,y) = (x^2+y, 2xy)$ und $\gamma$ als Einheitskreis mit positivem Umlaufsinn.
+Berechne das Linienintegral $\int_\gamma F \, d\vec{x} $ für $ F(x,y) = (x^2+y, 2xy)$ und $\gamma$ als Einheitskreis mit positivem Umlaufsinn.
 Gegeben:
 \begin{align*}
-\vec{K}(x,y) &= (x^2+y, 2xy) \\
+F(x,y) &= (x^2+y, 2xy) \\
 \gamma &: [0,2\pi]  \to \R^2\\
 \gamma &: t \mapsto   (\cos(t), \sin(t)) 
 \end{align*}
 Zu berechnen:
 \begin{eqnarray*}
 \gamma(t)' &=& (-\sin(t),\cos(t))\\
-\vec{K}(\gamma(t)) &=& (\cos^2(t) + \sin(t), 2 \cos(t)\sin(t))\\
-\left< \vec{K}(\gamma(t)), \gamma(t)' \right> &=& -\cos^2(t)\sin(t) - \sin^2(t)
-+ 2\cos^2(t)\sin(t)\\
+F(\gamma(t)) &=& (\cos^2(t) + \sin(t), 2 \cos(t)\sin(t))\\
+\left< F(\gamma(t)), \gamma(t)' \right> &=& -\cos^2(t)\sin(t) - \sin^2(t) + 2\cos^2(t)\sin(t)\\
  &=& \cos^2(t)\sin(t) - \sin^2(t)
 \end{eqnarray*}
 \begin{eqnarray*}
-\oint_\gamma \vec{K} d\vec{x} &=& \oint_0^{2\pi} \left< \vec{K}(\gamma(t)), \gamma(t)' \right> dt\\
-&=& \oint_0^{2\pi} \cos^2(t)\sin(t) - \sin^2(t) dt\\
+\int_\gamma F d\vec{x} &=& \int_0^{2\pi} \left< F(\gamma(t)), \gamma(t)' \right> dt\\
+&=& \int_0^{2\pi} \cos^2(t)\sin(t) - \sin^2(t) dt\\
 &=& \left. -\frac{1}{3}\cos^3(t) - \frac{1}{2}(t - \sin(t)\cos(t))
 \right|_0^{2\pi} = \underline{\underline{-\pi}}
 \end{eqnarray*}
@@ -113,7 +118,7 @@ Zu berechnen:
 Das Wegintegral einer \underline{stetigen Funktion} $f: \R^n \to \R$ entlang
 eines stetig differenzierbaren Weges $\gamma: [a,b] \to \R^n$ ist definiert durch:
 \[
-\oint_\gamma f ds := \oint_a^b f(\gamma(t)) \|\gamma(t)'\|_2 dt
+\int_\gamma f ds := \int_a^b f(\gamma(t)) \|\gamma(t)'\|_2 dt
 \]
 
 \underline{Euklidische Norm}: $\|\vec{a}\|_2 = \sqrt{a_x^2 + a_y^2 + \ldots}$.
@@ -126,7 +131,7 @@ Es sei die Schraubenlinie (Spirale in 3D)
 \[
 \gamma : [0,2\pi]  \to \R^3, \gamma : t \mapsto  (\cos(t), \sin(t), t) 
 \]
-und $f(x,y,z) := x^2 + y^2 + z^2$ gegeben. Wir berechnen $\oint_\gamma f ds$. Zunächst bestimmen wir
+und $f(x,y,z) := x^2 + y^2 + z^2$ gegeben. Wir berechnen $\int_\gamma f ds$. Zunächst bestimmen wir
 \begin{align*}
 \|\gamma(t)'\|_2 &= \sqrt{\left[\frac{d(\cos t)}{dt}\right]^2 +
 \left[\frac{d(\sin t)}{dt}\right]^2 + \left[\frac{dt}{dt}\right]^2} \\
@@ -138,7 +143,7 @@ f(x,y,z) = f(\gamma(t)) = \sin^2(t)+\cos^2(t)+t^2 = 1 +t^2
 \]
 auf $\gamma$. Das führt zu
 \begin{align*}
-\oint_\gamma f(x,y,z) ds &= \oint_0^{2\pi} (1 +t^2)\sqrt{2} dt = \left. \sqrt{2}(t+\frac{t^3}{3}) \right|_0^{2\pi} \\
+\int_\gamma f(x,y,z) ds &= \int_0^{2\pi} (1 +t^2)\sqrt{2} dt = \left. \sqrt{2}(t+\frac{t^3}{3}) \right|_0^{2\pi} \\
 &= \frac{2\sqrt{2}\pi}{3}(3+4\pi^2)
 \end{align*}
 
@@ -149,9 +154,10 @@ auf $\gamma$. Das führt zu
 \]
 \end{definition}
 
-\begin{definition}[Bogenlänge in Parameterform] Für die Bogenlänge L, auf dem Weg beschrieben durch $x(t)$ und $y(t)$, ergibt sich: 
-\[
-	L = \int ds = \int_a^b \sqrt{\dot{x}^2 + \dot{y}^2} dt
-\]
-\end{definition}
+% Never used so far, therefore we omit it for now
+%\begin{definition}[Bogenlänge in Parameterform] Für die Bogenlänge L, auf dem Weg beschrieben durch $x(t)$ und $y(t)$, ergibt sich: 
+%\[
+%	L = \int ds = \int_a^b \sqrt{\dot{x}^2 + \dot{y}^2} dt
+%\]
+%\end{definition}
 \pagebreak
