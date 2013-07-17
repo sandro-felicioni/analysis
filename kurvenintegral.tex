@@ -83,7 +83,15 @@ durch:
 \int_\gamma F(\vec{x}) d\vec{x} := \int_a^b \left< F(\gamma(t)), \gamma(t)' \right> dt
 \]
 
-\underline{Skalarprodukt}: $\left< \vec{a}, \vec{b} \right> = a_x b_x + a_y b_y + \ldots$\\
+\underline{Skalarprodukt}: $\left< \vec{a}, \vec{b} \right> = a_x b_x + a_y b_y + \ldots$
+
+\begin{satz}[Hauptsatz für Kurvenintegrale]
+Ist $\gamma$ ein Weg mit Anfangspunkt $\vec{a}$ und Endpunkt $\vec{b}$ (nicht mit a, b von $\gamma: [a, b]$ verwechseln!) und $f$ eine stetig differenzierbare Funktion so ist:
+\[
+	\int_{\gamma} \grad f(\vec{x}) \, d\vec{x} = f(\vec{b}) - f(\vec{a})
+\]
+Dh: Wenn $F$ ein Potential $\phi$ besitzt (also $F = \grad \phi$), dann kann der Weg so berechnet werden: $\phi(\vec{b}) - \phi(\vec{a})$
+\end{satz}
 
 \begin{lemma}[Geschlossener Weg]
 Wenn das Vektorfeld $F$ ein Potential besitzt \uline{und} $\gamma$ geschlossen ist, so folgt $\int_\gamma F = 0$.\\
@@ -117,13 +125,12 @@ F(\gamma(t)) &=& (\cos^2(t) + \sin(t), 2 \cos(t)\sin(t))\\
 \subsection{1. Art (Weg über Skalarfeld)}
 Das Wegintegral einer \underline{stetigen Funktion} $f: \R^n \to \R$ entlang
 eines stetig differenzierbaren Weges $\gamma: [a,b] \to \R^n$ ist definiert durch:
-\[
+\vspace{-0.3cm}\[
 \int_\gamma f ds := \int_a^b f(\gamma(t)) \|\gamma(t)'\|_2 dt
 \]
 
 \underline{Euklidische Norm}: $\|\vec{a}\|_2 = \sqrt{a_x^2 + a_y^2 + \ldots}$.
-Achtung: Beim Integral muss man zuerst $\gamma(t)$ nach $t$ ableiten und erst
-dann die Norm davon berechnen!
+Achtung: Zuerst $\gamma(t)$ nach $t$ ableiten und erst dann die Norm davon berechnen!
 
 \textbf{Beispiel}
 % Beispiel von http://www.tu-ilmenau.de/fileadmin/media/num/neundorf/Dokumente/Lehre/hm/Kurven_Integral.pdf Seite 2
@@ -142,17 +149,17 @@ Dann substituieren wir x,y und z und erhalten
 f(x,y,z) = f(\gamma(t)) = \sin^2(t)+\cos^2(t)+t^2 = 1 +t^2
 \]
 auf $\gamma$. Das führt zu
+{\vspace{-0.2cm}\small
 \begin{align*}
-\int_\gamma f(x,y,z) ds &= \int_0^{2\pi} (1 +t^2)\sqrt{2} dt = \left. \sqrt{2}(t+\frac{t^3}{3}) \right|_0^{2\pi} \\
-&= \frac{2\sqrt{2}\pi}{3}(3+4\pi^2)
-\end{align*}
-
+\int_\gamma f(x,y,z) ds &= \int_0^{2\pi} (1 +t^2)\sqrt{2} dt = \left. \sqrt{2}(t+\frac{t^3}{3}) \right|_0^{2\pi} 
+= \frac{2\sqrt{2}\pi}{3}(3+4\pi^2)
+\end{align*}}
+\vspace{-0.4cm}
 \subsection{Bogenlänge}
 \begin{definition}[Bogenlänge in kartesischen Koordinaten] Die Bogenlänge des Graphen einer stetig differenzierbaren Funktion $f: [a, b] \to \R$ ist definiert durch:
-\[
-	L = \int_a^b \sqrt{1 + (f'(x)^2)}
-\]
+$L = \int_a^b \sqrt{1 + (f'(x)^2)}$
 \end{definition}
+
 
 % Never used so far, therefore we omit it for now
 %\begin{definition}[Bogenlänge in Parameterform] Für die Bogenlänge L, auf dem Weg beschrieben durch $x(t)$ und $y(t)$, ergibt sich: 
